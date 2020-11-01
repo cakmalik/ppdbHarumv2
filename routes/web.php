@@ -1,0 +1,54 @@
+<?php
+
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BerandaController;
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Member\StudentController;
+use App\Http\Controllers\Setup\TekkenController;
+
+Route::get('/', function () {
+    return view('template.landpage.first');
+});
+
+Route::group(['prefix' => 'wel'], function () {
+    Route::get('announ',function(){
+        return view('template.landpage.announ');
+    });
+    Route::get('contact',function(){
+        return view('template.landpage.contact');
+    });
+});
+
+Route::get('login',[LoginController::class,'showLoginMember'])->name('login.member');
+Route::post('login',[LoginController::class,'postLoginMember'])->name('login.member');
+
+Route::get('auth',[LoginController::class,'showLoginAdmin'])->name('login.admin');
+Route::post('auth',[LoginController::class,'postLoginAdmin'])->name('login.admin');
+
+Route::get('coba',function(){
+    return view('template.app.master');
+});
+
+
+Route::group(['middleware' => ['auth:member','ceklevel:member']], function () { 
+    Route::get('form',[BerandaController::class,'index']);
+});
+
+Route::group(['middleware' => ['auth:user','ceklevel:op']], function () { 
+    Route::get('halamansatu',[BerandaController::class,'halamansatu'])->name('halamansatu');
+    Route::get('tekken',[TekkenController::class,'showCode']);
+    Route::post('tekken',[TekkenController::class,'useCode'])->name('useCode');
+});
+
+Route::group(['middleware' => ['auth:member','ceklevel:member']], function () { 
+    Route::get('halamandua',[BerandaController::class,'halamandua'])->name('halamandua');
+
+    Route::post('form', [BerandaController::class,'postForm'])->name('postForm');
+});
+
+
+Route::get('logout',[LoginController::class,'logout'])->name('logout');
+
+Route::get('registered', function () {
+    return view('registered');
+});

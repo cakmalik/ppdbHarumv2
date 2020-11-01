@@ -1,0 +1,47 @@
+.tengah {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 70px;
+}
+.card {
+  margin-top: 10px;
+  width: 700px;
+  min-height: 250px;
+  background-color: white;
+  box-shadow: 0 0 20px rgb(195, 195, 195);
+}
+
+.isi {
+  padding: 20px;
+  text-align: center;
+}
+
+.isi p {
+  font-size: 18px;
+}
+
+.garis {
+  max-width: 700px;
+  height: 10px;
+  background-color: #f39c12;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  text-align: center;
+  font-size: 12px;
+}
+
+@media (max-width: 40rem) {
+  .card {
+    max-width: 40rem;
+  }
+  .garis {
+    max-width: 40rem;
+  }
+}

@@ -1,0 +1,113 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background-image: url("../img/image.png");
+  background-size: cover;
+}
+
+/* content */
+.full {
+  height: 100%;
+  width: 100%;
+}
+.satu {
+  background-color: #f39c12;
+  text-align: center;
+}
+.kiri {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.logobesar {
+  width: 25%;
+  height: auto;
+}
+
+.tulisanlogo {
+  margin-top: 20px;
+  font-size: 50px;
+  color: white;
+}
+
+.kanan {
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding-left: 50px;
+}
+
+.kanan h1 {
+  margin-bottom: 20px;
+  font-size: 72px;
+  color: #f39c12;
+}
+.kanan p {
+  font-size: 25px;
+  margin-top: -10px;
+}
+
+.button-large {
+  font-size: 1.4rem;
+  height: 4.5rem;
+  line-height: 4.5rem;
+  padding: 0 2rem;
+}
+
+.footer {
+  color: white;
+  font-size: 12px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 51%;
+  text-align: center;
+}
+
+@media (max-width: 40rem) {
+  /* content */
+  .kiri {
+    padding-top: 10px;
+  }
+  .logobesar {
+    width: 20%;
+    height: auto;
+  }
+  .tulisanlogo {
+    font-size: 35px;
+  }
+  .dua {
+    text-align: center;
+    margin-left: 0;
+  }
+  .kanan {
+    padding-left: 0;
+    align-items: center;
+  }
+  .kanan h1 {
+    font-size: 50px;
+  }
+  .kanan p {
+    font-size: 22px;
+  }
+  .footer {
+    left: 0;
+    right: 0;
+    color: #f39c12;
+    text-align: center;
+  }
+}
