@@ -1,4 +1,4 @@
-@extends('template.app.master')
+@extends('template.app.member')
 @section('content')
 
     <table>
