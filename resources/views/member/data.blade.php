@@ -1,6 +1,5 @@
 @extends('template.app.member')
 @section('content')
-
     <table>
         <tbody>
             <tr>

@@ -12,14 +12,31 @@
 </head>
 
 <body>
-    {{-- @include('template.landpage.menu') --}}
+    <!-- navbar -->
+    <div class="nav">
+        <input type="checkbox" id="nav-check" />
+        <div class="nav-title">{{ config('app.name') }}</div>
+        <div class="nav-btn">
+            <label for="nav-check">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+        </div>
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="{{ URL('wel/announ') }}">Pengumuman</a>
+            <a href="{{ URL('wel/contact') }}">Kontak</a>
+            <a class="login" href="{{ route('login.member') }}">LOGIN</a>
+        </div>
+    </div>
 
     <!-- content -->
     <div class="row full">
         <div class="satu column">
             <div class="kiri">
-                <img class="logobesar" src="img/logobesar.svg" alt="logobesar" />
-                <p class="tulisanlogo">PENDAFTARAN PPDB</p>
+                <img class="logobesar" src="{{ asset('img/logobesar.svg') }}" alt="logobesar" />
+                <p class="tulisanlogo">PEeNDAFTARAN PPDB</p>
             </div>
         </div>
 

@@ -6,8 +6,10 @@ use App\Http\Controllers\MemberController;
 use App\Http\Controllers\BerandaController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Setup\TekkenController;
-use App\Http\Controllers\Member\StudentController;
+use App\Http\Controllers\StudentController;
 use App\Http\Controllers\OperatorController;
+use App\Http\Controllers\StudentController as ControllersStudentController;
+use Illuminate\Routing\RouteGroup;
 
 Route::get('/', function () {
     return view('template.landpage.first');
@@ -45,20 +47,29 @@ Route::group(['middleware' => ['auth:member','ceklevel:registered']], function (
     Route::group(['prefix' => 'members'], function () {
  
         Route::get('index',[MemberController::class,'index'])->name('member.index');
+    
     });
     
 });
 
 
-//
-Route::group(['middleware' => ['auth:user','ceklevel:2']], function () { 
-    Route::get('halamansatu',[BerandaController::class,'halamansatu'])->name('halamansatu');
-    Route::get('tekken',[TekkenController::class,'showCode']);
-    Route::post('tekken',[TekkenController::class,'useCode'])->name('useCode');
-    Route::get('students',[OperatorController::class,'showStudents']);
+//bagian operator
+Route::group(['middleware' => ['auth:user','ceklevel:2']], function () {
+    Route::resource('students', StudentController::class);
+    Route::get('op/home', [BerandaController::class,'opHome'])->name('opHome');
+    Route::get('tekken', [TekkenController::class,'showCode']);
+    Route::post('tekken', [TekkenController::class,'useCode'])->name('useCode');
+    Route::group(['prefix' => 'students'], function () {
+        Route::get('/', [OperatorController::class,'showStudents']);
+        Route::get('show',[StudentController::class,'show']);
+    });
+    
+    Route::group(['prefix' => 'members'], function () {
+        Route::get('all',[MemberController::class,'showTable'])->name('students');
+        Route::get('export',[StudentController::class,'export'])->name('export.students');
+        Route::get('search',[StudentController::class,'search'])->name('members.search');
+    });
 });
-
-
 
 
 Route::get('registered', function () {

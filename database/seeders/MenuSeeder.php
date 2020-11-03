@@ -16,21 +16,21 @@ class MenuSeeder extends Seeder
                 'name'=>'Data Calon Siswa',
                 'is_active'=>1,
                 'icon'=>'fa fa-bell',
-                'url'=>'members/index',
+                'url'=>'/members/index',
             ],
             [
                 'titlemenu_id'=>4,
                 'name'=>'Pengumuman',
-                'is_active'=>1,
+                'is_active'=>0,
                  'icon'=>'fa fa-bell',
-                'url'=>'members/pengumuman',
+                'url'=>'/members/pengumuman',
             ],
             [
                 'titlemenu_id'=>4,
                 'name'=>'Ukuran Baju',
-                'is_active'=>1, 
+                'is_active'=>0, 
                 'icon'=>'fa fa-bell',
-                'url'=>'members/uniform',
+                'url'=>'/members/uniform',
             ],
             [
                 'titlemenu_id'=>2,
@@ -40,7 +40,7 @@ class MenuSeeder extends Seeder
                 'url'=>'/tekken',
             ],
             [
-                'url'=>'#',
+                'url'=>'/members/all',
                 'titlemenu_id'=>2,
                 'name'=>'Pendaftar', 
                 'icon'=>'fa fa-bell',
@@ -59,6 +59,13 @@ class MenuSeeder extends Seeder
                 'is_active'=>1,
                  'icon'=>'fa fa-bell',
                 'url'=>'#',
+            ],
+             [
+                'titlemenu_id'=>2,
+                'name'=>'Beranda',
+                'is_active'=>1,
+                 'icon'=>'fa fa-bell',
+                'url'=>'/op/home',
             ],
         ]);
     }

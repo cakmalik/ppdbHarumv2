@@ -23,21 +23,10 @@
             <section class="row">
                 <ul class="column sidebar-nav">
                     @php
-                    if(!Auth::guard('member')->user()->username){
-                    $tbl = "user";
-                    }else{
-                    $tbl = "member";
-                    }
-
-                    if($tbl=="user"){
-                    $role = Auth::guard($tbl)->user()->level;
-                    }else{
-                    $role=4;
-                    }
-
-
+                    $role = 4;
                     $a= DB::table('titlemenus')->where('id',$role)->first();
-                    $b= DB::table('menus')->where(['titlemenu_id'=>$role,'is_active'=>1])->get();
+                    $b=
+                    DB::table('menus')->where(['titlemenu_id'=>$role,'is_active'=>1])->get();
                     @endphp
 
                     <li class="nav-section-heading">{{ $a->name }}</li>

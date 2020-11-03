@@ -6,8 +6,9 @@
         <br>
         <a class="button" onclick="window.location.reload(true)">Refresh</a>
         <button class="button" onclick="myFunction()">Use</button>
+
     </form>
-    <a href="{{ route('exportToken') }}" class="button">Excel</a>
+    <a href=" {{ route('exportToken') }}" class="button">Excel</a>
 
     <table>
         <thead>
@@ -15,6 +16,7 @@
                 <th>#</th>
                 <th>Token</th>
                 <th>Status</th>
+                <th>Kirim</th>
             </tr>
         </thead>
         <tbody>
@@ -32,6 +34,11 @@
                     <td>{{ $token_table->firstItem() + $key }}</td>
                     <td>{{ $item->email }}</td>
                     <td>{{ $status }}</td>
+                    <td>
+                        <a href="https://wa.me/?text=TOKEN PPDB = {{ $item->email }}" target="_blank"
+                            class="button primary">Send</a>
+
+                    </td>
                 </tr>
             @endforeach
         </tbody>

@@ -14,9 +14,9 @@ class BerandaController extends Controller
     {
         return view('beranda.form');
     }
-    public function halamansatu()
+    public function opHome()
     {
-        return view('beranda.hal1');
+        return view('beranda.op');
     }
     public function halamandua()
     {
