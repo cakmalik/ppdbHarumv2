@@ -19,13 +19,15 @@ class LoginController extends Controller
     public function postLoginMember(Request $request)
     {
         if (Auth::guard('member')->attempt(['email' => $request->email, 'password' => $request->password])) {
+            if(Auth::guard('member')->user()->level=="registered"){
+            return redirect()->route('member.index');
+            }
             return redirect('form');
         }
         return back();
     }
     public function postLoginAdmin(Request $request)
     {
-
         if (Auth::guard('user')->attempt(['email' => $request->email, 'password' => $request->password])) {
             return redirect('tekken');
         }

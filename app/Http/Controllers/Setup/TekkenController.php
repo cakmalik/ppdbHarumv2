@@ -13,11 +13,15 @@ class TekkenController extends Controller
     public function showCode()
     {
         return view('op.tekken.showcode',[
-            'kode_tekken'=>Str::random(8)
+            'kode_tekken'=>Str::random(8),
+            'token_table'=>DB::table('members')->paginate(7)
         ]);
     }
     public function useCode(Request $request)
     {
+        // $request->validate([
+        //     'email'=>'required|unique:members'
+        // ]);
         DB::table('members')->insert([
             'name'=>'calon',
             'username'=>Str::random(11),

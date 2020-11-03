@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
+
 class Member extends Authenticatable
 {
     use HasFactory, Notifiable;
@@ -14,11 +15,7 @@ class Member extends Authenticatable
     protected $table = "members";
     protected $primaryKey = "id";
     
-    protected $fillable = [
-        'name',
-        'email',
-        'password',
-    ];
+    protected $guarded=[];
 
     protected $hidden = [
         'password',

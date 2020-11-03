@@ -5,8 +5,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{ config('app.name') }}</title>
-    <link rel="stylesheet" href="{{ asset('assets/miligram/milligram.min.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/normalize.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/miligram/milligram.min.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/page.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/nav.css') }}" />
 </head>
@@ -28,15 +28,15 @@
 
     <!-- content -->
     @yield('content')
-
-    <div class="footer">
-        <p>made by
-            <a target="_blank" style="color:grey" href="https://wa.me/6285333920007"><b>pm.</b></a>
-            &
-            <a target="_blank" style="color:grey" href="https://wa.me/6285232213939"><b>iai.</b></a>
-            with milligram
-        </p>
-    </div>
+        <div class="footer">
+            <p>made by
+            <a target="_blank" href="https://wa.me/6285333920007"><b>pm.</b></a>
+                &
+            <a target="_blank" href="https://wa.me/6285232213939"><b>iai.</b></a>
+                with milligram
+            </p>
+        </div>
+    
 </body>
 
 </html>

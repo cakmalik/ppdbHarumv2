@@ -25,7 +25,7 @@ class BerandaController extends Controller
     public function postForm(Request $request)
     {
         DB::table('members')->where('email', $request->token)->update(
-            ['email'=>'registered']);
+            ['level'=>'registered']);
 
         $data = $request->all();
         $data['status'] = 1;

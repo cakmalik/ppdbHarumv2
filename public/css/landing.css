@@ -32,8 +32,8 @@ body {
 }
 
 .logobesar {
-  width: 25%;
-  height: auto;
+  padding-top: 60px;
+  
 }
 
 .tulisanlogo {
@@ -68,14 +68,17 @@ body {
   padding: 0 2rem;
 }
 
-.footer {
-  color: white;
+.footer p{
+  color: #f39c12;
   font-size: 12px;
-  position: absolute;
+  position: absolute; 
+  right: 15px;
   bottom: 0;
-  left: 0;
-  right: 51%;
   text-align: center;
+  z-index: 99;
+}
+.footer a{
+  color: #f39c12;
 }
 
 @media (max-width: 40rem) {
@@ -84,7 +87,7 @@ body {
     padding-top: 10px;
   }
   .logobesar {
-    width: 20%;
+    
     height: auto;
   }
   .tulisanlogo {
@@ -93,6 +96,8 @@ body {
   .dua {
     text-align: center;
     margin-left: 0;
+    height: 100%;
+    position: relative;
   }
   .kanan {
     padding-left: 0;
@@ -104,10 +109,14 @@ body {
   .kanan p {
     font-size: 22px;
   }
-  .footer {
+  .footer p{
+    position: absolute;
+    bottom: -50px;
+    font-size: 12px;
     left: 0;
     right: 0;
     color: #f39c12;
     text-align: center;
   }
+
 }

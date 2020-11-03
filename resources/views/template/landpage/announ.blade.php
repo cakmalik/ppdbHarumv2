@@ -6,9 +6,10 @@
             <div class="garis"></div>
             <div class="isi">
                 <div class="cardbagian">
-
+                
                 </div>
             </div>
         </div>
     </div>
 @endsection
+

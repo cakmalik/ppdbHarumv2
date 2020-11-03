@@ -35,7 +35,9 @@
     <div class="row full">
         <div class="satu column">
             <div class="kiri">
-                <img class="logobesar" src="img/logobesar.svg" alt="logobesar" />
+                <br>
+                <br>
+                <img style="width: 100%" class="logobesar" src="img/alur.svg" alt="logobesar" style />
                 <p class="tulisanlogo">PENDAFTARAN PPDB</p>
             </div>
         </div>
@@ -47,18 +49,22 @@
                 <a class="button" href="{{ route('login.member') }}">LOGIN</a>
                 {{-- <a class="button" href="{{ route('login.admin') }}">ADMIN</a>
                 --}}
+
+                <div class="footer">
+                    <p>made by
+                        <a target="_blank" href="https://wa.me/6285333920007"><b>pm.</b></a>
+                        &
+                        <a target="_blank" href="https://wa.me/6285232213939"><b>iai.</b></a>
+                        with milligram
+                    </p>
+                </div>
             </div>
+
         </div>
+
     </div>
 
-    <div class="footer">
-        <p>made by
-            <a target="_blank" style="color:white" href="https://wa.me/6285333920007"><b>pm.</b></a>
-            &
-            <a target="_blank" style="color:white" href="https://wa.me/6285232213939"><b>iai.</b></a>
-            with milligram
-        </p>
-    </div>
+
 </body>
 
 </html>

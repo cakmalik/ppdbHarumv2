@@ -12,9 +12,9 @@
                         @endphp
                         @foreach ($contacts as $contact)
                             <p> Alamat : {{ $contact->address }}</p>
-                            <p> Kota : {{ $contact->city }}</p>
-                            <p> Telp : {{ $contact->telp }}</p>
-                            <p> Whatsapp : {{ $contact->whatsapp }}</p>
+                            <p> Kabupaten/Kota : {{ $contact->city }}</p>
+                            <p> Whatsapp Admin : {{ $contact->whatsapp }}</p>
+                            <p> Whatsapp Bu Nafi : {{ $contact->telp }}</p>
                             <p>
                                 <a target="_blank" href="{{ $contact->facebook }}">FB</a> |
                                 <a target="_blank" href="{{ $contact->instagram }}">IG</a> |

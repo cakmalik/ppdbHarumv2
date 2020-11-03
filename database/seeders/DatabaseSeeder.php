@@ -5,11 +5,6 @@ use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
 {
-    /**
-     * Seed the application's database.
-     *
-     * @return void
-     */
     public function run()
     {
        $this->call([    
@@ -17,8 +12,8 @@ class DatabaseSeeder extends Seeder
         UserSeeder::class,
         MemberSeeder::class,
         IncomeSeeder::class,
-        // MenuSeeder::class,
-        // TitlemenuSeeder::class,
+        MenuSeeder::class,
+        TitlemenuSeeder::class,
         // IncomeSeeder::class,
         // FriendSeeder::class,
         // TokenSeeder::class,

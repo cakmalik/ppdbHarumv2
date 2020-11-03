@@ -11,7 +11,7 @@ class UserSeeder extends Seeder
     {
         DB::table('users')->insert([
         [
-            'level'=>'admin',
+            'level'=>'1',
             'name'=>'M. Hasin Ilmalik',
             'username'=>'admin',
             'email'=>'m@m.m',
@@ -19,7 +19,7 @@ class UserSeeder extends Seeder
             'remember_token'=>Str::random(60)
         ],
         [
-            'level'=>'op',
+            'level'=>'2',
             'name'=>'Ikromudin',
             'username'=>'operator',
             'email'=>'i@i.i',
