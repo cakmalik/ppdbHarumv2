@@ -26,7 +26,7 @@
                     $role = Auth::guard("user")->user()->level;
                     $a= DB::table('titlemenus')->where('id',$role)->first();
                     $b=
-                    DB::table('menus')->where(['titlemenu_id'=>$role,'is_active'=>1])->orderBy('created_at','asc')->get();
+                    DB::table('menus')->where(['titlemenu_id'=>$role,'is_active'=>1])->orderBy('posisi','asc')->get();
                     @endphp
 
                     <li class="nav-section-heading">{{ $a->name }}</li>

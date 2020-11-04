@@ -47,9 +47,7 @@ Route::group(['middleware' => ['auth:member','ceklevel:registered']], function (
     Route::group(['prefix' => 'members'], function () {
  
         Route::get('index',[MemberController::class,'index'])->name('member.index');
-    
     });
-    
 });
 
 
@@ -69,6 +67,8 @@ Route::group(['middleware' => ['auth:user','ceklevel:2']], function () {
         Route::get('export',[StudentController::class,'export'])->name('export.students');
         Route::get('search',[StudentController::class,'search'])->name('members.search');
     });
+
+    Route::get('confirmPage',[OperatorController::class,'confirmPage'])->name('confirmPage');
 });
 
 

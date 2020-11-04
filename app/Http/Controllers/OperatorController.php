@@ -13,4 +13,9 @@ class OperatorController extends Controller
         // dd($students);
         return view('op.students',compact('students'));
     }
+    public function confirmPage()
+    {
+        $students = Student::where('status',1)->latest()->paginate(20);
+        return view('op.confirmPage',compact('students')); 
+    }
 }

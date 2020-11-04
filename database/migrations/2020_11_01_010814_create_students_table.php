@@ -32,7 +32,7 @@ class CreateStudentsTable extends Migration
             $table->string('mom_income');
             $table->string('mom_phone');
             $table->string('email');
-            $table->string('status');
+            $table->integer('status');
             $table->timestamps();
         });
     }

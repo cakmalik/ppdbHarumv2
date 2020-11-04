@@ -15,6 +15,7 @@ class CreateMenusTable extends Migration
             $table->string('url');
             $table->string('icon');
             $table->string('is_active');
+            $table->integer('posisi');
             $table->timestamps();
         });
     }

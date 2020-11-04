@@ -4,6 +4,11 @@
   box-sizing: border-box;
 }
 
+.btn-sm{
+  padding: 0 10px !important;
+  
+}
+
 .button {
   text-align: center;
   font-size: 14px;
@@ -13,6 +18,7 @@
   background-color: slateblue;
   border: slateblue;
 }
+
 
 .secondary {
   background-color: #e74c3c;

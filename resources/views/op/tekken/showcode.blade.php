@@ -35,8 +35,9 @@
                     <td>{{ $item->email }}</td>
                     <td>{{ $status }}</td>
                     <td>
-                        <a href="https://wa.me/?text=TOKEN PPDB = {{ $item->email }}" target="_blank"
-                            class="button primary">Send</a>
+                        <a href="https://wa.me/?text=TOKEN PPDB = {{ $item->email }}" target="_blank" class="button xxx">
+                            <i class="fa fa-share-alt" aria-hidden="true"></i>
+                        </a>
 
                     </td>
                 </tr>

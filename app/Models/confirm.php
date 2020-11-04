@@ -5,13 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Student extends Model
+class confirm extends Model
 {
     use HasFactory;
-    protected $guarded=[];
+    protected $table = "confirms";
 
-    public function confirm()
+    public function students()
     {
-        return $this->hasOne(confirm::class);
+        return $this->belongsTo(Student::class);
     }
 }

@@ -15,12 +15,14 @@ class MenuSeeder extends Seeder
                 'titlemenu_id'=>4,
                 'name'=>'Data Calon Siswa',
                 'is_active'=>1,
+                'posisi'=>1,
                 'icon'=>'fa fa-bell',
                 'url'=>'/members/index',
             ],
             [
                 'titlemenu_id'=>4,
                 'name'=>'Pengumuman',
+                'posisi'=>1,
                 'is_active'=>0,
                  'icon'=>'fa fa-bell',
                 'url'=>'/members/pengumuman',
@@ -28,6 +30,7 @@ class MenuSeeder extends Seeder
             [
                 'titlemenu_id'=>4,
                 'name'=>'Ukuran Baju',
+                'posisi'=>1,
                 'is_active'=>0, 
                 'icon'=>'fa fa-bell',
                 'url'=>'/members/uniform',
@@ -35,6 +38,7 @@ class MenuSeeder extends Seeder
             [
                 'titlemenu_id'=>2,
                 'name'=>'Token',
+                'posisi'=>2,
                 'is_active'=>1, 
                 'icon'=>'fa fa-bell',
                 'url'=>'/tekken',
@@ -42,13 +46,23 @@ class MenuSeeder extends Seeder
             [
                 'url'=>'/members/all',
                 'titlemenu_id'=>2,
-                'name'=>'Pendaftar', 
+                'posisi'=>3,
+                'name'=>'Data Pendaftar', 
                 'icon'=>'fa fa-bell',
                 'is_active'=>1
             ],
              [
                 'titlemenu_id'=>2,
-                'name'=>'Jadwal',
+                'name'=>'Terima / tolak',
+                'posisi'=>4,
+                'is_active'=>1,
+                 'icon'=>'fa fa-bell',
+                'url'=>'#',
+            ],
+             [
+                'titlemenu_id'=>2,
+                'name'=>'Atur kategori',
+                'posisi'=>5,
                 'is_active'=>1,
                  'icon'=>'fa fa-bell',
                 'url'=>'#',
@@ -56,6 +70,7 @@ class MenuSeeder extends Seeder
              [
                 'titlemenu_id'=>2,
                 'name'=>'Ukuran Baju',
+                'posisi'=>6,
                 'is_active'=>1,
                  'icon'=>'fa fa-bell',
                 'url'=>'#',
@@ -63,6 +78,7 @@ class MenuSeeder extends Seeder
              [
                 'titlemenu_id'=>2,
                 'name'=>'Beranda',
+                'posisi'=>1,
                 'is_active'=>1,
                  'icon'=>'fa fa-bell',
                 'url'=>'/op/home',

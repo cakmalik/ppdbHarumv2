@@ -26,7 +26,7 @@
                     $role = 4;
                     $a= DB::table('titlemenus')->where('id',$role)->first();
                     $b=
-                    DB::table('menus')->where(['titlemenu_id'=>$role,'is_active'=>1])->get();
+                    DB::table('menus')->where(['titlemenu_id'=>$role,'is_active'=>1])->orderBy('posisi','asc')->get();
                     @endphp
 
                     <li class="nav-section-heading">{{ $a->name }}</li>

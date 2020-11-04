@@ -44,7 +44,7 @@ class StudentFactory extends Factory
             'mom_income'=>$this->faker->name,
             'mom_phone'=>$this->faker->e164PhoneNumber,
             'email'=>$this->faker->email,
-            'status'=>$this->faker->name,
+            'status'=>1,
         ];
     }
 }
