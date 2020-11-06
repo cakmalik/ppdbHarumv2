@@ -1,5 +1,8 @@
 @extends('template.app.member')
 @section('content')
+    @php
+    $dad_income = DB::table('incomes')->where('category',$data->dad_income)->get();
+    @endphp
     <table>
         <tbody>
             <tr>
@@ -48,7 +51,7 @@
             </tr>
             <tr>
                 <td>Penghasilan Ayah</td>
-                <th>{{ $data->dad_income }}</th>
+                <th>{{ $dad_income }}</th>
             </tr>
             <tr>
                 <td>No HP Ayah</td>

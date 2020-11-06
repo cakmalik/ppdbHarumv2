@@ -1,5 +1,6 @@
 @extends('template.app.user')
 @section('content')
+
     <table>
         <tbody>
             <tr>
@@ -48,7 +49,12 @@
             </tr>
             <tr>
                 <td>Penghasilan Ayah</td>
-                <th>{{ $student->dad_income }}</th>
+                <th>
+                    @php
+                    $dad = DB::table('incomes')->where('id',$student->dad_income)->first();
+                    echo $dad->amount;
+                    @endphp
+                </th>
             </tr>
             <tr>
                 <td>No HP Ayah</td>
@@ -69,7 +75,11 @@
             </tr>
             <tr>
                 <td>Penghasilan Ibu</td>
-                <th>{{ $student->mom_income }}</th>
+                <th>
+                    @php
+                    $mom = DB::table('incomes')->where('id',$student->mom_income)->first();
+                    echo $mom->amount;
+                    @endphp</th>
             </tr>
             <tr>
                 <td>No HP Ibu</td>
