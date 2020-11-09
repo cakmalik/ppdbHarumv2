@@ -79,6 +79,7 @@ Route::group(['middleware' => ['auth:user','ceklevel:2']], function () {
         Route::get('fundcategories',[OperatorController::class,'fundCategories']);
         Route::get('uniform',[OperatorController::class,'uniformTable']);
         Route::get('opset',[OperatorController::class,'opset'])->name('op.set');
+        Route::post('setwa',[OperatorController::class,'setwa'])->name('set.wa');
     });
 });
 

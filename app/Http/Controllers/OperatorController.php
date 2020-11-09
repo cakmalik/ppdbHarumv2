@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Setup\Uniform;
+use App\Models\setup;
 use App\Models\Student;
 use Illuminate\Http\Request;
+use App\Models\Setup\Uniform;
+use Illuminate\Support\Facades\DB;
 use App\Models\Students\Fund_category;
 
 class OperatorController extends Controller
@@ -47,6 +49,14 @@ class OperatorController extends Controller
     }
     public function opSet()
     {
-        return view('op.opset');
+        $pesanwa = setup::where('name','pesan_wa')->first();
+        return view('op.opset',compact('pesanwa'));
+    }
+    public function setwa(Request $request)
+    {
+        DB::table('setups')
+              ->where('name', 'pesan_wa')
+              ->update(['value' => $request->value]);
+        return back();
     }
 }

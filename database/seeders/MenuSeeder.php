@@ -70,7 +70,7 @@ class MenuSeeder extends Seeder
             ],
             [
                 'titlemenu_id'=>2,
-                'name'=>'Konfirmasi',
+                'name'=>'Terima / tolak',
                 'posisi'=>5,
                 'is_active'=>1,
                  'icon'=>'fa fa-clipboard-check',
@@ -78,7 +78,7 @@ class MenuSeeder extends Seeder
             ],
             [
                 'titlemenu_id'=>2,
-                'name'=>'Telah konfirmasi',
+                'name'=>'Status pendaftar',
                 'posisi'=>6,
                 'is_active'=>1,
                 'icon'=>'fa fa-user-check',
@@ -99,6 +99,14 @@ class MenuSeeder extends Seeder
                 'is_active'=>1,
                 'icon'=>'fas fa-user-cog',
                 'url'=>'/setup/uniform',
+            ],
+            [
+                'titlemenu_id'=>2,
+                'name'=>'Set Pesan Wa',
+                'posisi'=>9,
+                'is_active'=>1,
+                'icon'=>'fas fa-envelope',
+                'url'=>'/setup/opset',
             ],
             
         ]);
