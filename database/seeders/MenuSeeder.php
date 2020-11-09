@@ -35,12 +35,21 @@ class MenuSeeder extends Seeder
                 'icon'=>'fa fa-bell',
                 'url'=>'/members/uniform',
             ],
+            // INI MENU UNTUK OPERTATOR
+            [
+                'titlemenu_id'=>2,
+                'name'=>'Beranda',
+                'posisi'=>1,
+                'is_active'=>1,
+                 'icon'=>'fa fa-home',
+                'url'=>'/op/home',
+            ],
             [
                 'titlemenu_id'=>2,
                 'name'=>'Token',
                 'posisi'=>2,
                 'is_active'=>1, 
-                'icon'=>'fa fa-bell',
+                'icon'=>'fa fa-qrcode',
                 'url'=>'/tekken',
             ],
             [
@@ -48,41 +57,50 @@ class MenuSeeder extends Seeder
                 'titlemenu_id'=>2,
                 'posisi'=>3,
                 'name'=>'Data Pendaftar', 
-                'icon'=>'fa fa-bell',
+                'icon'=>'fa fa-users',
                 'is_active'=>1
             ],
-             [
+            [
                 'titlemenu_id'=>2,
-                'name'=>'Terima / tolak',
+                'name'=>'Data Ukuran Baju',
                 'posisi'=>4,
                 'is_active'=>1,
-                 'icon'=>'fa fa-bell',
+                 'icon'=>'fa fa-tshirt',
                 'url'=>'#',
             ],
-             [
+            [
                 'titlemenu_id'=>2,
-                'name'=>'Atur kategori',
+                'name'=>'Konfirmasi',
                 'posisi'=>5,
                 'is_active'=>1,
-                 'icon'=>'fa fa-bell',
-                'url'=>'#',
+                 'icon'=>'fa fa-clipboard-check',
+                'url'=>'/confirmpage',
             ],
-             [
+            [
                 'titlemenu_id'=>2,
-                'name'=>'Ukuran Baju',
+                'name'=>'Telah konfirmasi',
                 'posisi'=>6,
                 'is_active'=>1,
-                 'icon'=>'fa fa-bell',
-                'url'=>'#',
+                'icon'=>'fa fa-user-check',
+                'url'=>'/confirmed',
             ],
-             [
+            [
                 'titlemenu_id'=>2,
-                'name'=>'Beranda',
-                'posisi'=>1,
+                'name'=>'Atur kategori',
+                'posisi'=>7,
                 'is_active'=>1,
-                 'icon'=>'fa fa-bell',
-                'url'=>'/op/home',
+                'icon'=>'fas fa-sliders-h',
+                'url'=>'/setup/fundcategories',
             ],
+            [
+                'titlemenu_id'=>2,
+                'name'=>'Atur Ukuran Baju',
+                'posisi'=>8,
+                'is_active'=>1,
+                'icon'=>'fas fa-user-cog',
+                'url'=>'/setup/uniform',
+            ],
+            
         ]);
     }
 }

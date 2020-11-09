@@ -15,14 +15,31 @@
 }
 
 .primary {
-  background-color: slateblue;
-  border: slateblue;
+  background-color: #e67e22;
+  border: #e67e22;
 }
 
-
 .secondary {
+  background-color: #3498db;
+  border: #3498db;
+}
+
+.success {
+  background-color: #27ae60;
+  border: #27ae60;
+}
+
+.danger {
   background-color: #e74c3c;
   border: #e74c3c;
+}
+.dark {
+  background-color: #34495e;
+  border: #34495e;
+}
+.ligth {
+  background-color: #ecf0f1;
+  border: #ecf0f1;
 }
 
 /* page */

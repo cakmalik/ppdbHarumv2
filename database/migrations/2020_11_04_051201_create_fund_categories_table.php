@@ -15,6 +15,15 @@ class CreateFundCategoriesTable extends Migration
     {
         Schema::create('fund_categories', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('gender');
+            $table->string('gedung');
+            $table->string('perpustakaan');
+            $table->string('kegiatan');
+            $table->string('bukumedia');
+            $table->string('seragam');
+            $table->string('jilbab');
+            $table->string('ipp');
             $table->timestamps();
         });
     }

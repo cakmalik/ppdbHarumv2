@@ -20,12 +20,12 @@
                     <td>{{ $student->school_origin }}</td>
                     <td>
                         @php
-                        if($student->status==1){
-                        $sts = "Menunggu";
-                        }elseif($student->status==99){
+                        if($student->status==2){
                         $sts = "Diterima";
-                        }else{
+                        }elseif($student->status==3){
                         $sts = "Ditolak";
+                        }else{
+                        $sts = "Menunggu";
                         }
                         @endphp
                         {{ $sts }}
@@ -45,7 +45,7 @@
                             @csrf
                             @method('DELETE')
 
-                            <button class="button btn-sm secondary" type="submit"
+                            <button class="button btn-sm danger" type="submit"
                                 onclick="return confirm('Are you sure you want to Delete?')"> <i class="fa fa-trash"
                                     aria-hidden="true">
                                 </i></button>

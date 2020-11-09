@@ -25,4 +25,5 @@ class MemberController extends Controller
         $students = Student::latest()->paginate(15);
         return view('op.students',compact('students'));
     }
+    
 }

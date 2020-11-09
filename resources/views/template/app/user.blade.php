@@ -62,6 +62,7 @@
 
         <!-- content -->
         <div id="page-body">
+             <h3>@yield('title')</h3>
             @yield('content')
         </div>
     </div>

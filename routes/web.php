@@ -68,7 +68,18 @@ Route::group(['middleware' => ['auth:user','ceklevel:2']], function () {
         Route::get('search',[StudentController::class,'search'])->name('members.search');
     });
 
-    Route::get('confirmPage',[OperatorController::class,'confirmPage'])->name('confirmPage');
+    Route::get('confirmpage',[OperatorController::class,'confirmPage'])->name('confirmPage');
+    // Route::post('confirmpage',[OperatorController::class,'postConfirmPage']);
+    Route::post('terima',[OperatorController::class,'confirmAcc']);
+    Route::post('tolak',[OperatorController::class,'confirmReject']);
+
+    Route::get('confirmed',[OperatorController::class,'confirmed']);
+    
+    Route::group(['prefix' => 'setup'], function () {
+        Route::get('fundcategories',[OperatorController::class,'fundCategories']);
+        Route::get('uniform',[OperatorController::class,'uniformTable']);
+        Route::get('opset',[OperatorController::class,'opset'])->name('op.set');
+    });
 });
 
 

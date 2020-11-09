@@ -51,7 +51,7 @@
                 <td>Penghasilan Ayah</td>
                 <th>
                     @php
-                    $dad = DB::table('incomes')->where('id',$student->dad_income)->first();
+                    $dad = DB::table('incomes')->where('category',$student->dad_income)->first();
                     echo $dad->amount;
                     @endphp
                 </th>
@@ -77,7 +77,7 @@
                 <td>Penghasilan Ibu</td>
                 <th>
                     @php
-                    $mom = DB::table('incomes')->where('id',$student->mom_income)->first();
+                    $mom = DB::table('incomes')->where('category',$student->mom_income)->first();
                     echo $mom->amount;
                     @endphp</th>
             </tr>

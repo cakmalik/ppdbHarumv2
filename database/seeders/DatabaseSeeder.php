@@ -14,9 +14,9 @@ class DatabaseSeeder extends Seeder
         IncomeSeeder::class,
         MenuSeeder::class,
         TitlemenuSeeder::class,
-        // IncomeSeeder::class,
-        // FriendSeeder::class,
-        // TokenSeeder::class,
+        FundSeeder::class,
+        UniformSeeder::class,
+        SetupSeeder::class,
     ]);
     }
 }

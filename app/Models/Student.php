@@ -10,13 +10,14 @@ class Student extends Model
 {
     use HasFactory;
     protected $guarded=[];
+    protected $table ="students";
 
     public function confirm()
     {
         return $this->hasOne(confirm::class);
     }
-    public function income()
+    public function gaji()
     {
-        $this->hasOne(Income::class,'category');
+        return $this->hasOne(Income::class);
     }
 }
