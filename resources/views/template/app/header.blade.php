@@ -17,18 +17,11 @@
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
 
     <script src="{{ asset('js/jquery-3.5.1.min.js') }}"></script>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.js"></script>
+
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.js"></script> 
+    <link rel="stylesheet" href="{{ asset('css/alert.css') }}" />
 
-    <script type="text/javascript"> 
-    $(document).ready(function() { 
-      // ketika checkbox dengan id semua diklik,  
-      // maka semua checkbox akan tercentang. 
-      $('#semua').click(function(){ 
-         $(this).parents('#centang:eq(0)').
-         find(':checkbox').attr('checked', this.checked); 
-      });
-    });   
-</script>
 </head>

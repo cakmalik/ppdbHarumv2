@@ -1,6 +1,7 @@
 @include('template.app.header')
 
 <body>
+    @include('sweet::alert')
     <div id="page-container" class="sidebar-open">
         <div id="page-overlay"></div>
 
@@ -62,7 +63,7 @@
 
         <!-- content -->
         <div id="page-body">
-             <h3>@yield('title')</h3>
+            <h3>@yield('title')</h3>
             @yield('content')
         </div>
     </div>

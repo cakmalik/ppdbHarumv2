@@ -108,6 +108,14 @@ class MenuSeeder extends Seeder
                 'icon'=>'fas fa-envelope',
                 'url'=>'/setup/opset',
             ],
+            [
+                'titlemenu_id'=>2,
+                'name'=>'Try Yajra',
+                'posisi'=>10,
+                'is_active'=>1,
+                'icon'=>'fas fa-envelope',
+                'url'=>'/coba',
+            ],
             
         ]);
     }

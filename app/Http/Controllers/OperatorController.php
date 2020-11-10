@@ -1,13 +1,14 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Models\setup;
 use App\Models\Student;
 use Illuminate\Http\Request;
 use App\Models\Setup\Uniform;
+use UxWeb\SweetAlert\SweetAlert;
 use Illuminate\Support\Facades\DB;
 use App\Models\Students\Fund_category;
+use Illuminate\Support\Facades\Redirect;
 
 class OperatorController extends Controller
 {
@@ -59,4 +60,9 @@ class OperatorController extends Controller
               ->update(['value' => $request->value]);
         return back();
     }
+    // public function store()
+    // {
+    //     alert()->success('You have been logged out.', 'Good bye!');
+    //     return redirect('op/home');
+    // }
 }

@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Models\Student;
 use Illuminate\Http\Request;
 use App\Exports\MemberExport;
@@ -26,4 +25,5 @@ class MemberController extends Controller
         $students = Student::latest()->paginate(15);
         return view('op.students',compact('students'));
     }
+    
 }

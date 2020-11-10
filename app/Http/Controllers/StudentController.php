@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Student;
 use Illuminate\Http\Request;
 use App\Exports\StudentExport;
+use Illuminate\Support\Facades\DB;
 use Maatwebsite\Excel\Facades\Excel;
+use Yajra\DataTables\Facades\DataTables;
 
 class StudentController extends Controller
 {
@@ -19,22 +21,11 @@ class StudentController extends Controller
         //
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         //
@@ -54,13 +45,6 @@ class StudentController extends Controller
         return view('students.edit',compact('student'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
         // $request->validate([
@@ -84,4 +68,20 @@ class StudentController extends Controller
         return redirect()->route('students')
             ->with('success', 'User Berhasil Dihapus');
     }
+    
+    public function search(Request $request)
+	{
+		// menangkap data pencarian
+        $cari = $request->search;
+        // dd($cari);
+    	// mengambil data dari table pegawai sesuai pencarian data
+		$students = DB::table('students')
+		->where('full_name','like',"%".$cari."%")
+		->paginate();
+ 
+    		// mengirim data pegawai ke view index
+		return view('op.students',compact('students'));
+ 
+	}
+    
 }

@@ -1,6 +1,6 @@
 @extends('template.app.user')
 @section('content')
-
+    <a href="{{ URL::previous() }}" class="button btn-sm"><i class="fas fa-long-arrow-alt-left"></i> Kembali</a>
     <table>
         <tbody>
             <tr>

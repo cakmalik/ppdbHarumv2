@@ -1,7 +1,12 @@
 @extends('template.app.user')
 @section('content')
     <a href="{{ route('export.students') }}" target="_blank" class="button">Export</a>
-    <input type="text" name="" id="">
+    <form action="{{ route('members.search') }}" method="get">
+        @csrf
+        <input type="text" name="search" id="search" value="{{ old('cari') }}" placeholder="Cari pendaftar ..">
+        {{-- <button type="submit" class="button btn-sm" value="search">Cari</button>
+        --}}
+    </form>
     <table>
         <thead>
             <tr>
@@ -13,7 +18,7 @@
             </tr>
         </thead>
         <tbody>
-            @foreach ($students as $key => $student)
+            @forelse ($students as $key => $student)
                 <tr>
                     <td>{{ $students->firstItem() + $key }}</td>
                     <td>{{ $student->full_name }}</td>
@@ -52,7 +57,13 @@
                         </form>
                     </td>
                 </tr>
-            @endforeach
+            @empty
+                <div class="alert alert-success">
+                    Data tidak ditemukan
+                </div>
+                {{-- <button class="button danger">Data tidak ditemukan</button>
+                --}}
+            @endforelse
         </tbody>
         <tr>
         </tr>

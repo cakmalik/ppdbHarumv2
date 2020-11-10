@@ -1,9 +1,4 @@
-/**
- * Debounce functions for better performance
- * (c) 2018 Chris Ferdinandi, MIT License, https://gomakethings.com
- * @param  {Function} fn The function to debounce
- * https://gomakethings.com/debouncing-your-javascript-events/
- */
+
 var debounce = function (a) {
   var e;
   return function () {
@@ -98,3 +93,7 @@ function mymodal() {
   };
 }
 mymodal();
+
+
+//Swal
+require("sweetalert");

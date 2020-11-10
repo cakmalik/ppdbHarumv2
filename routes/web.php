@@ -1,19 +1,22 @@
 <?php
 
+use Illuminate\Routing\RouteGroup;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MyController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\MemberController;
 use App\Http\Controllers\BerandaController;
-use App\Http\Controllers\Auth\LoginController;
-use App\Http\Controllers\Setup\TekkenController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\OperatorController;
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\ProductAjaxController;
+use App\Http\Controllers\Setup\TekkenController;
 use App\Http\Controllers\StudentController as ControllersStudentController;
-use Illuminate\Routing\RouteGroup;
 
 Route::get('/', function () {
     return view('template.landpage.first');
 });
+
 
 Route::group(['prefix' => 'wel'], function () {
     Route::get('announ',function(){
@@ -45,7 +48,6 @@ Route::group(['middleware' => ['auth:member','ceklevel:member']], function () {
 //bagian member sudah isi data
 Route::group(['middleware' => ['auth:member','ceklevel:registered']], function () {
     Route::group(['prefix' => 'members'], function () {
- 
         Route::get('index',[MemberController::class,'index'])->name('member.index');
     });
 });
@@ -88,5 +90,12 @@ Route::get('registered', function () {
     return view('registered');
 });
 
-Route::get('Member', 'MemberController@index');
 Route::get('member/export', [MemberController::class,'exportExcel'])->name('exportToken');
+
+
+//TRY YAJRA
+Route::get('user',[UserController::class,'index']);
+Route::get('user/json',[UserController::class,'json']);
+
+//SWEET
+Route::get('coba',[OperatorController::class,'store']);

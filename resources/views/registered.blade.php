@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="{{ asset('assets/miligram/milligram.min.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/landing.css') }}" />
 
-
     <style>
         .tengah {
             width: 100%;
@@ -26,15 +25,54 @@
             font-size: 72px
         }
 
+        .loader {
+            border: 16px solid gray;
+            border-radius: 50%;
+            border-top: 16px solid #f39c12;
+            width: 50;
+            height: 50;
+            -webkit-animation: spin 2s linear infinite;
+            /* Safari */
+            animation: spin 2s linear infinite;
+        }
+
+        /* Safari */
+        @-webkit-keyframes spin {
+            0% {
+                -webkit-transform: rotate(0deg);
+            }
+
+            100% {
+                -webkit-transform: rotate(360deg);
+            }
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
     </style>
+    <script>
+        setTimeout(function() {
+            window.location.href = '/';
+        }, 5000);
+
+    </script>
 </head>
 
 <body>
-
     <div class="tengah">
         <h1>Selamat</h1>
         <h2>Anda Telah Berhasil Mendaftar</h2>
         <h3>Silahkan tunggu informasi berikutnya di website ini</h3>
+        <div class="loader"></div>
+
     </div>
 </body>
 
