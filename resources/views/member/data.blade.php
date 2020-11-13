@@ -1,8 +1,22 @@
 @extends('template.app.member')
 @section('content')
-    @php
-    $dad_income = DB::table('incomes')->where('category',$data->dad_income)->get();
-    @endphp
+    @push('script-head')
+        <style>
+            .footer {
+                position: fixed;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                background-color: #e67e22;
+                color: white;
+                text-align: center;
+                /* padding-bottom: 10; */
+                padding-top: 10px;
+                padding-bottom: -110px;
+            }
+
+        </style>
+    @endpush
     <table>
         <tbody>
             <tr>
@@ -51,7 +65,7 @@
             </tr>
             <tr>
                 <td>Penghasilan Ayah</td>
-                <th>{{ $dad_income }}</th>
+                <th>{{ $ga }}</th>
             </tr>
             <tr>
                 <td>No HP Ayah</td>
@@ -72,7 +86,7 @@
             </tr>
             <tr>
                 <td>Penghasilan Ibu</td>
-                <th>{{ $data->mom_income }}</th>
+                <th>{{ $gb }}</th>
             </tr>
             <tr>
                 <td>No HP Ibu</td>
@@ -80,8 +94,16 @@
             </tr>
         </tbody>
     </table>
-    <a href="" class="button">Edit Data</a>
-
+    <br><br>
+    {{-- <a href="" class="button">Edit Data</a> --}}
+    <div class="footer" style="padding-bottom: 1rem">
+        @php
+        if($data->status == 1){
+        $sts = "Menunggu";
+        }
+        @endphp
+        Status pendaftaran : {{ $sts }}
+    </div>
     <div id="modalpopup" class="modalpop">
         <div class="modalcard">
             <div class="modaljudul">

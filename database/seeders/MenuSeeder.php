@@ -13,27 +13,27 @@ class MenuSeeder extends Seeder
         DB::table('menus')->insert([
             [
                 'titlemenu_id'=>4,
-                'name'=>'Data Calon Siswa',
+                'name'=>'Cek data',
                 'is_active'=>1,
                 'posisi'=>1,
-                'icon'=>'fa fa-bell',
-                'url'=>'/members/index',
+                'icon'=>'fa fa-check',
+                'url'=>'/members/cek_data',
             ],
             [
                 'titlemenu_id'=>4,
-                'name'=>'Pengumuman',
-                'posisi'=>1,
-                'is_active'=>0,
-                 'icon'=>'fa fa-bell',
-                'url'=>'/members/pengumuman',
+                'name'=>'Daftar ulang',
+                'is_active'=>1,
+                'posisi'=>2,
+                'icon'=>'fa fa-dollar-sign',
+                'url'=>'/members/info_daftar_ulang',
             ],
             [
                 'titlemenu_id'=>4,
-                'name'=>'Ukuran Baju',
-                'posisi'=>1,
-                'is_active'=>0, 
-                'icon'=>'fa fa-bell',
-                'url'=>'/members/uniform',
+                'name'=>'Fitting seragam',
+                'posisi'=>3,
+                'is_active'=>1, 
+                'icon'=>'fa fa-tshirt',
+                'url'=>'/members/fitting_seragam',
             ],
             // INI MENU UNTUK OPERTATOR
             [
@@ -41,7 +41,7 @@ class MenuSeeder extends Seeder
                 'name'=>'Beranda',
                 'posisi'=>1,
                 'is_active'=>1,
-                 'icon'=>'fa fa-home',
+                'icon'=>'fa fa-home',
                 'url'=>'/op/home',
             ],
             [
@@ -85,7 +85,7 @@ class MenuSeeder extends Seeder
                 'url'=>'/confirmed',
             ],
             [
-                'titlemenu_id'=>2,
+                'titlemenu_id'=>1,
                 'name'=>'Atur kategori',
                 'posisi'=>7,
                 'is_active'=>1,
@@ -93,16 +93,16 @@ class MenuSeeder extends Seeder
                 'url'=>'/setup/fundcategories',
             ],
             [
-                'titlemenu_id'=>2,
-                'name'=>'Atur Ukuran Baju',
+                'titlemenu_id'=>1,
+                'name'=>'Atur ukuran baju',
                 'posisi'=>8,
                 'is_active'=>1,
                 'icon'=>'fas fa-user-cog',
                 'url'=>'/setup/uniform',
             ],
             [
-                'titlemenu_id'=>2,
-                'name'=>'Set Pesan Wa',
+                'titlemenu_id'=>1,
+                'name'=>'Atur pesan Wa',
                 'posisi'=>9,
                 'is_active'=>1,
                 'icon'=>'fas fa-envelope',
@@ -110,13 +110,12 @@ class MenuSeeder extends Seeder
             ],
             [
                 'titlemenu_id'=>2,
-                'name'=>'Try Yajra',
+                'name'=>'Tentukan daftar ulang',
                 'posisi'=>10,
                 'is_active'=>1,
-                'icon'=>'fas fa-envelope',
-                'url'=>'/coba',
+                'icon'=>'fas fa-dollar-sign',
+                'url'=>'/fund/applyDaftarUlang',
             ],
-            
         ]);
     }
 }

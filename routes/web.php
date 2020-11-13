@@ -12,6 +12,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\ProductAjaxController;
 use App\Http\Controllers\Setup\TekkenController;
 use App\Http\Controllers\StudentController as ControllersStudentController;
+use App\Models\Member;
 
 Route::get('/', function () {
     return view('template.landpage.first');
@@ -50,11 +51,23 @@ Route::group(['middleware' => ['auth:member','ceklevel:registered']], function (
     Route::group(['prefix' => 'members'], function () {
         Route::get('index',[MemberController::class,'index'])->name('member.index');
     });
+    Route::get('accRedirect',[MemberController::class,'accRedirect']);
+});
+
+// Member diterima
+Route::group(['middleware' => ['auth:member','ceklevel:accept']], function () {
+    Route::group(['prefix' => 'members'], function () {
+        Route::get('accept',[MemberController::class,'accept'])->name('member.accept');
+        Route::get('cek_data',[MemberController::class,'cekData']);
+        Route::get('info_daftar_ulang',[MemberController::class,'infoDaftarUlang']);
+    });
+    Route::get('roleDiterima',[MemberController::class,'roleDiterima']);
+
 });
 
 
 //bagian operator
-Route::group(['middleware' => ['auth:user','ceklevel:2']], function () {
+Route::group(['middleware' => ['auth:user','ceklevel:1,2']], function () {
     Route::resource('students', StudentController::class);
     Route::get('op/home', [BerandaController::class,'opHome'])->name('opHome');
     Route::get('tekken', [TekkenController::class,'showCode']);
@@ -78,11 +91,21 @@ Route::group(['middleware' => ['auth:user','ceklevel:2']], function () {
     Route::get('confirmed',[OperatorController::class,'confirmed']);
     
     Route::group(['prefix' => 'setup'], function () {
-        Route::get('fundcategories',[OperatorController::class,'fundCategories']);
+        Route::get('fundcategories',[OperatorController::class,'fundCategories'])->name('fund');
+
         Route::get('uniform',[OperatorController::class,'uniformTable']);
         Route::get('opset',[OperatorController::class,'opset'])->name('op.set');
         Route::post('setwa',[OperatorController::class,'setwa'])->name('set.wa');
     });
+    Route::group(['prefix' => 'fund'], function () {    
+        Route::get('{fund}/edit ',[OperatorController::class,'editFund'])->name('edit.fund');
+        Route::post('{fund}/edit',[OperatorController::class,'updateFund'])->name('update.fund');
+        Route::post('store',[OperatorController::class,'storeFund'])->name('store.fund');
+        Route::delete('{fund}',[OperatorController::class,'deleteFund'])->name('delete.fund');
+        Route::get('applyDaftarUlang',[OperatorController::class,'applyDaftarUlang']);
+        Route::post('applyDaftarUlang/{student}',[OperatorController::class,'postApplyDaftarulang'])->name('apply.daftarulang');
+    });
+   
 });
 
 
@@ -96,6 +119,3 @@ Route::get('member/export', [MemberController::class,'exportExcel'])->name('expo
 //TRY YAJRA
 Route::get('user',[UserController::class,'index']);
 Route::get('user/json',[UserController::class,'json']);
-
-//SWEET
-Route::get('coba',[OperatorController::class,'store']);

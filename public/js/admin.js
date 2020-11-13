@@ -96,4 +96,4 @@ mymodal();
 
 
 //Swal
-require("sweetalert");
+// require("sweetalert");

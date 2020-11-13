@@ -17,13 +17,13 @@ class CreateFundCategoriesTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('gender');
-            $table->string('gedung');
-            $table->string('perpustakaan');
-            $table->string('kegiatan');
-            $table->string('bukumedia');
-            $table->string('seragam');
-            $table->string('jilbab');
-            $table->string('ipp');
+            $table->integer('gedung');
+            $table->integer('perpustakaan');
+            $table->integer('kegiatan');
+            $table->integer('bukumedia');
+            $table->integer('seragam');
+            $table->integer('jilbab');
+            $table->integer('ipp');
             $table->timestamps();
         });
     }

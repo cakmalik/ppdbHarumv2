@@ -20,8 +20,18 @@
 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.js"></script>
 
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-
     <link rel="stylesheet" href="{{ asset('css/alert.css') }}" />
 
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+
+
+    {{-- <script src="sweetalert2/dist/sweetalert2.all.min.js"></script>
+    --}}
+
+    <!-- Include a polyfill for ES6 Promises (optional) for IE11 -->
+    {{-- <script src="https://cdn.jsdelivr.net/npm/promise-polyfill@8/dist/polyfill.js">
+    </script> --}}
+
+    @stack('script-head')
 </head>

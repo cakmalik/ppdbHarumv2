@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 use App\Models\setup;
+use App\Models\Member;
 use App\Models\Student;
 use Illuminate\Http\Request;
 use App\Models\Setup\Uniform;
 use UxWeb\SweetAlert\SweetAlert;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 use App\Models\Students\Fund_category;
 use Illuminate\Support\Facades\Redirect;
 
@@ -23,19 +25,29 @@ class OperatorController extends Controller
         $students = Student::where('status',1)->paginate(30);
         return view('op.confirmPage',compact('students')); 
     }
-    public function fundCategories()
-    {
-        $funds = Fund_category::latest()->get();
-        return view('op.fund_categories',compact('funds'));
-    }
+   
     public function confirmAcc(Request $request)
     {
+        $request->validate([
+            'status'=>'required'
+        ]);
+        //cek kode token student
+        $token = Student::whereIn('id',$request->status)->first()->token;
+        // update di members table level ke accept
+        Member::where('email', $token)->update(['level'=>'accept']);
+        // update status menjadi 2/diterima
         Student::whereIn('id',$request->status)->update(['status'=>2]);
+
+        alert()->success('Menerima siswa','Berhasil');
         return back();
     }
     public function confirmReject(Request $request)
     {
+       $request->validate([
+            'status'=>'required'
+        ]);
         Student::whereIn('id',$request->status)->update(['status'=>3]);
+        alert()->success('Menolak siswa','Berhasil');
         return back();
     }
     public function confirmed()
@@ -60,9 +72,67 @@ class OperatorController extends Controller
               ->update(['value' => $request->value]);
         return back();
     }
-    // public function store()
-    // {
-    //     alert()->success('You have been logged out.', 'Good bye!');
-    //     return redirect('op/home');
-    // }
+    public function fundCategories()
+    {
+        $funds = Fund_category::orderBy('id','asc')->get();
+        return view('op.fund.fund_categories',compact('funds'));
+    }
+    public function editFund($id)
+    {
+        $fund = Fund_category::where('id',$id)->first();
+        return view('op.fund.edit',compact('fund'));
+    }
+    public function updateFund(Request $request,$id)
+    {
+        $request->validate([
+            'gender'=>'required',
+            'name'=>'required',
+            'gedung'=>'required',
+            'perpustakaan'=>'required',
+            'kegiatan'=>'required',
+            'bukumedia'=>'required',
+            'seragam'=>'required',
+            'jilbab'=>'required',
+            'ipp'=>'required',
+        ]);
+        Fund_category::find($id)->update($request->all());
+        alert()->success('Berhasil', 'Update kategory');
+        return redirect()->route('fund');
+    }
+    public function storeFund(Request $request)
+    {
+        $request->validate([
+            'gender'=>'required',
+            'name'=>'required',
+            'gedung'=>'required',
+            'perpustakaan'=>'required',
+            'kegiatan'=>'required',
+            'bukumedia'=>'required',
+            'seragam'=>'required',
+            'jilbab'=>'required',
+            'ipp'=>'required',
+        ]);
+        Fund_category::create($request->all());
+        alert()->success('Berhasil', "kategori $request->name ditambah");
+        return back();
+    }
+    public function deleteFund($id)
+    {
+        Fund_category::find($id)->delete();
+        alert()->success('Menghapus kategori','Berhasil');
+        return back();
+    }
+    public function applyDaftarUlang()
+    {
+        $funds = Fund_category::orderBy('id','asc')->get();
+        $students = Student::where('status',2)->orderBy('status','asc')->paginate(15);
+        return view('op.fund.apply',compact('students','funds'));
+    }
+    public function postApplyDaftarulang(Request $request,$id)
+    {
+        Student::find($id)->update(['daftarulang'=>$request->daftarulang]);
+        alert()->success('Yeee','Berhasil');
+        return back();
+    }
+
 }

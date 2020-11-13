@@ -21,6 +21,8 @@ class LoginController extends Controller
         if (Auth::guard('member')->attempt(['email' => $request->email, 'password' => $request->password])) {
             if(Auth::guard('member')->user()->level=="registered"){
             return redirect()->route('member.index');
+            }elseif(Auth::guard('member')->user()->level=="accept"){
+            return redirect()->route('member.accept');
             }
             return redirect('form');
         }
@@ -32,7 +34,6 @@ class LoginController extends Controller
             return redirect('tekken');
         }
         return back();
-        
     }
      public function logout()
     {

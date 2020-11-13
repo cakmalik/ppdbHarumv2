@@ -1,12 +1,25 @@
-@extends('template.app.user')
+@extends('template.app.member')
+@push('script-head')
+    <style>
+        .footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: #e67e22;
+            color: white;
+            text-align: center;
+            /* padding-bottom: 10; */
+            padding-top: 10px;
+            padding-bottom: -110px;
+        }
+
+    </style>
+
+@endpush
 @section('content')
-    <a href="{{ URL::previous() }}" class="button btn-sm"><i class="fas fa-long-arrow-alt-left"></i> Kembali</a>
     <table>
         <tbody>
-            <tr>
-                <td>Token</td>
-                <th>{{ $student->token }}</th>
-            </tr>
             <tr>
                 <td>Nama Lengkap</td>
                 <th>{{ $student->full_name }}</th>
@@ -91,4 +104,8 @@
             </tr>
         </tbody>
     </table>
+    <br><br>
+    <div class="footer">
+        <a href="/members/info_daftar_ulang" class="button btn-sm dark"> Berikutnya</a>
+    </div>
 @endsection

@@ -21,24 +21,26 @@
                 </div>
             </section>
             <section class="row">
-                <ul class="column sidebar-nav">
-                    @php
-                    $role = 4;
-                    $a= DB::table('titlemenus')->where('id',$role)->first();
-                    $b=
-                    DB::table('menus')->where(['titlemenu_id'=>$role,'is_active'=>1])->orderBy('posisi','asc')->get();
-                    @endphp
+                @if ($role == 4)
+                    <ul class="column sidebar-nav">
+                        @php
+                        $a= DB::table('titlemenus')->where('id',$role)->first();
+                        $b=
+                        DB::table('menus')->where(['titlemenu_id'=>$role,'is_active'=>1])->orderBy('posisi','asc')->get();
+                        @endphp
 
-                    <li class="nav-section-heading">{{ $a->name }}</li>
-                    @foreach ($b as $menu)
-                        <li>
-                            <a class="sentuh" href="{{ $menu->url }}" class="">
-                                <i class="{{ $menu->icon }}" aria-hidden="true"></i>
-                                <span class="tekken">{{ $menu->name }}</span>
-                            </a>
-                        </li>
-                    @endforeach
-                </ul>
+                        <li class="nav-section-heading">{{ $a->name }}</li>
+                        @foreach ($b as $menu)
+                            <li>
+                                <a class="sentuh" href="{{ $menu->url }}" class="">
+                                    <i class="{{ $menu->icon }}" aria-hidden="true"></i>
+                                    <span class="tekken">{{ $menu->name }}</span>
+                                </a>
+                            </li>
+                        @endforeach
+                    </ul>
+                @endif
+
             </section>
         </nav>
 

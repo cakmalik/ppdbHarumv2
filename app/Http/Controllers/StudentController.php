@@ -65,8 +65,8 @@ class StudentController extends Controller
     public function destroy($id)
     {
         Student::find($id)->delete();
-        return redirect()->route('students')
-            ->with('success', 'User Berhasil Dihapus');
+        alert()->success('Menghapus data','Berhasil');
+        return back();
     }
     
     public function search(Request $request)
