@@ -61,7 +61,7 @@
     </style>
     <script>
         setTimeout(function() {
-            window.location.href = '/roleDiterima';
+            window.location.href = '/members/cek_data';
         }, 10000);
 
     </script>

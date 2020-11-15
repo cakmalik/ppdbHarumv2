@@ -1,43 +1,30 @@
 @extends('template.app.member')
 @section('content')
+    @push('script-head')
+        <style type="text/css">
+            .center {
+                margin: 250px auto;
+                width: 400px;
+                align-content: center;
+                text-align: center;
+            }
+
+        </style>
+    @endpush
     <button class="button btn-sm tombolmodal" id="tombolmodal">Tabel ukuran</button>
     <hr>
-
-    {{-- JIKA DATA BELUM ADA, MAKA TAMPIL FORM --}}
-    @if (!isset($cek))
-        <h4>Tentukan Ukuran </h4>
-        @foreach ($errors->all() as $error)
-            <li class="red">{{ $error }}</li>
-        @endforeach
-        <form action="{{ route('post.size') }}" method="POST">
-            @csrf
-            <label for="atasan">Ukuran Baju</label>
-            <select name="atasan" id="atasan">
-                <option selected disabled>Pilih</option>
-                <option>S</option>
-                <option>M</option>
-                <option>L</option>
-                <option>XL</option>
-                <option>XXL</option>
-            </select>
-            <label for="bawahan">
-                @if ($jk == 'p')
-                    Ukuran rok
-                @else
-                    Ukuran Celana
-                @endif
-            </label>
-            <select name="bawahan" id="bawahan">
-                <option selected disabled>Pilih</option>
-                <option>S</option>
-                <option>M</option>
-                <option>L</option>
-                <option>XL</option>
-                <option>XXL</option>
-            </select>
-            @if ($jk == 'p')
-                <label for="jilbab">Ukuran Jilbab</label>
-                <select name="jilbab" id="jilbab">
+    {{-- JIKA SUDAH BAYAR, MAKA TAMPILKAN --}}
+    @isset($telahbayar)
+        {{-- JIKA DATA BELUM ADA, MAKA TAMPIL FORM --}}
+        @if (!isset($cek))
+            <h4>Tentukan Ukuran </h4>
+            @foreach ($errors->all() as $error)
+                <li class="red">{{ $error }}</li>
+            @endforeach
+            <form action="{{ route('post.size') }}" method="POST">
+                @csrf
+                <label for="atasan">Ukuran Baju</label>
+                <select name="atasan" id="atasan">
                     <option selected disabled>Pilih</option>
                     <option>S</option>
                     <option>M</option>
@@ -45,44 +32,74 @@
                     <option>XL</option>
                     <option>XXL</option>
                 </select>
-            @else
-                <input type="hidden" name="jilbab" value="">
-            @endif
-
-            <button class="button btn-sm" type="submit">Kirim</button>
-        </form>
-    @else
-        {{-- JIKA DATA ADA, MAKA TAMPIL DATA UKURAN --}}
-        <h4>Ukuran seragam saya</h4>
-        <table>
-            <tr>
-                <th>Baju</th>
-                <th>:</th>
-                <td>{{ $cek->atasan }}</td>
-            </tr>
-            <tr>
-                <th>
+                <label for="bawahan">
                     @if ($jk == 'p')
-                        Rok
+                        Ukuran rok
                     @else
-                        Celana
+                        Ukuran Celana
                     @endif
-                </th>
-                <th>:</th>
-                <td>{{ $cek->bawahan }}</td>
-            </tr>
-            @if ($jk == 'p')
+                </label>
+                <select name="bawahan" id="bawahan">
+                    <option selected disabled>Pilih</option>
+                    <option>S</option>
+                    <option>M</option>
+                    <option>L</option>
+                    <option>XL</option>
+                    <option>XXL</option>
+                </select>
+                @if ($jk == 'p')
+                    <label for="jilbab">Ukuran Jilbab</label>
+                    <select name="jilbab" id="jilbab">
+                        <option selected disabled>Pilih</option>
+                        <option>S</option>
+                        <option>M</option>
+                        <option>L</option>
+                        <option>XL</option>
+                        <option>XXL</option>
+                    </select>
+                @else
+                    <input type="hidden" name="jilbab" value="">
+                @endif
+
+                <button class="button btn-sm" type="submit">Kirim</button>
+            </form>
+        @else
+            {{-- JIKA DATA ADA, MAKA TAMPIL DATA UKURAN --}}
+            <h4>Ukuran seragam saya</h4>
+            <table>
+                <tr>
+                    <th>Baju</th>
+                    <th>:</th>
+                    <td>{{ $cek->atasan }}</td>
+                </tr>
                 <tr>
                     <th>
-                        Jilbab
+                        @if ($jk == 'p')
+                            Rok
+                        @else
+                            Celana
+                        @endif
                     </th>
                     <th>:</th>
-                    <td>{{ $cek->jilbab }}</td>
+                    <td>{{ $cek->bawahan }}</td>
                 </tr>
-            @endif
-        </table>
-        <i> NB: Jika ada revisi, Silahkan hubungi admin</i>
-    @endif
+                @if ($jk == 'p')
+                    <tr>
+                        <th>
+                            Jilbab
+                        </th>
+                        <th>:</th>
+                        <td>{{ $cek->jilbab }}</td>
+                    </tr>
+                @endif
+            </table>
+            <i> NB: Jika ada revisi, Silahkan hubungi admin</i>
+        @endif
+    @else
+        <div class="center">
+            <h4>Menu ini belum dapat diakses, <br> Silahkan melakukan daftar ulang terlebih dahulu</h4>
+        </div>
+    @endisset
 
     <div id="modal" class="modal">
         <div class="modalcard">

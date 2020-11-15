@@ -198,6 +198,8 @@ class OperatorController extends Controller
                 'jam'=>$request->jam,
             ]);
         }
+        alert()->success('Waktu dan Tanggal telah diatur', 'Berhasil');
+        return back();
     }
      public function editjadwal($id)
     {

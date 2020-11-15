@@ -24,7 +24,7 @@ class MemberController extends Controller
     {
         $token = Auth::guard('member')->user()->email;
         $data = Student::where('token',$token)->first();
-        if ($data->status==1) {
+        if ($data->status==1 ) {
             $pesan = setup::where('name','pesan_siswa_baru')->first();
             $ga = Income::where('category', $data->dad_income)->first()->amount;
             $gb = Income::where('category', $data->mom_income)->first()->amount;
@@ -47,7 +47,8 @@ class MemberController extends Controller
     public function showTable()
     {
         $students = Student::latest()->paginate(15);
-        return view('op.students',compact('students'));
+        $jumlah_pendaftar = Student::get()->count();
+        return view('op.students',compact('students','jumlah_pendaftar'));
     }
     
     public function accept()
@@ -57,10 +58,13 @@ class MemberController extends Controller
         $full_name = $data->full_name;
         return view('member.selamat',compact('full_name'));
     }
+    //saat siswa diterima
     public function roleDiterima()
     {
+        $token = Auth::guard('member')->user()->email; 
+        $student = Student::where('token',$token)->first();
         $role = 4;
-        return view('member.stepwizard',compact('role'));
+        return view('member.show',compact('student','role'));
     }
 
     public function cekData()
@@ -72,12 +76,14 @@ class MemberController extends Controller
     }
     public function infoDaftarUlang()
     {
+        $alurdaftarulang = setup::where('name','alur_daftar_ulang')->first();
+        // dd($alurdaftarulang);
         $token = Auth::guard('member')->user()->email; 
         $student = Student::where('token',$token)->first();
         
             $fund=Fund_category::where('id',$student->daftarulang)->first();
             $role = 4;
-            return view('member.daftarulang',compact('fund','role'));
+            return view('member.daftarulang',compact('fund','role','alurdaftarulang'));
         
     }
     public function seragam()
@@ -85,6 +91,7 @@ class MemberController extends Controller
         $token = Auth::guard('member')->user()->email; 
         $student = Student::where('token',$token)->first();
         $cek = Size::where('student_id',$student->id)->first();
+        $telahbayar = $student->telahbayar;
         $role = 4;
         if($student->gender=='perempuan'){
             $jk = 'p';
@@ -92,7 +99,7 @@ class MemberController extends Controller
             $jk = 'l';
         }
         $uniforms=Uniform::where('gender',$jk)->get();
-        return view('member.seragam',compact('role','uniforms','jk','cek'));
+        return view('member.seragam',compact('role','uniforms','jk','cek','telahbayar'));
     }
     public function postsize(Request $request)
     {

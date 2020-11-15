@@ -2,7 +2,7 @@
 @section('title', 'Data pendaftar')
     {{-- @section('header', 'Token Pendaftaran') --}}
 @section('content')
-    <h3>Total pendaftar : {{ $students->count() }} </h3>
+    <h3>Total pendaftar : {{ $jumlah_pendaftar }} </h3>
     <a href="{{ route('export.students') }}" target="_blank" class="button">Export</a>
     <form action="{{ route('members.search') }}" method="get">
         @csrf
