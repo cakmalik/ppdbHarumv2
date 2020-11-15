@@ -6,10 +6,9 @@
             <div class="garis"></div>
             <div class="isi">
                 <div class="cardbagian">
-                
+                    {!! $pengumuman !!}
                 </div>
             </div>
         </div>
     </div>
 @endsection
-

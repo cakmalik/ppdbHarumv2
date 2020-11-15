@@ -50,10 +50,12 @@
                     </td>
                     <td>
                         @if ($sts == 'Diterima')
-                            <a href="" class="button btn-sm danger"><i class="fas fa-thumbs-down"></i></a>
+                            <a href="{{ route('ganti.tolak', $student->id) }}" class="button btn-sm danger"><i
+                                    class="fas fa-thumbs-down"></i></a>
                             <a href="dfsd" class="button btn-sm dark"><i class="fas fa-cog fa-spin"></i></a>
                         @else
-                            <a href="dfsd" class="button btn-sm success"><i class="fas fa-thumbs-up"></i></a>
+                            <a href="{{ route('ganti.terima', $student->id) }}" class="button btn-sm success"><i
+                                    class="fas fa-thumbs-up"></i></a>
                             <a href="dfsd" class="button btn-sm dark"><i class="fas fa-cog fa-spin"></i></a>
                         @endif
                     </td>

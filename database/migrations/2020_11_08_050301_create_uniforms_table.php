@@ -16,6 +16,7 @@ class CreateUniformsTable extends Migration
         Schema::create('uniforms', function (Blueprint $table) {
             $table->id();
             $table->string('gender');
+            $table->string('kode');
             $table->string('category');
             $table->string('info');
             $table->integer('s');

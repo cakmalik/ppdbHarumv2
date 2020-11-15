@@ -38,17 +38,13 @@
                 <br>
                 <br>
                 <img style="width: 100%" class="logobesar" src="img/alur.svg" alt="logobesar" style />
-                <p class="tulisanlogo">PENDAFTARAN PPDB</p>
+                <p class="tulisanlogo">{!! $judul_welcome !!}</p>
             </div>
         </div>
         <div class="dua column">
             <div class="kanan">
-                <h1>Selamat Datang</h1>
-                <p>calon peserta didik baru di website</p>
-                <p>PPDB SDIT Harapan Umat Jember</p>
+                {!! $pesan_welcome !!}
                 <a class="button" href="{{ route('login.member') }}">LOGIN</a>
-                {{-- <a class="button" href="{{ route('login.admin') }}">ADMIN</a>
-                --}}
 
                 <div class="footer">
                     <p>made by

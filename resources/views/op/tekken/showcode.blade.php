@@ -1,4 +1,6 @@
 @extends('template.app.user')
+@section('title', 'Token Pendaftaran')
+@section('header', 'Token Pendaftaran')
 @section('content')
     <form action="{{ route('useCode') }}" method="post">
         @csrf

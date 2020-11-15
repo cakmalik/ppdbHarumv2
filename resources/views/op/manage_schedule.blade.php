@@ -1,6 +1,6 @@
 @extends('template.app.user')
-@section('title', 'Terima / tolak')
-@section('header', 'Terima / tolak')
+@section('title', 'Atur jadwal')
+@section('header', 'Atur jadwal')
     @push('script-head')
         <script>
             function toggle(source) {
@@ -14,14 +14,13 @@
         </script>
     @endpush
 @section('content')
-@section('header', 'Terima/tolak pendaftar')
+@section('header', 'Atur jadwal')
     <form method="POST">
         @csrf
         @method('post')
         <table>
             <thead>
                 <th>#</th>
-                <th>Status</th>
                 <th>Nama</th>
                 <th>Asal sekolah</th>
             </thead>
@@ -32,10 +31,6 @@
                     @endphp
                     <tr>
                         <td>{{ $key + $students->firstItem() }}</td>
-                        <td>
-                            <input type="checkbox" value="{{ $student->id }}" name="status[]">
-
-                        </td>
                         <td>{{ $student->full_name }}</td>
                         <td>{{ $student->school_origin }}</td>
                     </tr>
@@ -45,9 +40,7 @@
 
         <input type="checkbox" onclick="toggle(this);" /> Pilih semua<br />
         <button onclick="confirm('Yakin akan menerima para pendaftar ini')" type="submit" class="button btn-sm success"
-            value="terima" formaction="{{ url('terima') }}">Terima</button>
-        <button type="submit" class="button btn-sm danger" value="tolak" formaction="{{ url('tolak') }}"
-            onclick="confirm('Yakin akan menolak para pendaftar ini')">Tolak</button>
+            value="terima" formaction="{{ url('terima') }}">Terapkan</button>
     </form>
     {{ $students->links('vendor.pagination.custom') }}
 @endsection

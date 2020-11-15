@@ -1,4 +1,6 @@
 @extends('template.app.user')
+@section('title', 'Data pendaftar')
+    {{-- @section('header', 'Token Pendaftaran') --}}
 @section('content')
     <a href="{{ route('export.students') }}" target="_blank" class="button">Export</a>
     <form action="{{ route('members.search') }}" method="get">

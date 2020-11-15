@@ -5,9 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class setup extends Model
+class Size extends Model
 {
     use HasFactory;
-    protected $guarded=[];  
-    public $timestamps = false;
+    protected $guarded=[];
+
+    public function student()
+    {
+        return $this->belongsTo(Student::class);
+    }
 }

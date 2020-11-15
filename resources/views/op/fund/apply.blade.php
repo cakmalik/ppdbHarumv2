@@ -1,4 +1,6 @@
 @extends('template.app.user')
+@section('title', 'Tentukan nominal')
+    {{-- @section('header', 'Token Pendaftaran') --}}
 @section('content')
     <button class="button btn-sm primary tombolmodal" id="tombolmodal">Cek kategori</button>
     <table>
@@ -8,6 +10,7 @@
             <th>Status</th>
             <th>Pilih</th>
             <th>Act</th>
+            <th>Telah bayar</th>
 
         </thead>
         <tbody>
@@ -25,6 +28,10 @@
                             @endphp
                         @else
                             {{ 'Belum ditentukan' }}
+                        @endif
+                        @if ($student->telahbayar == 1)
+                            - {{ 'lunas' }}
+
                         @endif
                     </td>
                     <form action="{{ route('apply.daftarulang', $student->id) }}" method="POST">
@@ -48,6 +55,9 @@
                         </td>
                         <td>
                             <button type="submit">apply</button>
+                        </td>
+                        <td>
+                            <a href="{{ route('lunas.daftarulang', $student->id) }}" class="button btn-sm success">lunas</a>
                         </td>
                     </form>
                 </tr>

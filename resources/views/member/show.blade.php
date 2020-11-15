@@ -1,22 +1,26 @@
 @extends('template.app.member')
-@push('script-head')
-    <style>
-        .footer {
-            position: fixed;
-            left: 0;
-            bottom: 0;
-            width: 100%;
-            background-color: #e67e22;
-            color: white;
-            text-align: center;
-            /* padding-bottom: 10; */
-            padding-top: 10px;
-            padding-bottom: -110px;
-        }
 
-    </style>
+@section('title', 'Data pribadi')
+@section('header', 'Data Siswa')
+    @push('script-head')
+        <style>
+            .footer {
+                position: fixed;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                height: 50px;
+                background-color: #e67e22;
+                color: white;
+                text-align: center;
+                z-index: 9999;
+                font-size: 25px;
+                line-height: 50px;
+            }
 
-@endpush
+        </style>
+
+    @endpush
 @section('content')
     <table>
         <tbody>
@@ -105,7 +109,5 @@
         </tbody>
     </table>
     <br><br>
-    <div class="footer">
-        <a href="/members/info_daftar_ulang" class="button btn-sm dark"> Berikutnya</a>
-    </div>
+    <a href="/members/info_daftar_ulang" class="footer">Berikutnya</a>
 @endsection

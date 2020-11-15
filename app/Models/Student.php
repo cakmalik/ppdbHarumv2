@@ -20,4 +20,8 @@ class Student extends Model
     {
         return $this->hasOne(Income::class);
     }
+    public function size()
+    {
+        return $this->hasOne(Size::class);
+    }
 }

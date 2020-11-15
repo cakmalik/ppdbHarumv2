@@ -13,7 +13,7 @@ class MenuSeeder extends Seeder
         DB::table('menus')->insert([
             [
                 'titlemenu_id'=>4,
-                'name'=>'Cek data',
+                'name'=>'Data Siswa',
                 'is_active'=>1,
                 'posisi'=>1,
                 'icon'=>'fa fa-check',
@@ -21,7 +21,7 @@ class MenuSeeder extends Seeder
             ],
             [
                 'titlemenu_id'=>4,
-                'name'=>'Daftar ulang',
+                'name'=>'Daftar Ulang',
                 'is_active'=>1,
                 'posisi'=>2,
                 'icon'=>'fa fa-dollar-sign',
@@ -29,13 +29,13 @@ class MenuSeeder extends Seeder
             ],
             [
                 'titlemenu_id'=>4,
-                'name'=>'Fitting seragam',
+                'name'=>'Fitting Seragam',
                 'posisi'=>3,
                 'is_active'=>1, 
                 'icon'=>'fa fa-tshirt',
                 'url'=>'/members/fitting_seragam',
             ],
-            // INI MENU UNTUK OPERTATOR
+            // MENU OPERTATOR
             [
                 'titlemenu_id'=>2,
                 'name'=>'Beranda',
@@ -62,16 +62,24 @@ class MenuSeeder extends Seeder
             ],
             [
                 'titlemenu_id'=>2,
-                'name'=>'Data Ukuran Baju',
+                'name'=>'Atur jadwal tes',
                 'posisi'=>4,
                 'is_active'=>1,
-                 'icon'=>'fa fa-tshirt',
-                'url'=>'#',
+                'icon'=>'fas fa-calendar-alt',
+                'url'=>'/op/schedule',
+            ],
+            [
+                'titlemenu_id'=>2,
+                'name'=>'Data Ukuran Baju',
+                'posisi'=>5,
+                'is_active'=>1,
+                'icon'=>'fa fa-tshirt',
+                'url'=>'/op/fitting_seragam',
             ],
             [
                 'titlemenu_id'=>2,
                 'name'=>'Terima / tolak',
-                'posisi'=>5,
+                'posisi'=>6,
                 'is_active'=>1,
                  'icon'=>'fa fa-clipboard-check',
                 'url'=>'/confirmpage',
@@ -79,15 +87,36 @@ class MenuSeeder extends Seeder
             [
                 'titlemenu_id'=>2,
                 'name'=>'Status pendaftar',
-                'posisi'=>6,
+                'posisi'=>7,
                 'is_active'=>1,
                 'icon'=>'fa fa-user-check',
                 'url'=>'/confirmed',
             ],
+           
+            [
+                'titlemenu_id'=>2,
+                'name'=>'Tentukan daftar ulang',
+                'posisi'=>8,
+                'is_active'=>1,
+                'icon'=>'fas fa-dollar-sign',
+                'url'=>'/fund/applyDaftarUlang',
+            ],
+            
+
+            //MENU ADMIN
+
+            [
+                'titlemenu_id'=>1,
+                'name'=>'Atur pesan Wa',
+                'posisi'=>1,
+                'is_active'=>1,
+                'icon'=>'fas fa-envelope',
+                'url'=>'/setup/opset',
+            ],
             [
                 'titlemenu_id'=>1,
                 'name'=>'Atur kategori',
-                'posisi'=>7,
+                'posisi'=>2,
                 'is_active'=>1,
                 'icon'=>'fas fa-sliders-h',
                 'url'=>'/setup/fundcategories',
@@ -95,26 +124,18 @@ class MenuSeeder extends Seeder
             [
                 'titlemenu_id'=>1,
                 'name'=>'Atur ukuran baju',
-                'posisi'=>8,
+                'posisi'=>3,
                 'is_active'=>1,
                 'icon'=>'fas fa-user-cog',
                 'url'=>'/setup/uniform',
             ],
             [
                 'titlemenu_id'=>1,
-                'name'=>'Atur pesan Wa',
-                'posisi'=>9,
+                'name'=>'Setups',
+                'posisi'=>4,
                 'is_active'=>1,
-                'icon'=>'fas fa-envelope',
-                'url'=>'/setup/opset',
-            ],
-            [
-                'titlemenu_id'=>2,
-                'name'=>'Tentukan daftar ulang',
-                'posisi'=>10,
-                'is_active'=>1,
-                'icon'=>'fas fa-dollar-sign',
-                'url'=>'/fund/applyDaftarUlang',
+                'icon'=>'fas fa-tools',
+                'url'=>'/admin/setups',
             ],
         ]);
     }

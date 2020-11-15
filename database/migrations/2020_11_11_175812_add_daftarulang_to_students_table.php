@@ -15,6 +15,7 @@ class AddDaftarulangToStudentsTable extends Migration
     {
         Schema::table('students', function (Blueprint $table) {
              $table->integer('daftarulang')->after('status')->nullable();
+             $table->integer('telahbayar')->after('daftarulang')->nullable();
         });
     }
 

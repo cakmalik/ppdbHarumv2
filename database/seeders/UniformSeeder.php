@@ -17,6 +17,7 @@ class UniformSeeder extends Seeder
         DB::table('uniforms')->insert([
             [
                 'gender'=>'l',
+                'kode'=>'a',
                 'category'=>'ld',
                 'info'=>'Lebar dada',
                 's'=>40,
@@ -27,6 +28,7 @@ class UniformSeeder extends Seeder
             ],
             [
                 'gender'=>'l',
+                'kode'=>'a',
                 'category'=>'pb',
                 'info'=>'Panjang baju',
                 's'=>53,
@@ -37,6 +39,7 @@ class UniformSeeder extends Seeder
             ],
             [
                 'gender'=>'l',
+                'kode'=>'b',
                 'category'=>'lp',
                 'info'=>'Lebar pinggang',
                 's'=>38,
@@ -47,6 +50,7 @@ class UniformSeeder extends Seeder
             ],
             [
                 'gender'=>'l',
+                'kode'=>'b',
                 'category'=>'pc',
                 'info'=>'Panjang celana',
                 's'=>71,
@@ -60,6 +64,7 @@ class UniformSeeder extends Seeder
             
             [
                 'gender'=>'p',
+                'kode'=>'a',
                 'category'=>'ld',
                 'info'=>'Lebar dada',
                 's'=>40,
@@ -70,6 +75,7 @@ class UniformSeeder extends Seeder
             ],
             [
                 'gender'=>'p',
+                'kode'=>'a',
                 'category'=>'pb',
                 'info'=>'Panjang baju',
                 's'=>53,
@@ -80,6 +86,7 @@ class UniformSeeder extends Seeder
             ],
             [
                 'gender'=>'p',
+                'kode'=>'b',
                 'category'=>'lp',
                 'info'=>'Lebar pinggang',
                 's'=>36,
@@ -90,6 +97,7 @@ class UniformSeeder extends Seeder
             ],
             [
                 'gender'=>'p',
+                'kode'=>'b',
                 'category'=>'pc',
                 'info'=>'Panjang rok',
                 's'=>65,
@@ -98,11 +106,12 @@ class UniformSeeder extends Seeder
                 'xl'=>74,
                 'xxl'=>77,
             ],
-            //INI BAGIAN ROK
+            //INI BAGIAN JILBAB
             [
                 'gender'=>'p',
+                'kode'=>'j',
                 'category'=>'pd',
-                'info'=>'Panjang depan',
+                'info'=>'Panjang depan Jilbab',
                 's'=>62,
                 'm'=>64,
                 'l'=>66,
@@ -111,8 +120,9 @@ class UniformSeeder extends Seeder
             ],
             [
                 'gender'=>'p',
+                'kode'=>'j',
                 'category'=>'pbl',
-                'info'=>'Panjang belakang',
+                'info'=>'Panjang belakang Jilbab',
                 's'=>70,
                 'm'=>72,
                 'l'=>74,

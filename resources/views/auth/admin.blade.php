@@ -1,9 +1,8 @@
 @extends('auth.authlayout')
 @section('form-control')
-    <img style="height:80px; border-radius: 100%;display: block; margin-left: auto; margin-right: auto; margin-bottom: 10px;"
-            src="{{asset('img/logo.png')}}"
-            alt="">
-            
+    <img style="height:60px; border-radius: 100%;display: block; margin-left: auto; margin-right: auto; margin-bottom: 10px;"
+        src="{{ asset('img/logo.png') }}" alt="">
+
     <form action="{{ route('login.admin') }}" method="post">
         @csrf
         <fieldset>

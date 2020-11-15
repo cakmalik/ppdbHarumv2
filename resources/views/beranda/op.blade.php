@@ -1,4 +1,5 @@
 @extends('template.app.user')
+@section('title', 'Home')
 @section('content')
     <h1>Home</h1>
     <div id="wrap">

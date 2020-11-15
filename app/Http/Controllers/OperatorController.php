@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\Size;
 use App\Models\setup;
 use App\Models\Member;
 use App\Models\Student;
@@ -37,7 +38,6 @@ class OperatorController extends Controller
         Member::where('email', $token)->update(['level'=>'accept']);
         // update status menjadi 2/diterima
         Student::whereIn('id',$request->status)->update(['status'=>2]);
-
         alert()->success('Menerima siswa','Berhasil');
         return back();
     }
@@ -130,9 +130,49 @@ class OperatorController extends Controller
     }
     public function postApplyDaftarulang(Request $request,$id)
     {
-        Student::find($id)->update(['daftarulang'=>$request->daftarulang]);
-        alert()->success('Yeee','Berhasil');
+        if ($request->daftarulang) {
+            Student::find($id)->update(['daftarulang'=>$request->daftarulang]);
+            alert()->success('Yeee', 'Berhasil');
+        }else{
+            alert()->error('Kategori belum dipilih', 'MAAF !');
+        }
+
         return back();
     }
-
+    public function lunasDaftarulang($id)
+    {
+        $cek_du = Student::where('id',$id)->first();
+        // dd($cek_du);
+        if($cek_du->daftarulang!==null){
+            Student::find($id)->update(['telahbayar'=>1]);
+            alert()->success('Fitting seragam aktif','Berhasil membayar');
+            return back();
+        }else{
+            alert()->error('Tentukan dulu daftar ulang','GAGAL');
+            return back();
+        }
+        
+    }
+    public function gantiTolak($id)
+    {
+        Student::find($id)->update(['status'=>3]);
+        alert()->success('Data diganti tolak','Berhasil');
+        return back();
+    }
+    public function gantiTerima($id)
+    {
+        Student::find($id)->update(['status'=>2]);
+        alert()->success('Data diganti terima','Berhasil');
+        return back();
+    }
+    public function tableFitting()
+    {
+        $sizes = Size::latest()->paginate(15);
+        return view('op.table_fitting', compact('sizes'));
+    }
+    public function manageSchedule()
+    {
+        $students = Student::paginate(30);
+        return view('op.manage_schedule',compact('students'));   
+    }
 }

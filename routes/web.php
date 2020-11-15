@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use Illuminate\Routing\RouteGroup;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MyController;
@@ -13,15 +14,19 @@ use App\Http\Controllers\ProductAjaxController;
 use App\Http\Controllers\Setup\TekkenController;
 use App\Http\Controllers\StudentController as ControllersStudentController;
 use App\Models\Member;
+use App\Models\setup;
 
 Route::get('/', function () {
-    return view('template.landpage.first');
+    $pesan_welcome = setup::where('name','pesan_welcome')->first()->value;
+    $judul_welcome = setup::where('name','judul_welcome')->first()->value;
+    return view('template.landpage.first',compact('pesan_welcome','judul_welcome'));
 });
 
 
 Route::group(['prefix' => 'wel'], function () {
     Route::get('announ',function(){
-        return view('template.landpage.announ');
+        $pengumuman = setup::where('name','pengumuman_welcome')->first()->value;
+        return view('template.landpage.announ',compact('pengumuman'));
     });
     Route::get('contact',function(){
         return view('template.landpage.contact');
@@ -50,6 +55,7 @@ Route::group(['middleware' => ['auth:member','ceklevel:member']], function () {
 Route::group(['middleware' => ['auth:member','ceklevel:registered']], function () {
     Route::group(['prefix' => 'members'], function () {
         Route::get('index',[MemberController::class,'index'])->name('member.index');
+        Route::get('schedule', [MemberController::class,'schedule']);
     });
     Route::get('accRedirect',[MemberController::class,'accRedirect']);
 });
@@ -60,6 +66,8 @@ Route::group(['middleware' => ['auth:member','ceklevel:accept']], function () {
         Route::get('accept',[MemberController::class,'accept'])->name('member.accept');
         Route::get('cek_data',[MemberController::class,'cekData']);
         Route::get('info_daftar_ulang',[MemberController::class,'infoDaftarUlang']);
+        Route::get('fitting_seragam', [MemberController::class,'seragam']);
+        Route::post('postsize',[MemberController::class,'postsize'])->name('post.size');
     });
     Route::get('roleDiterima',[MemberController::class,'roleDiterima']);
 
@@ -84,12 +92,15 @@ Route::group(['middleware' => ['auth:user','ceklevel:1,2']], function () {
     });
 
     Route::get('confirmpage',[OperatorController::class,'confirmPage'])->name('confirmPage');
-    // Route::post('confirmpage',[OperatorController::class,'postConfirmPage']);
     Route::post('terima',[OperatorController::class,'confirmAcc']);
     Route::post('tolak',[OperatorController::class,'confirmReject']);
+    Route::get('gantitolak/{student}',[OperatorController::class,'gantiTolak'])->name('ganti.tolak');
+    Route::get('gantiterima/{student}',[OperatorController::class,'gantiTerima'])->name('ganti.terima');
 
     Route::get('confirmed',[OperatorController::class,'confirmed']);
-    
+    Route::get('op/fitting_seragam', [OperatorController::class,'tableFitting'])->name('op.fitting');
+    Route::get('op/schedule', [OperatorController::class,'manageSchedule'])->name('op.schedule');
+
     Route::group(['prefix' => 'setup'], function () {
         Route::get('fundcategories',[OperatorController::class,'fundCategories'])->name('fund');
 
@@ -104,9 +115,23 @@ Route::group(['middleware' => ['auth:user','ceklevel:1,2']], function () {
         Route::delete('{fund}',[OperatorController::class,'deleteFund'])->name('delete.fund');
         Route::get('applyDaftarUlang',[OperatorController::class,'applyDaftarUlang']);
         Route::post('applyDaftarUlang/{student}',[OperatorController::class,'postApplyDaftarulang'])->name('apply.daftarulang');
+        Route::get('lunas/{student}', [OperatorController::class,'lunasDaftarulang'])->name('lunas.daftarulang');
+        
     });
    
 });
+
+
+Route::group(['middleware' => ['auth:user','ceklevel:1']], function () {
+    route::group(['prefix'=>'admin'],function(){
+        route::get('setups',[AdminController::class,'setups']);
+        route::get('{setup}/editsetup',[AdminController::class,'editSetup'])->name('edit.setup');
+        route::post('{setup}/editsetup',[AdminController::class,'updateSetup'])->name('update.setup');
+    });
+    
+});
+
+
 
 
 Route::get('registered', function () {

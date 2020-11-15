@@ -111,9 +111,7 @@
                 <i id="close" class="fas fa-times-circle tutup"></i>
             </div>
             <div class="modalbody">
-                <p> Terima kasih telah memilih SDIT Harapan Umat (HARUM) Jember. <br> untuk ikut membantu generasi putra/i
-                    anda menjadi generasi Unggul dan Cinta Al-Quran</p>
-                <p>Segala informasi terkait pendaftaran bisa anda temukan disini</p>
+                {!! $pesan->value !!}
             </div>
         </div>
     </div>

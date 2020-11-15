@@ -1,6 +1,7 @@
 @include('template.app.header')
 
 <body>
+    @include('sweet::alert')
     <div id="page-container" class="sidebar-open">
         <div id="page-overlay"></div>
 
@@ -39,8 +40,22 @@
                             </li>
                         @endforeach
                     </ul>
+                @elseif($role==0)
+                    <ul class="column sidebar-nav" style="margin-top: 10px">
+                        <li>
+                            <a class="sentuh" href="/members/index" class="">
+                                <i class="fas fa-user" aria-hidden="true"></i>
+                                <span class="tekken">Biodata</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="sentuh" href="/members/schedule" class="">
+                                <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+                                <span class="tekken">Jadwal tes</span>
+                            </a>
+                        </li>
+                    </ul>
                 @endif
-
             </section>
         </nav>
 
@@ -64,6 +79,7 @@
 
         <!-- content -->
         <div id="page-body">
+            <h3>@yield('header')</h3>
             @yield('content')
         </div>
     </div>

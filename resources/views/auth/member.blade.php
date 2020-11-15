@@ -1,11 +1,10 @@
 @extends('auth.authlayout')
 @section('form-control')
     @push('logo')
-    <br>
-        <img style="height:80px; border-radius: 100%;display: block; margin-left: auto; margin-right: auto; margin-bottom: 10px;"
-            src="{{asset('img/logo.png')}}"
-            alt="">
-      
+        <br>
+        <img style="height:60px; border-radius: 100%;display: block; margin-left: auto; margin-right: auto; margin-bottom: 10px;"
+            src="{{ asset('img/logo.png') }}" alt="">
+
         <div style="color:red">
             @if (session()->get('error'))
                 {{ session('error') }}

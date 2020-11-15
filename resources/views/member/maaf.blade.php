@@ -71,7 +71,7 @@
     <div class="tengah">
         <h1>MAAF !</h1>
         <h2>"{{ $full_name }}"</h2>
-        <h2 style="color: red">Belum Berhasil</h2>
+        <h2 style="color: red">Belum Diterima</h2>
         <h3>Tetap semangat ya, <br> Semoga Allah berikan pendidikan terbaik bagi {{ $nama }}</h3>
         <br>
         <div class="loader"></div>
