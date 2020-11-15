@@ -24,4 +24,8 @@ class Student extends Model
     {
         return $this->hasOne(Size::class);
     }
+    public function jadwal()
+    {
+        return $this->hasOne(Schedule::class);
+    }
 }

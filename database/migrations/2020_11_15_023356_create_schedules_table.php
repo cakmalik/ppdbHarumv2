@@ -16,7 +16,8 @@ class CreateSchedulesTable extends Migration
         Schema::create('schedules', function (Blueprint $table) {
             $table->id();
             $table->foreignId('student_id');
-            $table->timestamp('time');
+            $table->string('tanggal');
+            $table->string('jam');
             $table->foreign('student_id')->references('id')->on('students');
 
         });

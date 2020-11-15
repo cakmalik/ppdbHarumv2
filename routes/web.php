@@ -15,6 +15,7 @@ use App\Http\Controllers\Setup\TekkenController;
 use App\Http\Controllers\StudentController as ControllersStudentController;
 use App\Models\Member;
 use App\Models\setup;
+use Matrix\Operators\Operator;
 
 Route::get('/', function () {
     $pesan_welcome = setup::where('name','pesan_welcome')->first()->value;
@@ -100,6 +101,10 @@ Route::group(['middleware' => ['auth:user','ceklevel:1,2']], function () {
     Route::get('confirmed',[OperatorController::class,'confirmed']);
     Route::get('op/fitting_seragam', [OperatorController::class,'tableFitting'])->name('op.fitting');
     Route::get('op/schedule', [OperatorController::class,'manageSchedule'])->name('op.schedule');
+    Route::post('op/schedule', [OperatorController::class,'postSchedule'])->name('post.jadwal');
+    Route::get('{student}/editjadwal',[OperatorController::class,'editjadwal'])->name('edit.jadwal');
+    Route::post('{student}/updatejadwal',[OperatorController::class,'updatejadwal'])->name('update.jadwal');
+
 
     Route::group(['prefix' => 'setup'], function () {
         Route::get('fundcategories',[OperatorController::class,'fundCategories'])->name('fund');

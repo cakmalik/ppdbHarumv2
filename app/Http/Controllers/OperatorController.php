@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\Size;
 use App\Models\setup;
 use App\Models\Member;
+use App\Models\Schedule;
 use App\Models\Student;
 use Illuminate\Http\Request;
 use App\Models\Setup\Uniform;
@@ -174,5 +175,43 @@ class OperatorController extends Controller
     {
         $students = Student::paginate(30);
         return view('op.manage_schedule',compact('students'));   
+    }
+    public function postSchedule(Request $request)
+    {
+        $request->validate([
+            'tanggal'=>'required',
+            'jam'=>'required',
+            'nilai'=>'required|unique:schedules,student_id',
+        ],
+        [
+            'tanggal.required'=>'Pastikan tanggal ditentukan',
+            'jam.required'=>'Pastikan jam ditentukan',
+            'nilai.unique'=>'Ada siswa yang sudah terjadwal',
+            'nilai.required'=>'Pilih siswa'
+        ]
+    );
+        $students = $request->nilai;
+        foreach($students as $std){
+            Schedule::create([
+                'student_id'=>$std,
+                'tanggal'=>$request->tanggal,
+                'jam'=>$request->jam,
+            ]);
+        }
+    }
+     public function editjadwal($id)
+    {
+        $student = Student::find($id)->first();
+        return view('op.editjadwal',compact('student'));
+    }
+    public function updatejadwal(Request $request,$id)
+    {
+        $request->validate([
+            'tanggal'=>'required',
+            'jam'=>'required',
+        ]);
+        Schedule::where('student_id',$id)->update(['tanggal'=>$request->tanggal,'jam'=>$request->jam]);
+        alert()->success('Tanggal & Jam diganti','Berhasil');
+        return back();
     }
 }

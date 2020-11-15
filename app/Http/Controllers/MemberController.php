@@ -127,6 +127,9 @@ class MemberController extends Controller
     public function schedule()
     {
         $role = 0;
-        return view('member.schedule',compact('role'));
+        $token = Auth::guard('member')->user()->email; 
+        $student = Student::where('token',$token)->first();
+        return view('member.schedule',compact('role','student'));
     }
+   
 }

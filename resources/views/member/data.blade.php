@@ -1,4 +1,5 @@
 @extends('template.app.member')
+@section('title', 'Data siswa')
 @section('content')
     @push('script-head')
         <style>
