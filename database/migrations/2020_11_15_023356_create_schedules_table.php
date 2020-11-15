@@ -18,7 +18,7 @@ class CreateSchedulesTable extends Migration
             $table->foreignId('student_id');
             $table->string('tanggal');
             $table->string('jam');
-            $table->foreign('student_id')->references('id')->on('students');
+            $table->foreign('student_id')->references('id')->on('students')->onDelete('cascade');;
 
         });
     }
