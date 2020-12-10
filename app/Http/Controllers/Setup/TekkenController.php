@@ -19,9 +19,6 @@ class TekkenController extends Controller
     }
     public function useCode(Request $request)
     {
-        // $request->validate([
-        //     'email'=>'required|unique:members'
-        // ]);
         DB::table('members')->insert([
             'name'=>'calon',
             'username'=>Str::random(11),

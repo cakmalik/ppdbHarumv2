@@ -1,14 +1,9 @@
 <?php
+use App\Http\Controllers\{MyController,UserController,MemberController,BerandaController,StudentController,OperatorController};
 
 use App\Http\Controllers\AdminController;
 use Illuminate\Routing\RouteGroup;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\MyController;
-use App\Http\Controllers\UserController;
-use App\Http\Controllers\MemberController;
-use App\Http\Controllers\BerandaController;
-use App\Http\Controllers\StudentController;
-use App\Http\Controllers\OperatorController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\ProductAjaxController;
 use App\Http\Controllers\Setup\TekkenController;
@@ -48,7 +43,7 @@ Route::get('coba',function(){
 
 // Bagian Member belum isi data
 Route::group(['middleware' => ['auth:member','ceklevel:member']], function () { 
-    Route::get('form',[BerandaController::class,'index']);
+    Route::get('form',[BerandaController::class,'index'])->name('form_pendaftaran');
     Route::post('form', [BerandaController::class,'postForm'])->name('postForm');
 });
 

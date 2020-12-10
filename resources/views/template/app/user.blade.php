@@ -1,4 +1,14 @@
 @include('template.app.header')
+@section('script-head')
+    <style>
+        .sentuh {
+            margin-left: 20px;
+            padding: 20px !important;
+        }
+
+    </style>
+
+@endsection
 
 <body>
     @include('sweet::alert')
@@ -33,9 +43,11 @@
                     <li class="nav-section-heading">{{ $a->name }}</li>
                     @foreach ($b as $menu)
                         <li>
-                            <a class="sentuh" href="{{ $menu->url }}" class="">
+                            <a class="sentuh" href="{{ $menu->url }}">
                                 <i class="{{ $menu->icon }}" aria-hidden="true"></i>
-                                <span class="tekken">{{ $menu->name }}</span>
+                                <span>
+                                    {{ $menu->name }}
+                                </span>
                             </a>
                         </li>
                     @endforeach

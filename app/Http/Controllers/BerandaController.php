@@ -29,9 +29,14 @@ class BerandaController extends Controller
 
         $data = $request->all();
         $data['status'] = 1;
-        Student::create($data);
-        $this->logout();
-        return redirect('/registered')->with('status','Berhasil melengkapi data');
+        
+        $activity = Student::create($data);
+        if ($activity->exists) {
+            return redirect('/registered')->with('status','Berhasil melengkapi data');
+            $this->logout();
+        } else {
+            redirect()->route('form_pendaftaran');
+        }
     }
     public function logout()
     {
