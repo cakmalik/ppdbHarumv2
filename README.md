@@ -101,6 +101,23 @@ This is an example of how to list things you need to use the software and how to
    ```sh
    composer install --ignore-platform-reqs
    ```
+4. Rename .env.example to .env
+5. Edit .env file
+    Customize your database
+    --------------------
+    DB_DATABASE=ppdbv2
+    DB_USERNAME=root
+    DB_PASSWORD=
+    --------------------
+    And make sure you have created a database with the same name. example "ppdv2"
+6. Run migration fresh and Seeder
+   ```sh
+   php artisan migrate:fresh --seed
+   ```
+7. Run Development server 
+    ```sh
+   php artisan serve
+    ```
 
 <!-- USAGE EXAMPLES -->
 ## Usage
