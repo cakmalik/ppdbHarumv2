@@ -15,10 +15,10 @@
     <img src="https://yt3.ggpht.com/B2NpzXFb5ct2p6hahw214HxWTelz0W_xoBYDPhzWSkRGAI8JpwE9TjoZoGDf5ydkpOfGIvQDdQ=s88-c-k-c0x00ffffff-no-rj" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">project_title</h3>
+  <h3 align="center">PPDB SDIT HARUM v2</h3>
 
   <p align="center">
-    project_description
+    Aplikasi Penerimaan Peserta Didik Baru (PPDB) SDIT Harapan Umat Jember 2022/2023
     <br />
     <a href="https://github.com/github_username/repo_name"><strong>Explore the docs »</strong></a>
     <br />
