@@ -69,9 +69,10 @@
 
 ### Built With
 
-* []()
-* []()
-* []()
+* [Laravel](https://laravel.com)
+* [Bootstrap](https://getbootstrap.com)
+* [JQuery](https://jquery.com)
+
 
 
 
