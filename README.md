@@ -158,7 +158,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 <!-- CONTACT -->
 ## Contact
 
-M Hasin Ilmalik - [@twitter_handle](https://twitter.com/hasinilmalik) - hasinilmalik@gmail.com
+M Hasin Ilmalik - [@hasinilmalik](https://twitter.com/hasinilmalik) - hasinilmalik@gmail.com
 
 Project Link: [https://github.com/hasinilmalik/ppdbHarumv2](https://github.com/hasinilmalik/ppdbHarumv2)
 
@@ -167,11 +167,11 @@ Project Link: [https://github.com/hasinilmalik/ppdbHarumv2](https://github.com/h
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
 
-* [](Allah SWT and Rasulallah SAW)
-* [](Parents)
-* [](Partners ~ Ikromudin Al Islami)
-* [](laravel)
-* [](bootstrap)
+* [Allah SWT and Rasulallah SAW]()
+* [Parents]()
+* [Partners ~ Ikromudin Al Islami]()
+* [laravel]()
+* [bootstrap]()
 
 
 
