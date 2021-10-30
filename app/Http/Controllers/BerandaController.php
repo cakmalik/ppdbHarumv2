@@ -25,24 +25,22 @@ class BerandaController extends Controller
     public function postForm(Request $request)
     {
         DB::table('members')->where('email', $request->token)->update(
-            ['level'=>'registered']);
+            ['level' => 'registered']
+        );
 
         $data = $request->all();
         $data['status'] = 1;
-        
         $activity = Student::create($data);
         if ($activity->exists) {
-            return redirect('/registered')->with('status','Berhasil melengkapi data');
-            $this->logout();
+            return redirect()->route('member.index')->with('status', 'Berhasil melengkapi data');
         } else {
             redirect()->route('form_pendaftaran');
         }
     }
     public function logout()
     {
-        if(Auth::guard('member')->check()){
+        if (Auth::guard('member')->check()) {
             Auth::guard('member')->logout();
         }
     }
-    
 }

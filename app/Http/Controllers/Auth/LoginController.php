@@ -10,7 +10,7 @@ class LoginController extends Controller
 {
     public function showLoginMember()
     {
-        return view('auth.member');
+        return view('landingpage.login');
     }
     public function showLoginAdmin()
     {
@@ -19,10 +19,10 @@ class LoginController extends Controller
     public function postLoginMember(Request $request)
     {
         if (Auth::guard('member')->attempt(['email' => $request->email, 'password' => $request->password])) {
-            if(Auth::guard('member')->user()->level=="registered"){
-            return redirect()->route('member.index');
-            }elseif(Auth::guard('member')->user()->level=="accept"){
-            return redirect()->route('member.accept');
+            if (Auth::guard('member')->user()->level == "registered") {
+                return redirect()->route('member.index');
+            } elseif (Auth::guard('member')->user()->level == "accept") {
+                return redirect()->route('member.accept');
             }
             return redirect('form');
         }
@@ -35,11 +35,11 @@ class LoginController extends Controller
         }
         return back();
     }
-     public function logout()
+    public function logout()
     {
-        if(Auth::guard('member')->check()){
+        if (Auth::guard('member')->check()) {
             Auth::guard('member')->logout();
-        }elseif(Auth::guard('user')->check()){
+        } elseif (Auth::guard('user')->check()) {
             Auth::guard('user')->logout();
         }
         return redirect('/');

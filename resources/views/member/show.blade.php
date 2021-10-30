@@ -2,25 +2,25 @@
 
 @section('title', 'Data pribadi')
 @section('header', 'Data Siswa')
-    @push('script-head')
-        <style>
-            .footer {
-                position: fixed;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                height: 50px;
-                background-color: #e67e22;
-                color: white;
-                text-align: center;
-                z-index: 9999;
-                font-size: 25px;
-                line-height: 50px;
-            }
+@push('script-head')
+    <style>
+        .footer {
+            position: fixed;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 50px;
+            background-color: #e67e22;
+            color: white;
+            text-align: center;
+            z-index: 9999;
+            font-size: 25px;
+            line-height: 50px;
+        }
 
-        </style>
+    </style>
 
-    @endpush
+@endpush
 @section('content')
     <table>
         <tbody>
@@ -71,10 +71,7 @@
             <tr>
                 <td>Penghasilan Ayah</td>
                 <th>
-                    @php
-                    $dad = DB::table('incomes')->where('category',$student->dad_income)->first();
-                    echo $dad->amount;
-                    @endphp
+                    {{ $student->dad_income }}
                 </th>
             </tr>
             <tr>
@@ -97,10 +94,7 @@
             <tr>
                 <td>Penghasilan Ibu</td>
                 <th>
-                    @php
-                    $mom = DB::table('incomes')->where('category',$student->mom_income)->first();
-                    echo $mom->amount;
-                    @endphp</th>
+                    {{ $student->mom_income }}</th>
             </tr>
             <tr>
                 <td>No HP Ibu</td>

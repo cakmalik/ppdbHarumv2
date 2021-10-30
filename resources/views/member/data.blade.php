@@ -66,7 +66,7 @@
             </tr>
             <tr>
                 <td>Penghasilan Ayah</td>
-                <th>{{ $ga }}</th>
+                <th>{{ $data->dad_income }}</th>
             </tr>
             <tr>
                 <td>No HP Ayah</td>
@@ -87,7 +87,7 @@
             </tr>
             <tr>
                 <td>Penghasilan Ibu</td>
-                <th>{{ $gb }}</th>
+                <th>{{ $data->mom_income }}</th>
             </tr>
             <tr>
                 <td>No HP Ibu</td>
@@ -99,9 +99,9 @@
     {{-- <a href="" class="button">Edit Data</a> --}}
     <div class="footer" style="padding-bottom: 1rem">
         @php
-        if($data->status == 1){
-        $sts = "Menunggu";
-        }
+            if ($data->status == 1) {
+                $sts = 'Menunggu';
+            }
         @endphp
         Status pendaftaran : {{ $sts }}
     </div>
@@ -136,6 +136,5 @@
             }
         }
         loadmodal();
-
     </script>
 @endpush

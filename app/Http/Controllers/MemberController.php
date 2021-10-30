@@ -23,120 +23,120 @@ class MemberController extends Controller
     public function index()
     {
         $token = Auth::guard('member')->user()->email;
-        $data = Student::where('token',$token)->first();
-        if ($data->status==1 ) {
-            $pesan = setup::where('name','pesan_siswa_baru')->first();
-            $ga = Income::where('category', $data->dad_income)->first()->amount;
-            $gb = Income::where('category', $data->mom_income)->first()->amount;
+        $data = Student::where('token', $token)->first();
+        if ($data->status == 1) {
+            $pesan = setup::where('name', 'pesan_siswa_baru')->first();
+            // $ga = Income::where('category', $data->dad_income)->first()->amount;
+            // dd($ga);
+            // $gb = Income::where('category', $data->mom_income)->first()->amount;
             return view('member.data', [
-                'data'=>$data,
-                'ga'=>$ga,
-                'gb'=>$gb,
-                'role'=>0,
-                'pesan'=>$pesan,
+                'data' => $data,
+                // 'ga' => $ga,
+                // 'gb' => $gb,
+                'role' => 0,
+                'pesan' => $pesan,
             ]);
-        }elseif($data->status==3){
+        } elseif ($data->status == 3) {
             $full_name = $data->full_name;
             $nama = $data->nick_name;
-            return view('member.maaf',compact('full_name','nama'));
-        }else{
+            return view('member.maaf', compact('full_name', 'nama'));
+        } else {
             $full_name = $data->full_name;
-            return view('member.selamat',compact('full_name'));
+            return view('member.selamat', compact('full_name'));
         }
     }
     public function showTable()
     {
         $students = Student::latest()->paginate(15);
         $jumlah_pendaftar = Student::get()->count();
-        return view('op.students',compact('students','jumlah_pendaftar'));
+        return view('op.students', compact('students', 'jumlah_pendaftar'));
     }
-    
+
     public function accept()
     {
         $token = Auth::guard('member')->user()->email;
-        $data = Student::where('token',$token)->first();
+        $data = Student::where('token', $token)->first();
         $full_name = $data->full_name;
-        return view('member.selamat',compact('full_name'));
+        return view('member.selamat', compact('full_name'));
     }
     //saat siswa diterima
     public function roleDiterima()
     {
-        $token = Auth::guard('member')->user()->email; 
-        $student = Student::where('token',$token)->first();
+        $token = Auth::guard('member')->user()->email;
+        $student = Student::where('token', $token)->first();
         $role = 4;
-        return view('member.show',compact('student','role'));
+        return view('member.show', compact('student', 'role'));
     }
 
     public function cekData()
     {
-        $token = Auth::guard('member')->user()->email; 
-        $student = Student::where('token',$token)->first();
+        $token = Auth::guard('member')->user()->email;
+        $student = Student::where('token', $token)->first();
         $role = 4;
-        return view('member.show',compact('student','role'));
+        return view('member.show', compact('student', 'role'));
     }
     public function infoDaftarUlang()
     {
-        $alurdaftarulang = setup::where('name','alur_daftar_ulang')->first();
+        $alurdaftarulang = setup::where('name', 'alur_daftar_ulang')->first();
         // dd($alurdaftarulang);
-        $token = Auth::guard('member')->user()->email; 
-        $student = Student::where('token',$token)->first();
-        
-            $fund=Fund_category::where('id',$student->daftarulang)->first();
-            $role = 4;
-            return view('member.daftarulang',compact('fund','role','alurdaftarulang'));
-        
+        $token = Auth::guard('member')->user()->email;
+        $student = Student::where('token', $token)->first();
+
+        $fund = Fund_category::where('id', $student->daftarulang)->first();
+        $role = 4;
+        return view('member.daftarulang', compact('fund', 'role', 'alurdaftarulang'));
     }
     public function seragam()
     {
-        $token = Auth::guard('member')->user()->email; 
-        $student = Student::where('token',$token)->first();
-        $cek = Size::where('student_id',$student->id)->first();
+        $token = Auth::guard('member')->user()->email;
+        $student = Student::where('token', $token)->first();
+        $cek = Size::where('student_id', $student->id)->first();
         $telahbayar = $student->telahbayar;
         $role = 4;
-        if($student->gender=='perempuan'){
+        if ($student->gender == 'perempuan') {
             $jk = 'p';
-        }else{
+        } else {
             $jk = 'l';
         }
-        $uniforms=Uniform::where('gender',$jk)->get();
-        return view('member.seragam',compact('role','uniforms','jk','cek','telahbayar'));
+        $uniforms = Uniform::where('gender', $jk)->get();
+        return view('member.seragam', compact('role', 'uniforms', 'jk', 'cek', 'telahbayar'));
     }
     public function postsize(Request $request)
     {
-        $token = Auth::guard('member')->user()->email; 
-        $student = Student::where('token',$token)->first();
+        $token = Auth::guard('member')->user()->email;
+        $student = Student::where('token', $token)->first();
 
-        $request->validate([
-            'atasan'=>'required',
-            'bawahan'=>'required',
-        ],
-        [
-            'atasan.required' => 'Ukuran :attribute tidak boleh kosong',
-            'bawahan.required' => 'Ukuran :attribute tidak boleh kosong'
-        ]
+        $request->validate(
+            [
+                'atasan' => 'required',
+                'bawahan' => 'required',
+            ],
+            [
+                'atasan.required' => 'Ukuran :attribute tidak boleh kosong',
+                'bawahan.required' => 'Ukuran :attribute tidak boleh kosong'
+            ]
         );
-       
-        $cek = Size::where('student_id',$student->id)->first();
-        if ($cek==null) {
+
+        $cek = Size::where('student_id', $student->id)->first();
+        if ($cek == null) {
             Size::create([
-            'student_id'=>$student->id,
-            'atasan'=>$request->atasan,
-            'bawahan'=>$request->bawahan,
-            'jilbab'=>$request->jilbab,
-        ]);
-        }else{
-        alert()->error('Data ukuranmu sudah ada, Hubungi admin untuk revisi','GAGAL !');
-        return back();
+                'student_id' => $student->id,
+                'atasan' => $request->atasan,
+                'bawahan' => $request->bawahan,
+                'jilbab' => $request->jilbab,
+            ]);
+        } else {
+            alert()->error('Data ukuranmu sudah ada, Hubungi admin untuk revisi', 'GAGAL !');
+            return back();
         }
-        alert()->success('Data ukuran baju telah dikirim','Berhasil');
+        alert()->success('Data ukuran baju telah dikirim', 'Berhasil');
         return back();
     }
     public function schedule()
     {
         $role = 0;
-        $token = Auth::guard('member')->user()->email; 
-        $student = Student::where('token',$token)->first();
-        return view('member.schedule',compact('role','student'));
+        $token = Auth::guard('member')->user()->email;
+        $student = Student::where('token', $token)->first();
+        return view('member.schedule', compact('role', 'student'));
     }
-   
 }
