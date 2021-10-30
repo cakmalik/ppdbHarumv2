@@ -69,9 +69,8 @@
 
 ### Built With
 
-* [Laravel](https://laravel.com)
-* [Bootstrap](https://getbootstrap.com)
-* [JQuery](https://jquery.com)
+* [Laravel 8](https://laravel.com)
+* [Bootstrap 5](https://getbootstrap.com)
 
 
 
@@ -93,14 +92,16 @@ This is an example of how to list things you need to use the software and how to
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/github_username/repo_name.git
+   git clone https://github.com/hasinilmalik/ppdbHarumv2.git
    ```
 2. Install NPM packages
    ```sh
    npm install
    ```
-
-
+3. Install Composer
+    ```sh
+composer install --ignore-platform-reqs
+   ```
 
 <!-- USAGE EXAMPLES -->
 ## Usage
