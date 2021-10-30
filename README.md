@@ -175,4 +175,4 @@ Project Link: [https://github.com/github_username/repo_name](https://github.com/
 [license-url]: https://github.com/othneildrew/Best-README-Template/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/othneildrew
-[product-screenshot]: images/screenshot.png
+[product-screenshot]: public/img/Screen%20Shot%202021-10-30%20at%208.23.45%20AM.png
