@@ -1,4 +1,3 @@
-
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
@@ -99,8 +98,8 @@ This is an example of how to list things you need to use the software and how to
    npm install
    ```
 3. Install Composer
-    ```sh
-composer install --ignore-platform-reqs
+   ```sh
+   composer install --ignore-platform-reqs
    ```
 
 <!-- USAGE EXAMPLES -->
