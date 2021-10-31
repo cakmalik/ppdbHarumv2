@@ -170,6 +170,7 @@ Project Link: [https://github.com/hasinilmalik/ppdbHarumv2](https://github.com/h
 * [Allah SWT and Rasulallah SAW]()
 * [Parents]()
 * [Partners ~ Ikromudin Al Islami]()
+* [Partners ~ liflog()
 * [laravel]()
 * [bootstrap]()
 
