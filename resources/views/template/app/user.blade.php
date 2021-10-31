@@ -13,7 +13,7 @@
 <body>
     @include('sweet::alert')
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary py-3">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary navbar hidden-tablet hidden-phone py-3">
         <div class="container">
             <a class="navbar-brand" href="#">SDIT HARUM JEMBER</a>
                  {{-- <p>{{ Auth::user()->name }}</p> --}}

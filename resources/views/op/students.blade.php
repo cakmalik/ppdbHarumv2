@@ -1,4 +1,4 @@
-@extends('template.app.user')
+@extends('template2.layout')
 @section('title', 'Data pendaftar')
     {{-- @section('header', 'Token Pendaftaran') --}}
 @section('content')

@@ -1,4 +1,4 @@
-@extends('template.app.user')
+@extends('template2.layout')
 @section('title', 'Edit')
 @section('content')
     <a href="{{ URL::previous() }}" class="button btn-sm"><i class="fas fa-long-arrow-alt-left"></i> Kembali</a><br><br>
