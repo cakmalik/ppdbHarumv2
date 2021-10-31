@@ -2,17 +2,18 @@
 @section('title', 'Token Pendaftaran')
 @section('header', 'Token Pendaftaran')
 @section('content')
-    <form action="{{ route('useCode') }}" method="post">
-        @csrf
-        <input id="myInput" type="text" name="kode_tekken" value="{{ $kode_tekken }}">
-        <br>
-        <a class="button" onclick="window.location.reload(true)">Refresh</a>
-        <button class="button" onclick="myFunction()">Use</button>
 
-    </form>
-    <a href=" {{ route('exportToken') }}" class="button">Excel</a>
+    <div class="my-3">
+        <form action="{{ route('useCode') }}" method="post">
+            @csrf
+            <input id="myInput" class="form-control mb-3" type="text" name="kode_tekken" value="{{ $kode_tekken }}">
+            <a class="btn btn-primary" onclick="window.location.reload(true)">Refresh</a>
+            <button class="btn btn-primary" onclick="myFunction()">Use</button>
 
-    <table>
+            <a href=" {{ route('exportToken') }}" class="btn btn-primary">Excel</a>
+        </form>
+    </div>
+    <table class="table mt-3">
         <thead>
             <tr>
                 <th>#</th>

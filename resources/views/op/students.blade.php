@@ -3,14 +3,14 @@
     {{-- @section('header', 'Token Pendaftaran') --}}
 @section('content')
     <h3>Total pendaftar : {{ $jumlah_pendaftar }} </h3>
-    <a href="{{ route('export.students') }}" target="_blank" class="button">Export</a>
+    <a class="btn btn-primary mb-3" href="{{ route('export.students') }}" target="_blank" class="button">Export</a>
     <form action="{{ route('members.search') }}" method="get">
         @csrf
-        <input type="text" name="search" id="search" value="{{ old('cari') }}" placeholder="Cari pendaftar ..">
-        {{-- <button type="submit" class="button btn-sm" value="search">Cari</button>
+        <input type="text" class="form-control" name="search" id="search" value="{{ old('cari') }}" placeholder="Cari pendaftar ..">
+        {{-- <button type="submit" class="btn btn-sm" value="search">Cari</button>
         --}}
     </form>
-    <table>
+    <table class="table">
         <thead>
             <tr>
                 <th>#</th>
@@ -41,19 +41,19 @@
                     <td>
                         <form action="{{ route('students.destroy', $student->id) }}" method="POST">
 
-                            <a class="button btn-sm" href="{{ route('students.show', $student->id) }}">
+                            <a class="btn btn-primary btn-sm" href="{{ route('students.show', $student->id) }}">
                                 <i class="fa fa-search-plus" aria-hidden="true">
                                 </i>
                             </a>
 
-                            <a class="button btn-sm primary" href="{{ route('students.edit', $student->id) }}">
+                            <a class="btn btn-sm btn-primary" href="{{ route('students.edit', $student->id) }}">
                                 <i class="fa fa-edit" aria-hidden="true">
                                 </i></a>
 
                             @csrf
                             @method('DELETE')
 
-                            <button class="button btn-sm danger" type="submit"
+                            <button class="btn btn-danger btn-sm" type="submit"
                                 onclick="return confirm('Are you sure you want to Delete?')"> <i class="fa fa-trash"
                                     aria-hidden="true">
                                 </i></button>
