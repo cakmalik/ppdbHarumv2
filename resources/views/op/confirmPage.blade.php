@@ -1,4 +1,4 @@
-@extends('template.app.user')
+@extends('template2.layout')
 @section('title', 'Terima / tolak')
 @section('header', 'Terima / tolak')
     @push('script-head')
