@@ -14,7 +14,7 @@
                                     <h4 class="fw-bold mb-5">Masukkan Token</h4>
                                     <input class="form-control mb-3" type="text" placeholder="Token pendaftaran"
                                         name="email" />
-                                    <input class="form-control mb-3" type="password" value="password" name="password" />
+                                    <input class="form-control mb-3" type="password" value="password" name="Password" />
                                     <button type="submit" class="btn btn-primary py-2 w-100 mb-4">Login</button>
 
                                     <a class="link-secondary d-inline-block mb-4" href="#"><small>jika token salah hubungi

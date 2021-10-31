@@ -16,7 +16,7 @@ class BerandaController extends Controller
     }
     public function opHome()
     {
-        return view('beranda.op');
+        return view('template2._layoUt');
     }
     public function halamandua()
     {

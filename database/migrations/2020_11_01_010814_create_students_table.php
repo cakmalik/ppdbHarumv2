@@ -18,13 +18,13 @@ class CreateStudentsTable extends Migration
             $table->string('school_origin');
             $table->string('gender');
             $table->string('place_birth');
-            $table->date('date_birth');
+            $table->string('date_birth');
             $table->string('special_needs');
-            $table->integer('jumlah_saudara');
+            $table->string('jumlah_saudara');
             $table->string('living');
             $table->string('address');
             $table->string('rtrw');
-            $table->integer('postalcode');
+            $table->string('postalcode');
             $table->string('desa');
             $table->string('kecamatan');
             $table->string('kota');
@@ -43,7 +43,7 @@ class CreateStudentsTable extends Migration
             $table->string('mom_phone');
             $table->string('email');
 
-            $table->integer('status');
+            $table->string('status');
             $table->timestamps();
         });
     }
