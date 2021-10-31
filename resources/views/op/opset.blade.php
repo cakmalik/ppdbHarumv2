@@ -1,4 +1,4 @@
-@extends('template.app.user')
+@extends('template2.layout')
 @section('content')
 
     <form action="{{ route('set.wa') }}" method="post">

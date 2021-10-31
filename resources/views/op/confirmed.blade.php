@@ -1,7 +1,7 @@
-@extends('template.app.user')
+@extends('template2.layout')
 @section('title', 'Telah dikonfirmasi')
 @section('content')
-    <table>
+    <table class="table">
         <thead>
             <th>#</th>
             <th>Status</th>

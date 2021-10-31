@@ -1,4 +1,4 @@
-@extends('template.app.user')
+@extends('template2.layout')
 @section('content')
     <h3><button class="btn btn-sm btn-dark"><i class="fas fa-tshirt"></i></button> Ukuran baju Laki-laki</h3>
     <table class="table">

@@ -1,4 +1,4 @@
-@extends('template.app.user')
+@extends('template2.layout')
 @section('title', 'Atur jadwal')
 @section('header', 'Atur jadwal')
     @push('script-head')
