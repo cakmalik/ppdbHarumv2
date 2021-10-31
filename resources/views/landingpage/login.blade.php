@@ -12,9 +12,9 @@
                                 <form action="{{ route('login.member') }}" class="text-center" method="POST">
                                     @csrf
                                     <h4 class="fw-bold mb-5">Masukkan Token</h4>
-                                    <input class="form-control form-control-lg mb-3" type="text" placeholder="Token pendaftaran"
-                                        name="email" />
-                                    <input class="form-control mb-3 visually-hidden" type="password" value="password" name="Password" />
+                                    <input class="form-control form-control-lg mb-3" type="text"
+                                        placeholder="Token pendaftaran" name="email" />
+                                    <input type="hidden" name="password" value="password">
                                     <button type="submit" class="btn btn-primary py-2 w-100 mb-4">Login</button>
 
                                     <a class="link-secondary d-inline-block mb-4" href="#"><small>jika token salah hubungi
