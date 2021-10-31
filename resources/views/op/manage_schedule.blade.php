@@ -18,18 +18,24 @@
     <form method="POST" action="{{ route('post.jadwal') }}">
         @csrf
         @method('post')
-
-        <label for="tanggal">Tanggal</label>
-        <input type="date" name="tanggal" id="tanggal">
-        @error('tanggal')
-            <p style="color: red">{{ $message }}</p>
-        @enderror
-        <label for="jam">Jam</label>
-        <input type="time" name="jam" id="jam">
-        @error('jam')
-            <p style="color: red">{{ $message }}</p>
-        @enderror
-        <table>
+        <div class="row mb-3">
+            <div class="col-6">
+            <label for="tanggal">Tanggal</label>
+                <input class="form-control" type="date" name="tanggal" id="tanggal">
+                @error('tanggal')
+                    <p style="color: red">{{ $message }}</p>
+                @enderror
+            </div>
+            <div class="col-6">
+            <label for="jam">Jam</label>
+                <input class="form-control type="time" name="jam" id="jam">
+                @error('jam')
+                    <p style="color: red">{{ $message }}</p>
+                @enderror
+            </div>
+        </div>
+        
+        <table class="table">
             <thead>
                 <th>#</th>
                 <th>Pilih</th>
@@ -67,8 +73,8 @@
         @error('nilai')
             <p style="color: red">{{ $message }}</p>
         @enderror
-        <input type="checkbox" onclick="toggle(this);" /> Pilih semua<br />
-        <button class="button btn-sm" type="submit">Terapkan</button>
+        <input  type="checkbox" onclick="toggle(this);" /> Pilih semua<br />
+        <button class="btn btn-primary" type="submit">Terapkan</button>
     </form>
     {{ $students->links('vendor.pagination.custom') }}
 @endsection

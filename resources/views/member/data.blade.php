@@ -18,8 +18,18 @@
 
         </style>
     @endpush
-    <table>
+    <table class="table fs-3">
+        <thead>
+            <tr>
+                <td>form</td>
+                <td>Keterangan</td>
+            </tr>
+        </thead>
         <tbody>
+            <tr>
+                <td>Token</td>
+                <th>{{ $data->token }}</th>
+            </tr>
             <tr>
                 <td>Nama Lengkap</td>
                 <th>{{ $data->full_name }}</th>
@@ -45,12 +55,40 @@
                 <th>{{ $data->special_needs }}</th>
             </tr>
             <tr>
-                <td>Alamat</td>
-                <th>{{ $data->address }}</th>
+                <td>Jumlah Saudara Knadung</td>
+                <th>{{ $data->jumlah_saudara }}</th>
             </tr>
             <tr>
                 <td>Tinggal bersama</td>
                 <th>{{ $data->living }}</th>
+            </tr>
+            <tr>
+                <td>Alamat</td>
+                <th>{{ $data->address }}</th>
+            </tr>
+            <tr>
+                <td>RT/RW</td>
+                <th>{{ $data->rtrw }}</th>
+            </tr>
+            <tr>
+                <td>Kode Pos</td>
+                <th>{{ $data->postalcode }}</th>
+            </tr>
+            <tr>
+                <td>Desa</td>
+                <th>{{ $data->desa }}</th>
+            </tr>
+            <tr>
+                <td>Kecamatan</td>
+                <th>{{ $data->kecamatan }}</th>
+            </tr>
+            <tr>
+                <td>Kabupaten/Kota</td>
+                <th>{{ $data->kota }}</th>
+            </tr>
+            <tr>
+                <td>Provinsi</td>
+                <th>{{ $data->provinsi }}</th>
             </tr>
             <tr>
                 <td>Nama Ayah</td>

@@ -25,8 +25,8 @@
             <a href="/login" class="btn btn-outline-light ms-md-3" type="submit">
                 LOGIN
             </a>
-            <div class="">
-                <button class="btn" type="checkbox" id="darkMode"><img
+            <div class="ms-3">
+                <button class="btn btn-outline-light" type="checkbox" id="darkMode"><img
                         src="{{ asset('img/new/night-mode.png') }}" width="25"></button>
             </div>
         </div>

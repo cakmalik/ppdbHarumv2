@@ -67,7 +67,17 @@
                 <div class="column">
                     <a href="#" id="toggle-sidebar" class="bundar"><i class="fas fa-fw fa-bars"></i></a>
                 </div>
-                <div class="column">
+
+                <nav class="navbar navbar-expand-lg navbar-dark bg-primary py-3">
+                    <div class="container">
+                        <a class="navbar-brand" href="#">SDIT HARUM JEMBER</a>
+                        {{-- <p>{{ Auth::user()->name }}</p>--}}
+                        <a class="btn btn-outline-light ms-3" href="{{ route('logout') }}" >{{ __('Logout') }}</a>
+                    </div>
+                </nav>
+
+
+                <!-- <div class="column">
                     <div class="user">
                         {{-- <p>{{ Auth::user()->name }}</p>
                         --}}
@@ -75,7 +85,7 @@
                             {{ __('Logout') }}
                         </a>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
 

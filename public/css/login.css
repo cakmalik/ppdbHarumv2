@@ -1,44 +1,44 @@
 html,
 body {
-  height: 100%;
+    height: 100%;
 }
 
 body {
-  background-color: #f39c12;
+    background-color: #0d6efd;
 }
 
 form {
-  padding: 20px;
+    padding: 20px;
 }
 
 .full {
-  height: 100%;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .kotak {
-  height: 100%;
-  padding: 20px;
-  height: 320px;
-  background-color: white;
-  flex-direction: column;
+    height: 100%;
+    padding: 20px;
+    height: 320px;
+    background-color: white;
+    flex-direction: column;
 }
 
 .inputform {
-  text-align: center;
-  margin-top: 5px;
-  line-height: 30px;
+    text-align: center;
+    margin-top: 5px;
+    line-height: 30px;
 }
 
 .judul {
-  text-align: center;
-  font-size: 40px;
-  margin-bottom: -20px;
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: -20px;
 }
 
 .button {
-  margin-top: 10px;
-  width: 100%;
+    margin-top: 10px;
+    width: 100%;
 }
