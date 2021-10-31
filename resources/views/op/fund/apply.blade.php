@@ -1,9 +1,9 @@
-@extends('template.app.user')
+@extends('template2.layout')
 @section('title', 'Tentukan nominal')
     {{-- @section('header', 'Token Pendaftaran') --}}
 @section('content')
-    <button class="button btn-sm primary tombolmodal" id="tombolmodal">Cek kategori</button>
-    <table>
+    <button class="btn btn-primary tombolmodal mb-3" id="tombolmodal">Cek kategori</button>
+    <table class="table">
         <thead>
             <th>#</th>
             <th>Nama</th>
