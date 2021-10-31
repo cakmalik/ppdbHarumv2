@@ -1,4 +1,7 @@
 @extends('template2.layout')
+
+@section('judul', 'Home')
+
 @section('content')
 
     <form class="mb-4">

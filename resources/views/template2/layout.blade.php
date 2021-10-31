@@ -11,7 +11,7 @@
 
                     @include('template2._breadcumb')
 
-                    <h1 class="pt-2 pb-4 text-center display-6">Token Pendaftaran</h1>
+                    <h1 class="pt-2 pb-4 text-center display-6">@yield('judul')</h1>
 
                     @yield('content')
 
