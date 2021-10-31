@@ -64,9 +64,9 @@
         <!-- header -->
         <div id="page-content" class="container-fluid">
             <div class="row page-header">
-                <div class="column">
+                <!-- <div class="column">
                     <a href="#" id="toggle-sidebar" class="bundar"><i class="fas fa-fw fa-bars"></i></a>
-                </div>
+                </div> -->
 
                 <nav class="navbar navbar-expand-lg navbar-dark bg-primary py-3">
                     <div class="container">
