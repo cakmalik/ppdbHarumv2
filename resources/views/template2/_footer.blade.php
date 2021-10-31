@@ -3,7 +3,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6 text-center text-md-start">
-                    <p>Copyright © SDIT Harapan Umat Jember 2021-2022 by PM & IAI</p>
+                    <p>Copyright © SDIT HARUM 22/23</p>
                 </div>
                 <div class="col-md-6 text-center text-md-end mb-4">
                     <a href="#" class="btn btn-outline-light btn-sm">

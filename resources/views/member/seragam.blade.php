@@ -1,4 +1,4 @@
-@extends('template.app.member')
+@extends('template2.layoutMember')
 @section('content')
     @push('script-head')
         <style type="text/css">

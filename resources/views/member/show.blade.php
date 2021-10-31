@@ -1,4 +1,4 @@
-@extends('template.app.member')
+@extends('template2.layoutMember')
 
 @section('title', 'Data pribadi')
 @section('header', 'Data Siswa')

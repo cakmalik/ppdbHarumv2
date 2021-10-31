@@ -1,7 +1,11 @@
+<<<<<<< HEAD
 @extends('template.app.member')
+=======
+@extends('template2.layoutMember')
+>>>>>>> 5743be6f32eff08548a10a4f75cd727a95558ecf
 @section('title', 'Data siswa')
 @section('content')
-    @push('script-head')
+    {{-- @push('script-head')
         <style>
             .footer {
                 position: fixed;
@@ -17,7 +21,7 @@
             }
 
         </style>
-    @endpush
+    @endpush --}}
     <table class="table">
         <thead>
             <tr>
@@ -134,8 +138,8 @@
         </tbody>
     </table>
     <br><br>
-    {{-- <a href="" class="button">Edit Data</a> --}}
-    <div class="footer" style="padding-bottom: 1rem">
+
+    {{-- <div class="footer" style="padding-bottom: 1rem">
         @php
             if ($data->status == 1) {
                 $sts = 'Menunggu';
@@ -153,9 +157,9 @@
                 {!! $pesan->value !!}
             </div>
         </div>
-    </div>
+    </div> --}}
 @endsection
-@push('popup')
+{{-- @push('popup')
     <script>
         function loadmodal() {
             var modalpopup = document.getElementById("modalpopup");
@@ -175,4 +179,4 @@
         }
         loadmodal();
     </script>
-@endpush
+@endpush --}}
