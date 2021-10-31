@@ -1,4 +1,4 @@
-@extends('template.app.member')
+@extends('template2.layout')
 @section('title', 'Data siswa')
 @section('content')
     @push('script-head')
@@ -18,7 +18,7 @@
 
         </style>
     @endpush
-    <table class="table fs-3">
+    <table class="table">
         <thead>
             <tr>
                 <td>form</td>

@@ -29,8 +29,7 @@
                     @php
                     $role = Auth::guard("user")->user()->level;
                     $a= DB::table('titlemenus')->where('id',$role)->first();
-                    $b=
-                    DB::table('menus')->where(['titlemenu_id'=>$role,'is_active'=>1])->orderBy('posisi','asc')->get();
+                    $b= DB::table('menus')->where(['titlemenu_id'=>$role,'is_active'=>1])->orderBy('posisi','asc')->get();
                     @endphp
 
                     <p class="display-5 text-center">{{ config('app.name') }}</p>
