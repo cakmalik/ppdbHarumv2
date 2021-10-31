@@ -18,6 +18,7 @@
 
         </style>
     @endpush
+
     <table class="table fs-3">
         <thead>
             <tr>
