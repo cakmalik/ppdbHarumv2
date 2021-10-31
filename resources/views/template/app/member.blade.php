@@ -25,9 +25,13 @@
                 @if ($role == 4)
                     <ul class="column sidebar-nav">
                         @php
-                        $a= DB::table('titlemenus')->where('id',$role)->first();
-                        $b=
-                        DB::table('menus')->where(['titlemenu_id'=>$role,'is_active'=>1])->orderBy('posisi','asc')->get();
+                            $a = DB::table('titlemenus')
+                                ->where('id', $role)
+                                ->first();
+                            $b = DB::table('menus')
+                                ->where(['titlemenu_id' => $role, 'is_active' => 1])
+                                ->orderBy('posisi', 'asc')
+                                ->get();
                         @endphp
 
                         <li class="nav-section-heading">{{ $a->name }}</li>
@@ -71,16 +75,15 @@
                 <nav class="navbar navbar-expand-lg navbar-dark bg-primary py-3">
                     <div class="container">
                         <a class="navbar-brand" href="#">SDIT HARUM JEMBER</a>
-                        {{-- <p>{{ Auth::user()->name }}</p>--}}
-                        <a class="btn btn-outline-light ms-3" href="{{ route('logout') }}" >{{ __('Logout') }}</a>
+                        {{-- <p>{{ Auth::user()->name }}</p> --}}
+                        <a class="btn btn-outline-light ms-3" href="{{ route('logout') }}">{{ __('Logout') }}</a>
                     </div>
                 </nav>
 
 
                 <!-- <div class="column">
                     <div class="user">
-                        {{-- <p>{{ Auth::user()->name }}</p>
-                        --}}
+                        {{-- <p>{{ Auth::user()->name }}</p> --}}
                         <a class="dropdown-item button" href="{{ route('logout') }}">
                             {{ __('Logout') }}
                         </a>

@@ -1,4 +1,4 @@
-@extends('template2.layout')
+@extends('template.app.member')
 @section('title', 'Data siswa')
 @section('content')
     @push('script-head')
