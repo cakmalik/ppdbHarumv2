@@ -18,7 +18,7 @@
     <form method="POST">
         @csrf
         @method('post')
-        <table>
+        <table class="table">
             <thead>
                 <th>#</th>
                 <th>Status</th>
@@ -44,9 +44,9 @@
         </table>
 
         <input type="checkbox" onclick="toggle(this);" /> Pilih semua<br />
-        <button onclick="confirm('Yakin akan menerima para pendaftar ini')" type="submit" class="button btn-sm success"
+        <button onclick="confirm('Yakin akan menerima para pendaftar ini')" type="submit" class="btn btn-sm btn-success"
             value="terima" formaction="{{ url('terima') }}">Terima</button>
-        <button type="submit" class="button btn-sm danger" value="tolak" formaction="{{ url('tolak') }}"
+        <button type="submit" class="btn btn-sm btn-danger" value="tolak" formaction="{{ url('tolak') }}"
             onclick="confirm('Yakin akan menolak para pendaftar ini')">Tolak</button>
     </form>
     {{ $students->links('vendor.pagination.custom') }}

@@ -1,4 +1,4 @@
-@extends('template.app.user')
+@extends('template2.layout')
 @section('content')
     <button id="tombolmodal" class="button tombolmodal">Tambah kategori
     </button>

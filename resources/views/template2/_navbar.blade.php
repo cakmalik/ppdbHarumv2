@@ -9,22 +9,20 @@
 
 <section class="bg-secondary py-4">
     <div class="container pb-4">
-        @php
-            $role = Auth::guard('user')->user()->level;
-            $a = DB::table('titlemenus')
-                ->where('id', $role)
-                ->first();
-            $b = DB::table('menus')
-                ->where(['titlemenu_id' => $role, 'is_active' => 1])
-                ->orderBy('posisi', 'asc')
-                ->get();
-        @endphp
 
-        <p class="display-5 text-center text-white">{{ config('app.name') }}</p>
+        
+                    @php
+                    $role = Auth::guard("user")->user()->level;
+                    $a= DB::table('titlemenus')->where('id',$role)->first();
+                    $b= DB::table('menus')->where(['titlemenu_id'=>$role,'is_active'=>1])->orderBy('posisi','asc')->get();
+                    @endphp
 
-        <div class="alert alert-info text-center fs-4" role="alert">
-            {{ $a->name }}
-        </div>
+                    <p class="display-5 text-center text-white">{{ config('app.name') }}</p>
+
+                    <div class="alert alert-info text-center fs-4" role="alert">
+                            {{ $a->name }}
+                    </div>
+
 
         <div class="d-flex justify-content-between flex-wrap">
             @foreach ($b as $menu)
