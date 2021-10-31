@@ -1,4 +1,4 @@
-@extends('template.app.member')
+@extends('template2.layoutMember')
 @section('content')
     <p>
         1. Cek Rincian Daftar Ulang yang Tertera Sebelumnya, Jika ada yang kurang jelas bisa ditanyakan di sekolah.
