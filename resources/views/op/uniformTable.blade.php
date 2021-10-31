@@ -1,7 +1,7 @@
 @extends('template.app.user')
 @section('content')
-    <h3><button class="button btn-sm dark"><i class="fas fa-tshirt"></i></button> Ukuran baju Laki-laki</h3>
-    <table>
+    <h3><button class="btn btn-sm btn-dark"><i class="fas fa-tshirt"></i></button> Ukuran baju Laki-laki</h3>
+    <table class="table">
         <thead>
             <tr>
                 <th>#</th>
@@ -31,7 +31,7 @@
             @endforeach
         </tbody>
     </table>
-    <h3><button class="button btn-sm dark"><i class="fas fa-tshirt"></i></button> Ukuran baju perempuan</h3>
+    <h3><button class="btn btn-sm btn-dark"><i class="fas fa-tshirt"></i></button> Ukuran baju perempuan</h3>
     <table>
         <thead>
             <tr>
