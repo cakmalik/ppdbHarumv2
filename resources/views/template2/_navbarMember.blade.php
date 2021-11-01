@@ -9,7 +9,6 @@
 
 <section class="bg-secondary py-4">
     <div class="container pb-4">
-
         @if ($role == 4)
             @php
                 $a = DB::table('titlemenus')
@@ -29,6 +28,7 @@
                 @foreach ($b as $menu)
                     <a class="btn btn-outline-light mt-2 mt-xl-0 width-100" href="{{ $menu->url }}">
                         <i class="{{ $menu->icon }}" aria-hidden="true"></i>
+                        <br>
                         <span>
                             {{ $menu->name }}
                         </span>
@@ -57,8 +57,6 @@
             </div>
 
         @endif
-
-
 
     </div>
 </section>

@@ -2,7 +2,7 @@
 @section('title', 'Setups')
 @section('header', 'Setups')
 @section('content')
-    <table>
+    <table class="table">
         <thead>
             <th>#</th>
             <th>Name</th>

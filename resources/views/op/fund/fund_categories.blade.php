@@ -2,7 +2,7 @@
 @section('content')
     <button id="tombolmodal" class="button tombolmodal">Tambah kategori
     </button>
-    <table>
+    <table class="table">
         <thead>
             <tr>
                 <th>#</th>
@@ -22,9 +22,7 @@
         <tbody>
             @foreach ($funds as $key => $fund)
                 @php
-                $total = intval($fund->gedung +$fund->perpustakaan + $fund->kegiatan +$fund->bukumedia +$fund->seragam
-                +$fund->jilbab
-                +$fund->ipp);
+                    $total = intval($fund->gedung + $fund->perpustakaan + $fund->kegiatan + $fund->bukumedia + $fund->seragam + $fund->jilbab + $fund->ipp);
                 @endphp
                 <tr>
                     <td>{{ $fund->id }}</td>
@@ -39,16 +37,16 @@
                     <td>@currency($fund->ipp) </td>
                     <td>@currency($total)</td>
                     <td>
-                        <a class="button btn-sm primary" href="/fund/{{ $fund->id }}/edit">
-                            <i class="fa fa-edit" aria-hidden="true"></i>
+                        <a class="btn btn-sm btn-primary" href="/fund/{{ $fund->id }}/edit">
+                            <i class="bi bi-pencil-square" aria-hidden="true"></i>
                         </a>
 
                         <form action="{{ route('delete.fund', $fund->id) }}" method="POST">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="button btn-sm danger"
+                            <button type="submit" class="btn btn-sm btn-danger"
                                 onclick="return confirm('Are you sure you want to Delete?')">
-                                <i class="fa fa-trash" aria-hidden="true"></i>
+                                <i class="bi bi-trash" aria-hidden="true"></i>
                             </button>
                         </form>
                     </td>

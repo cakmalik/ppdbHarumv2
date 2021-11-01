@@ -11,9 +11,9 @@
         @endif value="l"> Laki-laki
         <br>
         <label for="name">Nama kategory</label>
-        <input name="name" type="text" value="{{ $fund->name }}">
+        <input name="name" class="form-control" type="text" value="{{ $fund->name }}">
         <label for="gedung">Uang gedung</label>
-        <input name="gedung" type="number" value="{{ $fund->gedung }}">
+        <input name="gedung" class="form-control" type="number" value="{{ $fund->gedung }}">
         <label for="perpustakaan">Uang perpustakaan</label>
         <input name="perpustakaan" type="number" value="{{ $fund->perpustakaan }}">
         <label for="kegiatan">Uang kegiatan</label>
