@@ -2699,8 +2699,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.3488575"
-     inkscape:cx="1006.4731"
-     inkscape:cy="1069.0093"
+     inkscape:cx="645.27959"
+     inkscape:cy="642.29552"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      inkscape:document-rotation="0"
@@ -3157,7 +3157,9 @@
        height="375.20663"
        width="478.72064"
        id="rect3772"
-       style="opacity:0.35;fill:#1a1a1a;fill-opacity:1;stroke:none;stroke-width:0.843205;stroke-linecap:round;stroke-linejoin:round" />
+       style="opacity:0.35;fill:#1a1a1a;fill-opacity:1;stroke:none;stroke-width:0.843205;stroke-linecap:round;stroke-linejoin:round"
+       inkscape:export-xdpi="99"
+       inkscape:export-ydpi="99" />
     <rect
        inkscape:export-ydpi="100"
        inkscape:export-xdpi="100"
@@ -3201,31 +3203,26 @@
        x="-137.82312"
        y="98.088394"
        id="text3510"><tspan
+         id="tspan808"
          sodipodi:role="line"
          x="-137.82312"
          y="98.088394"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.2889px;font-family:Arial;-inkscape-font-specification:Arial;fill:#ffffff;fill-opacity:1;stroke-width:0.215726"
-         id="tspan1270">Calon wali murid mendaftar dengan </tspan><tspan
-         id="tspan3881"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.2889px;font-family:Arial;-inkscape-font-specification:Arial;fill:#ffffff;fill-opacity:1;stroke-width:0.215726">Membayar biaya pendaftaran sebesar </tspan><tspan
+         id="tspan815"
          sodipodi:role="line"
          x="-137.82312"
          y="109.3773"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.2889px;font-family:Arial;-inkscape-font-specification:Arial;fill:#ffffff;fill-opacity:1;stroke-width:0.215726">biaya sebesar Rp 300.000 melalui </tspan><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.2889px;font-family:Arial;-inkscape-font-specification:Arial;fill:#ffffff;fill-opacity:1;stroke-width:0.215726">Rp 300.000 ke rekening sekolah </tspan><tspan
+         id="tspan817"
          sodipodi:role="line"
          x="-137.82312"
          y="120.6662"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.2889px;font-family:Arial;-inkscape-font-specification:Arial;fill:#ffffff;fill-opacity:1;stroke-width:0.215726"
-         id="tspan959">transfer ke Bank Syariah Indonesia </tspan><tspan
-         id="tspan3875"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.2889px;font-family:Arial;-inkscape-font-specification:Arial;fill:#ffffff;fill-opacity:1;stroke-width:0.215726">BSI 441234007 an. Sekolah Dasar </tspan><tspan
+         id="tspan819"
          sodipodi:role="line"
          x="-137.82312"
          y="131.95509"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.2889px;font-family:Arial;-inkscape-font-specification:Arial;fill:#ffffff;fill-opacity:1;stroke-width:0.215726">a/n Sekolah Dasar Islam Terpadu</tspan><tspan
-         sodipodi:role="line"
-         x="-137.82312"
-         y="143.24399"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.2889px;font-family:Arial;-inkscape-font-specification:Arial;fill:#ffffff;fill-opacity:1;stroke-width:0.215726"
-         id="tspan955">Harapan Umat Jember</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.2889px;font-family:Arial;-inkscape-font-specification:Arial;fill:#ffffff;fill-opacity:1;stroke-width:0.215726">Islam Terpadu Umat</tspan></text>
     <path
        inkscape:export-ydpi="100"
        inkscape:export-xdpi="100"
@@ -3722,7 +3719,7 @@
          sodipodi:role="line">PENGUMUMAN</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:11.1592px;line-height:1.25;font-family:Arial;-inkscape-font-specification:'Arial Bold';letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.273795;"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:11.1592px;line-height:1.25;font-family:Arial;-inkscape-font-specification:'Arial Bold';letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.273795"
        x="103.09385"
        y="286.77692"
        id="text928"
@@ -3731,13 +3728,13 @@
          sodipodi:role="line"
          x="103.09385"
          y="286.77692"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Arial;-inkscape-font-specification:'Arial Bold';fill:#ffffff;fill-opacity:1;stroke-width:0.273795;"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Arial;-inkscape-font-specification:'Arial Bold';fill:#ffffff;fill-opacity:1;stroke-width:0.273795"
          id="tspan941">No. Rekening SDIT HARUM</tspan><tspan
          sodipodi:role="line"
          x="103.09385"
          y="300.72592"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Arial;-inkscape-font-specification:'Arial Bold';fill:#ffffff;fill-opacity:1;stroke-width:0.273795;"
-         id="tspan943">4441234007 (BNI Syariah)</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Arial;-inkscape-font-specification:'Arial Bold';fill:#ffffff;fill-opacity:1;stroke-width:0.273795"
+         id="tspan943">4441234007 (BSI)</tspan></text>
     <rect
        style="fill:#82d9fa;fill-opacity:1;stroke:none;stroke-width:1.44729;stroke-opacity:1"
        id="rect1018"

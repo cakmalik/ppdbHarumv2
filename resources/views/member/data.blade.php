@@ -1,23 +1,7 @@
 @extends('template2.layoutMember')
 @section('title', 'Data siswa')
 @section('content')
-    {{-- @push('script-head')
-        <style>
-            .footer {
-                position: fixed;
-                left: 0;
-                bottom: 0;
-                width: 100%;
-                background-color: #e67e22;
-                color: white;
-                text-align: center;
-                /* padding-bottom: 10; */
-                padding-top: 10px;
-                padding-bottom: -110px;
-            }
 
-        </style>
-    @endpush --}}
     <table class="table">
         <thead>
             <tr>

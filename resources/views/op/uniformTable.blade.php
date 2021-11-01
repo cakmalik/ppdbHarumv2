@@ -1,6 +1,6 @@
 @extends('template2.layout')
 @section('content')
-    <h3><button class="btn btn-sm btn-dark"><i class="fas fa-tshirt"></i></button> Ukuran baju Laki-laki</h3>
+    <h3><button class="btn btn-sm btn-dark"><i class="bi bi-person-bounding-box"></i></button> Ukuran baju Laki-laki</h3>
     <table class="table">
         <thead>
             <tr>
@@ -25,14 +25,15 @@
                     <td>{{ $uni->xl }}</td>
                     <td>{{ $uni->xxl }}</td>
                     <td>
-                        <a href="" class="button btn-sm primary"><i class="fas fa-edit"></i></a>
+                        <a href="" class="btn btn-sm btn-primary"><i class="bi bi-pencil-square"></i></a>
                     </td>
                 </tr>
             @endforeach
         </tbody>
     </table>
-    <h3><button class="btn btn-sm btn-dark"><i class="fas fa-tshirt"></i></button> Ukuran baju perempuan</h3>
-    <table>
+    <h3><button class="btn btn-sm btn-dark"><i class="bi bi-person-bounding-box"></i></button> Ukuran baju perempuan</h3>
+
+    <table class="table">
         <thead>
             <tr>
                 <th>#</th>
@@ -56,17 +57,17 @@
                     <td>{{ $uni->xl }}</td>
                     <td>{{ $uni->xxl }}</td>
                     <td>
-                        <a href="" class="button btn-sm primary"><i class="fas fa-edit"></i></a>
+                        <a href="" class="btn btn-sm btn-primary"><i class="bi bi-pencil-square"></i></a>
                     </td>
                 </tr>
                 @if ($uni->id == 8)
-                    @break
-                @endif
+                @break
+            @endif
             @endforeach
         </tbody>
     </table>
-    <h3><button class="button btn-sm dark"><i class="fas fa-tshirt"></i></button> Ukuran baju jilbab</h3>
-    <table>
+    <h3><button class="button btn-sm dark"><i class="bi bi-person-bounding-box"></i></button> Ukuran baju jilbab</h3>
+    <table class="table">
         <thead>
             <tr>
                 <th>#</th>
@@ -90,7 +91,7 @@
                     <td>{{ $uni->xl }}</td>
                     <td>{{ $uni->xxl }}</td>
                     <td>
-                        <a href="" class="button btn-sm primary"><i class="fas fa-edit"></i></a>
+                        <a href="" class="btn btn-sm btn-primary"><i class="bi bi-pencil-square"></i></a>
                     </td>
                 </tr>
             @endforeach

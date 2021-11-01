@@ -30,6 +30,7 @@
             @foreach ($b as $menu)
                 <a class="btn btn-outline-light mt-2 mt-xl-0 width-100" href="{{ $menu->url }}">
                     <i class="{{ $menu->icon }}" aria-hidden="true"></i>
+                    <br>
                     <span>
                         {{ $menu->name }}
                     </span>

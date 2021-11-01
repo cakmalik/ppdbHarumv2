@@ -16,7 +16,7 @@ class MenuSeeder extends Seeder
                 'name' => 'Data Siswa',
                 'is_active' => 1,
                 'posisi' => 1,
-                'icon' => 'fa fa-check',
+                'icon' => 'bi bi-people',
                 'url' => '/members/cek_data',
             ],
             [
@@ -24,7 +24,7 @@ class MenuSeeder extends Seeder
                 'name' => 'Daftar Ulang',
                 'is_active' => 1,
                 'posisi' => 2,
-                'icon' => 'fa fa-dollar-sign',
+                'icon' => 'bi bi-currency-dollar',
                 'url' => '/members/info_daftar_ulang',
             ],
             [
@@ -32,7 +32,7 @@ class MenuSeeder extends Seeder
                 'name' => 'Fitting Seragam',
                 'posisi' => 3,
                 'is_active' => 1,
-                'icon' => 'fa fa-tshirt',
+                'icon' => 'bi bi-person-bounding-box',
                 'url' => '/members/fitting_seragam',
             ],
             // MENU OPERTATOR
@@ -56,13 +56,13 @@ class MenuSeeder extends Seeder
                 'url' => '/members/all',
                 'titlemenu_id' => 2,
                 'posisi' => 3,
-                'name' => 'Data Pendaftar',
+                'name' => 'Pendaftar',
                 'icon' => 'bi bi-people',
                 'is_active' => 1
             ],
             [
                 'titlemenu_id' => 2,
-                'name' => 'Atur jadwal tes',
+                'name' => 'Jadwal Tes',
                 'posisi' => 4,
                 'is_active' => 1,
                 'icon' => 'bi bi-journal',
@@ -70,7 +70,7 @@ class MenuSeeder extends Seeder
             ],
             [
                 'titlemenu_id' => 2,
-                'name' => 'Data Ukuran Baju',
+                'name' => 'Ukuran Baju',
                 'posisi' => 5,
                 'is_active' => 1,
                 'icon' => 'bi bi-person-bounding-box',
@@ -78,7 +78,7 @@ class MenuSeeder extends Seeder
             ],
             [
                 'titlemenu_id' => 2,
-                'name' => 'Terima / tolak',
+                'name' => 'Terima-tolak',
                 'posisi' => 6,
                 'is_active' => 1,
                 'icon' => 'bi bi-question-square',
@@ -86,7 +86,7 @@ class MenuSeeder extends Seeder
             ],
             [
                 'titlemenu_id' => 2,
-                'name' => 'Status pendaftar',
+                'name' => 'Status',
                 'posisi' => 7,
                 'is_active' => 1,
                 'icon' => 'bi bi-card-checklist',
@@ -95,7 +95,7 @@ class MenuSeeder extends Seeder
 
             [
                 'titlemenu_id' => 2,
-                'name' => 'Tentukan daftar ulang',
+                'name' => 'Daftar ulang',
                 'posisi' => 8,
                 'is_active' => 1,
                 'icon' => 'bi bi-pen',
@@ -107,10 +107,10 @@ class MenuSeeder extends Seeder
 
             [
                 'titlemenu_id' => 1,
-                'name' => 'Atur pesan Wa',
+                'name' => 'Atur Wa',
                 'posisi' => 1,
                 'is_active' => 1,
-                'icon' => 'fas fa-envelope',
+                'icon' => 'bi bi-envelope',
                 'url' => '/setup/opset',
             ],
             [
@@ -118,15 +118,15 @@ class MenuSeeder extends Seeder
                 'name' => 'Atur kategori',
                 'posisi' => 2,
                 'is_active' => 1,
-                'icon' => 'fas fa-sliders-h',
+                'icon' => 'bi bi-sliders',
                 'url' => '/setup/fundcategories',
             ],
             [
                 'titlemenu_id' => 1,
-                'name' => 'Atur ukuran baju',
+                'name' => 'Atur Ukuran',
                 'posisi' => 3,
                 'is_active' => 1,
-                'icon' => 'fas fa-user-cog',
+                'icon' => 'bi bi-person-lines-fill',
                 'url' => '/setup/uniform',
             ],
             [
@@ -134,7 +134,7 @@ class MenuSeeder extends Seeder
                 'name' => 'Setups',
                 'posisi' => 4,
                 'is_active' => 1,
-                'icon' => 'fas fa-tools',
+                'icon' => 'bi bi-tools',
                 'url' => '/admin/setups',
             ],
         ]);
