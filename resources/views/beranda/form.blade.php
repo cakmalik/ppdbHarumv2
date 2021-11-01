@@ -353,7 +353,7 @@
                         <input type="button" name="previous" class="previous btn btn-primary float-start"
                             value="Sebelumnya" />
                     </fieldset>
-                    <fieldset>
+                    <!-- <fieldset>
                         <div class="form-card">
                             <div class="row"></div>
                             <br />
@@ -375,7 +375,7 @@
                                 </div>
                             </div>
                         </div>
-                    </fieldset>
+                    </fieldset> -->
                 </form>
             </div>
         </div>

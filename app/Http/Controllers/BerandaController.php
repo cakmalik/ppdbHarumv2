@@ -32,7 +32,7 @@ class BerandaController extends Controller
         $data['status'] = 1;
         $activity = Student::create($data);
         if ($activity->exists) {
-            return redirect()->route('member.index')->with('status', 'Berhasil melengkapi data');
+            return view('member.berhasilisi');
         } else {
             redirect()->route('form_pendaftaran');
         }
