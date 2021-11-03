@@ -29,7 +29,7 @@ class MenuSeeder extends Seeder
             ],
             [
                 'titlemenu_id' => 4,
-                'name' => 'Fitting Seragam',
+                'name' => 'Seragam',
                 'posisi' => 3,
                 'is_active' => 1,
                 'icon' => 'bi bi-person-bounding-box',
@@ -68,15 +68,7 @@ class MenuSeeder extends Seeder
                 'icon' => 'bi bi-journal',
                 'url' => '/op/schedule',
             ],
-            [
-                'titlemenu_id' => 2,
-                'name' => 'Ukuran Baju',
-                'posisi' => 5,
-                'is_active' => 1,
-                'icon' => 'bi bi-person-bounding-box',
-                'url' => '/op/fitting_seragam',
-            ],
-            [
+             [
                 'titlemenu_id' => 2,
                 'name' => 'Terima-tolak',
                 'posisi' => 6,
@@ -92,7 +84,6 @@ class MenuSeeder extends Seeder
                 'icon' => 'bi bi-card-checklist',
                 'url' => '/confirmed',
             ],
-
             [
                 'titlemenu_id' => 2,
                 'name' => 'Daftar ulang',
@@ -101,6 +92,15 @@ class MenuSeeder extends Seeder
                 'icon' => 'bi bi-pen',
                 'url' => '/fund/applyDaftarUlang',
             ],
+            [
+                'titlemenu_id' => 2,
+                'name' => 'Ukuran Baju',
+                'posisi' => 5,
+                'is_active' => 1,
+                'icon' => 'bi bi-person-bounding-box',
+                'url' => '/op/fitting_seragam',
+            ],
+            
 
 
             //MENU ADMIN
