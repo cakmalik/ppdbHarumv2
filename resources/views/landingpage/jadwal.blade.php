@@ -3,15 +3,13 @@
 @endpush
 @section('judul', 'Jadwal')
 @section('content')
-    <section class="pt-0 pb-5 pt-md-5">
-        <div class="container">
-            <div class="card shadow">
-                <div class="card-body">
-                    <p class="card-text fs-2 text-center">
-                        coming soon
-                    </p>
-                </div>
+<section class="pt-0 pb-5 pt-md-5">
+    <div class="container">
+        <div class="card shadow">
+            <div class="card-body">
+                <img src="{{ asset('img/new/jadwal.svg') }}" class="img-fluid" alt="jadwal">
             </div>
         </div>
-    </section>
+    </div>
+</section>
 @endsection

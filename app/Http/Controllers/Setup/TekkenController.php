@@ -12,8 +12,9 @@ class TekkenController extends Controller
 {
     public function showCode()
     {
+        $rnd = Str::random(8);
         return view('op.tekken.showcode',[
-            'kode_tekken'=>Str::random(8),
+            'kode_tekken'=>Str::upper($rnd),
             'token_table'=>DB::table('members')->orderBy('id','desc')->paginate(7)
         ]);
     }

@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-transparent py-3">
     <div class="container">
-        <a class="navbar-brand" href="#">SDIT HARUM JEMBER</a>
+        <a class="navbar-brand" href="{{ route('landingpage.home') }}">SDIT HARUM JEMBER</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -25,7 +25,7 @@
             <a href="/login" class="btn btn-outline-light ms-md-3" type="submit">
                 LOGIN
             </a>
-            <div class="ms-3">
+            <div class="ms-md-3">
                 <button class="btn btn-outline-light" type="checkbox" id="darkMode"><img
                         src="{{ asset('img/new/night-mode.png') }}" width="25"></button>
             </div>

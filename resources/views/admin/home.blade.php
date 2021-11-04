@@ -4,6 +4,6 @@
 
 @section('content')
 
-    <h1 class="display-4 text-center">Selamat Datang di Aplikasi PPDB SDIT HARAPAN UMAT JEMBER</h1>
+<h1 class="display-5 text-center">Selamat Datang di Aplikasi <br /> PPDB SDIT HARAPAN UMAT JEMBER</h1>
 
 @endsection
