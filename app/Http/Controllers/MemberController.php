@@ -45,6 +45,11 @@ class MemberController extends Controller
             return view('member.selamat', compact('full_name'));
         }
     }
+    public function informasiBiaya()
+    {
+        $role = 0;
+        return view('member.informasi_biaya',compact('role'));
+    }
     public function showTable()
     {
         $students = Student::latest()->paginate(15);
