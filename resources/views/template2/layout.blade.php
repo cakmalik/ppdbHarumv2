@@ -4,6 +4,7 @@
 
 
     @include('template2._navbar')
+    
 
     <section class="negative ">
         <div class="container mb-4 ">
