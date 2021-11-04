@@ -2,7 +2,6 @@
 
 <body>
     <div class="backgroundimg">
-
         @include('landingpage.layout.navbar')
 
         {{-- @component('components.alert', ['judul' => 'Header Component'])

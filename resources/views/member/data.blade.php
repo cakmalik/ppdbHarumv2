@@ -1,4 +1,4 @@
-@extends('template2.layoutMember')
+@extends('template.app.layoutMember')
 @section('title', 'Data siswa')
 @section('content')
 
@@ -117,46 +117,28 @@
             </tr>
         </tbody>
     </table>
-    <br><br>
+    <br>
+
+    <a class="btn btn-primary w-100 btn-lg" href="/members/informasi_biaya"> Selanjutnya</a>
+
 
     {{-- <div class="footer" style="padding-bottom: 1rem">
-        @php
-            if ($data->status == 1) {
-                $sts = 'Menunggu';
-            }
-        @endphp
-        Status pendaftaran : {{ $sts }}
-    </div>
-    <div id="modalpopup" class="modalpop">
-        <div class="modalcard">
-            <div class="modaljudul">
-                <p>Selamat Datang</p>
-                <i id="close" class="fas fa-times-circle tutup"></i>
-            </div>
-            <div class="modalbody">
-                {!! $pesan->value !!}
-            </div>
+    @php
+    if ($data->status == 1) {
+    $sts = 'Menunggu';
+    }
+    @endphp
+    Status pendaftaran : {{ $sts }}
+</div>
+<div id="modalpopup" class="modalpop">
+    <div class="modalcard">
+        <div class="modaljudul">
+            <p>Selamat Datang</p>
+            <i id="close" class="fas fa-times-circle tutup"></i>
         </div>
-    </div> --}}
+        <div class="modalbody">
+            {!! $pesan->value !!}
+        </div>
+    </div>
+</div> --}}
 @endsection
-{{-- @push('popup')
-    <script>
-        function loadmodal() {
-            var modalpopup = document.getElementById("modalpopup");
-            var close = document.getElementById("close");
-
-            window.onload = function() {
-                modalpopup.style.display = "block";
-            };
-            close.onclick = function() {
-                modalpopup.style.display = "none";
-            }
-            window.onclick = function(e) {
-                if (e.target == modalpop) {
-                    modalpopup.style.display = "none";
-                }
-            }
-        }
-        loadmodal();
-    </script>
-@endpush --}}

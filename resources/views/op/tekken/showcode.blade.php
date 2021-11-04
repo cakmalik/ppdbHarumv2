@@ -1,8 +1,8 @@
-@extends('template2.layout')
+@extends('template.app.layout')
 @section('title', 'Token Pendaftaran')
 @section('header', 'Token Pendaftaran')
+<x-tabeldata />
 @section('content')
-
     <div class="my-3">
         <form action="{{ route('useCode') }}" method="post">
             @csrf
@@ -13,7 +13,7 @@
             <a href=" {{ route('exportToken') }}" class="btn btn-primary">Excel</a>
         </form>
     </div>
-    <table class="table mt-3">
+    <table id="example" class="table table-striped" style="width:100%">
         <thead>
             <tr>
                 <th>#</th>
@@ -55,3 +55,15 @@
     </table>
     {{ $token_table->links('vendor.pagination.custom') }}
 @endsection
+@push('scripts')
+    <script>
+        // paste code
+        function myFunction() {
+            var copyText = document.getElementById("myInput");
+            copyText.select();
+            copyText.setSelectionRange(0, 99999);
+            document.execCommand("copy");
+            alert("Kode siap digunakan, PASTE LAH: " + copyText.value);
+        }
+    </script>
+@endpush

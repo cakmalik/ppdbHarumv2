@@ -1,4 +1,5 @@
-@extends('template2.layout')
+@extends('template.app.layout')
+
 @section('content')
     <h3><button class="btn btn-sm btn-dark"><i class="bi bi-person-bounding-box"></i></button> Ukuran baju Laki-laki</h3>
     <table class="table">

@@ -12,7 +12,7 @@ class BerandaController extends Controller
 {
     public function index()
     {
-        return view('beranda.form');
+        return view('member.form');
     }
     public function opHome()
     {

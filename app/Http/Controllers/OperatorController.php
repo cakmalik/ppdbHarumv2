@@ -181,12 +181,13 @@ class OperatorController extends Controller
         $request->validate([
             'tanggal'=>'required',
             'jam'=>'required',
-            'nilai'=>'required|unique:schedules,student_id',
+            // 'nilai'=>'required|unique:schedules,student_id',
+            'nilai'=>'required',
         ],
         [
             'tanggal.required'=>'Pastikan tanggal ditentukan',
             'jam.required'=>'Pastikan jam ditentukan',
-            'nilai.unique'=>'Ada siswa yang sudah terjadwal',
+            // 'nilai.unique'=>'Ada siswa yang sudah terjadwal',
             'nilai.required'=>'Pilih siswa'
         ]
     );
