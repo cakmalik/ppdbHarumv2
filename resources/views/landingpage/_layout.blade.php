@@ -2,13 +2,13 @@
 
 <body>
     <div class="backgroundimg">
-        
+
         @include('landingpage.layout.navbar')
-        
-        {{-- @component('components.alert', ['judul'=>'Header Component'])
+
+        {{-- @component('components.alert', ['judul' => 'Header Component'])
         sdfsd
         @endcomponent --}}
-        
+
         {{-- ini contoh komponen model 1 --}}
         {{-- @component('components.alert')
             @slot('judul')
@@ -24,24 +24,24 @@
         @endcomponent --}}
 
         {{-- ini contoh komponen model 1 --}}
-        <x-alert>
+        {{-- <x-alert>
             <x-slot name="judul">
-judul
+                judul
             </x-slot>
-        
+
             sdfsd
 
             @slot('footer')
                 dsfdsffds
             @endslot
 
-        </x-alert>
+        </x-alert> --}}
 
 
-        
-        
-        
-        
+
+
+
+
         <section class="bg-transparent">
             <div class="container pb-5">
                 <div class="row justify-content-center d-flex">
@@ -57,4 +57,3 @@ judul
     </div>
     @yield('content')
     @include('landingpage.layout.footer')
-    
