@@ -2,7 +2,7 @@
 @section('title', 'Ukuran baju')
 <x-tabeldata/>
 @section('content')
-    <table  id="example" class="table table-striped" style="width:100%">
+    <table id="example" class="table table-striped" style="width:100%">
         <thead>
             <th>#</th>
             <th>Nama</th>
