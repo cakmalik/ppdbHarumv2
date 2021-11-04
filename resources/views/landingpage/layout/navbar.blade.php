@@ -27,7 +27,7 @@
             </a>
             <div class="ms-md-3">
                 <button class="btn btn-outline-light" type="checkbox" id="darkMode"><img
-                        src="{{ asset('img/new/night-mode.png') }}" width="25"></button>
+                        src="{{ asset('img/night-mode.png') }}" width="25"></button>
             </div>
         </div>
     </div>

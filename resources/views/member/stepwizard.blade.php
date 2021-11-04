@@ -1,4 +1,4 @@
-@extends('template2.layoutMember')
+@extends('template.app.layoutMember')
 @push('script-head')
 @endpush
 @section('content')

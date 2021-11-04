@@ -1,18 +1,7 @@
-@extends('template2.layout')
+@extends('template.app.layout')
 @section('title', 'Terima / tolak')
 @section('header', 'Terima / tolak')
-@push('script-head')
-<script>
-    function toggle(source) {
-                var checkboxes = document.querySelectorAll('input[type="checkbox"]');
-                for (var i = 0; i < checkboxes.length; i++) {
-                    if (checkboxes[i] != source)
-                        checkboxes[i].checked = source.checked;
-                }
-            }
 
-</script>
-@endpush
 @section('content')
 @section('header', 'Terima/tolak pendaftar')
 <form method="POST">
@@ -27,18 +16,18 @@
         </thead>
         <tbody>
             @foreach ($students as $key => $student)
-            @php
-            $status = $student->status;
-            @endphp
-            <tr>
-                <td>{{ $key + $students->firstItem() }}</td>
-                <td>
-                    <input type="checkbox" value="{{ $student->id }}" name="status[]">
+                @php
+                    $status = $student->status;
+                @endphp
+                <tr>
+                    <td>{{ $key + $students->firstItem() }}</td>
+                    <td>
+                        <input type="checkbox" value="{{ $student->id }}" name="status[]">
 
-                </td>
-                <td>{{ $student->full_name }}</td>
-                <td>{{ $student->school_origin }}</td>
-            </tr>
+                    </td>
+                    <td>{{ $student->full_name }}</td>
+                    <td>{{ $student->school_origin }}</td>
+                </tr>
             @endforeach
         </tbody>
     </table>
@@ -51,3 +40,14 @@
 </form>
 {{ $students->links('vendor.pagination.custom') }}
 @endsection
+@push('scripts')
+<script>
+    function toggle(source) {
+        var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+        for (var i = 0; i < checkboxes.length; i++) {
+            if (checkboxes[i] != source)
+                checkboxes[i].checked = source.checked;
+        }
+    }
+</script>
+@endpush

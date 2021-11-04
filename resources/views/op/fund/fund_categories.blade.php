@@ -1,4 +1,6 @@
-@extends('template2.layout')
+@extends('template.app.layout')
+@section('title', 'Atur Kategori')
+@section('judul', 'Atur Kategori')
 @section('content')
     <button id="tombolmodal" class="button tombolmodal">Tambah kategori
     </button>

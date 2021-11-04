@@ -1,5 +1,7 @@
-@extends('template2.layout')
+@extends('template.app.layout')
 @section('content')
+@section('title', 'Atur Pesan Wa')
+@section('judul', 'Atur Pesan Wa')
 
 <form action="{{ route('set.wa') }}" method="post">
     @csrf
@@ -32,25 +34,19 @@
             <td>%0a </td>
             <td> membuat baris baru </td>
         </tr>
-
     </tbody>
-
 </table>
-
-@stop
+@endsection
 
 @push('scripts')
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/5.5.1/tinymce.min.js"
-    integrity="sha512-rCSG4Ab3y6N79xYzoaCqt9gMHR0T9US5O5iBuB25LtIQ1Hsv3jKjREwEMeud8q7KRgPtxhmJesa1c9pl6upZvg=="
-    crossorigin="anonymous">
+integrity="sha512-rCSG4Ab3y6N79xYzoaCqt9gMHR0T9US5O5iBuB25LtIQ1Hsv3jKjREwEMeud8q7KRgPtxhmJesa1c9pl6upZvg=="
+crossorigin="anonymous">
 </script>
 <script>
     tinymce.init({
-            selector: 'textarea.content',
-            height: 350
-        })
-
+        selector: 'textarea.content',
+        height: 350,
+        forced_root_block: "",
+    })
 </script>
-
-
-@endpush

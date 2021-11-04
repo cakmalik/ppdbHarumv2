@@ -1,10 +1,9 @@
-@include('template2._head')
+@include('template.app._head')
 
 <script>
     setTimeout(function() {
-            window.location.href = '/members/index';
-        }, 5000);
-
+        window.location.href = '/members/index';
+    }, 5000);
 </script>
 </head>
 
@@ -20,7 +19,7 @@
             <br />
             <div class="row justify-content-center">
                 <div class="col-3">
-                    <img src="{{ asset('img/new/success.gif') }}" class="fit-image" />
+                    <img src="{{ asset('img/success.gif') }}" class="fit-image" />
                 </div>
             </div>
             <br /><br />

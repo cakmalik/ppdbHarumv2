@@ -25,7 +25,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12 col-md-6 mt-4 mt-md-0">
-                <img alt="image" class="img-fluid" src="{{ asset('img/new/register.svg') }}" />
+                <img alt="image" class="img-fluid" src="{{ asset('img/register.svg') }}" />
             </div>
             <div class="col-12 col-md-6 mt-3 mt-md-0">
                 <h3>Pendaftaran calon siswa</h3>

@@ -55,7 +55,9 @@ Route::group(['middleware' => ['auth:member', 'ceklevel:member']], function () {
 Route::group(['middleware' => ['auth:member', 'ceklevel:registered']], function () {
     Route::group(['prefix' => 'members'], function () {
         Route::get('index', [MemberController::class, 'index'])->name('member.index');
+        
         Route::get('schedule', [MemberController::class, 'schedule']);
+        Route::get('informasi_biaya',[Membercontroller::class,'informasiBiaya'])->name('member.info_biaya');
     });
     Route::get('accRedirect', [MemberController::class, 'accRedirect']);
 });
@@ -137,6 +139,7 @@ Route::group(['middleware' => ['auth:user', 'ceklevel:1']], function () {
 Route::get('registered', function () {
     return view('registered');
 });
+
 
 Route::get('member/export', [MemberController::class, 'exportExcel'])->name('exportToken');
 

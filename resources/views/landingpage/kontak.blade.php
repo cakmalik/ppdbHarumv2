@@ -6,22 +6,11 @@
         <div class="container">
             <div class="card shadow">
                 <div class="card-body text-center">
-                   <table class="table">
-                        @php
-                        $contacts = DB::table('contacts')->get();
-                        @endphp
-                        @foreach ($contacts as $contact)
-                            <p> Alamat : {{ $contact->address }}</p>
-                            <p> Kabupaten/Kota : {{ $contact->city }}</p>
-                            <p> Whatsapp Admin : {{ $contact->whatsapp }}</p>
-                            <p> Whatsapp Bu Nafi : {{ $contact->telp }}</p>
-                            <p>
-                                <a target="_blank" href="{{ $contact->facebook }}">FB</a> |
-                                <a target="_blank" href="{{ $contact->instagram }}">IG</a> |
-                                <a target="_blank" href="{{ $contact->youtube }}">YOUTUBE</a>
-                            </p>
-                        @endforeach
-                    </table>
+                    <h3>SDIT Harapan Umat Jember</h3> <br>
+                    <h4> Gg. Islamic Center, Jl. Danau Toba, Lingkungan Panji, Tegalgede, <br> Kec.
+                        Sumbersari, Kabupaten Jember,
+                        Jawa Timur Kode Pos: 68124 </h4> <br>
+                    <h4>Informasi PPDB Ust Ristiono : +6288-289-378-109</h4>
                 </div>
             </div>
         </div>

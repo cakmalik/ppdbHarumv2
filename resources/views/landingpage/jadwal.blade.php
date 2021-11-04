@@ -7,7 +7,7 @@
     <div class="container">
         <div class="card shadow">
             <div class="card-body">
-                <img src="{{ asset('img/new/jadwal.svg') }}" class="img-fluid" alt="jadwal">
+                <img src="{{ asset('img/jadwal.svg') }}" class="img-fluid" alt="jadwal">
             </div>
         </div>
     </div>
