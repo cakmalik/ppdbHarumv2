@@ -6,14 +6,15 @@ use Illuminate\View\Component;
 
 class Alert extends Component
 {
-    /**
-     * Create a new component instance.
-     *
-     * @return void
-     */
-    public function __construct()
+    
+    public $pesan;
+    public $halo;
+    // public $warna;
+    public function __construct($pesan,$halo)
     {
-        //
+        $this->pesan=$pesan;
+        $this->halo=$halo;
+        // $this->warna=$warna;
     }
 
     /**

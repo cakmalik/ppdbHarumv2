@@ -53,9 +53,8 @@
             @endforeach
         </tbody>
     </table>
-    {{ $token_table->links('vendor.pagination.custom') }}
 @endsection
-@push('scripts')
+@push('script-head')
     <script>
         // paste code
         function myFunction() {
@@ -63,7 +62,7 @@
             copyText.select();
             copyText.setSelectionRange(0, 99999);
             document.execCommand("copy");
-            alert("Kode siap digunakan, PASTE LAH: " + copyText.value);
+            // alert("Kode siap digunakan, PASTE LAH: " + copyText.value);
         }
     </script>
 @endpush

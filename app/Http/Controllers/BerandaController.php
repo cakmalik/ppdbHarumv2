@@ -18,11 +18,9 @@ class BerandaController extends Controller
     {
         return view('admin.home');
     }
-    public function halamandua()
-    {
-        return view('beranda.hal2');
-    }
-    public function postForm(Request $request)
+
+    // ini input data siswa yang mendaftar
+    public function memberPost(Request $request)
     {
         $validated = $request->validate([
             'full_name' => 'required',
@@ -56,17 +54,18 @@ class BerandaController extends Controller
             'email' => 'required',
         ]);
 
-        DB::table('members')->where('email', $request->token)->update(
-            ['level' => 'registered']
-        );
-
         $data = $request->all();
         $data['status'] = 1;
         $activity = Student::create($data);
+        // jika berhasil input data
         if ($activity->exists) {
+        // mengubah level pada members_tabel menjadi registered (telah daftar)
+            DB::table('members')->where('email', $request->token)->update(
+                ['level' => 'registered']
+            );
             return view('member.berhasilisi');
         } else {
-            redirect()->route('form_pendaftaran');
+            redirect()->back();
         }
     }
     public function logout()

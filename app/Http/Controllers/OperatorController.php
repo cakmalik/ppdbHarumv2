@@ -173,7 +173,7 @@ class OperatorController extends Controller
     }
     public function manageSchedule()
     {
-        $students = Student::paginate(30);
+        $students = Student::paginate(1000);
         return view('op.manage_schedule',compact('students'));   
     }
     public function postSchedule(Request $request)

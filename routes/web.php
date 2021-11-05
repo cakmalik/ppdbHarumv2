@@ -48,7 +48,7 @@ Route::get('coba', function () {
 // Bagian Member belum isi data
 Route::group(['middleware' => ['auth:member', 'ceklevel:member']], function () {
     Route::get('form', [BerandaController::class, 'index'])->name('form_pendaftaran');
-    Route::post('form', [BerandaController::class, 'postForm'])->name('postForm');
+    Route::post('form', [BerandaController::class, 'memberPost'])->name('member.input');
 });
 
 //bagian member sudah isi data

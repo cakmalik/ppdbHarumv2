@@ -28,7 +28,6 @@ class TekkenController extends Controller
             'password'=>bcrypt("password"),
             'remember_token'=>Str::random(60)
         ]);
-        alert()->success('Berhasil','Kode siap digunakan');
-        return back();
+        return redirect()->back()->with(['success' => 'Kode SIAP di PASTE']);
     }
 }
