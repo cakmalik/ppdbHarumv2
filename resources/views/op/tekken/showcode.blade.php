@@ -1,8 +1,8 @@
 @extends('template.app.layout')
 @section('title', 'Token Pendaftaran')
 @section('header', 'Token Pendaftaran')
+<x-tabeldata />
 @section('content')
-
     <div class="my-3">
         <form action="{{ route('useCode') }}" method="post">
             @csrf
@@ -13,7 +13,7 @@
             <a href=" {{ route('exportToken') }}" class="btn btn-primary">Excel</a>
         </form>
     </div>
-    <table class="table mt-3">
+    <table id="example" class="table table-striped" style="width:100%">
         <thead>
             <tr>
                 <th>#</th>

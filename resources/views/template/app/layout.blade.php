@@ -1,8 +1,13 @@
 @include('template.app._head')
 
 <body>
+<<<<<<< HEAD:resources/views/template/app/layout.blade.php
     @include('template.app._navbar')
 
+=======
+    <x-Alert type="success" />
+    @include('template.app._navbar')
+>>>>>>> f38b5c90682a942f2e67b9833353090dab42d91a:resources/views/template2/layout.blade.php
     <section class="negative ">
         <div class="container mb-4 ">
             <div class="card">

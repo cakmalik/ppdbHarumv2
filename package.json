@@ -19,6 +19,7 @@
     },
     "dependencies": {
         "@fortawesome/fontawesome-free": "^5.15.1",
-        "sweetalert2": "^10.9.1"
+        "sweetalert2": "^10.9.1",
+        "tata-js": "^0.1.5"
     }
 }

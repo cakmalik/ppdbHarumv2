@@ -11,11 +11,20 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.1/font/bootstrap-icons.css" />
     <link rel="stylesheet" href="{{ asset('css/style.css') }}" />
+<<<<<<< HEAD:resources/views/template/app/_head.blade.php
 
+=======
+>>>>>>> f38b5c90682a942f2e67b9833353090dab42d91a:resources/views/template2/_head.blade.php
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
     <title>Info PPDB SDIT Harum Jember</title>
+<<<<<<< HEAD:resources/views/template/app/_head.blade.php
 
     @stack('scripts')
+=======
+    @stack('script-head')
+    @stack('head')
+
+>>>>>>> f38b5c90682a942f2e67b9833353090dab42d91a:resources/views/template2/_head.blade.php
 </head>

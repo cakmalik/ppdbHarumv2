@@ -1,8 +1,12 @@
 @extends('template.app.layout')
 @section('title', 'Ukuran baju')
-@section('header', 'Ukuran baju')
+<x-tabeldata/>
 @section('content')
+<<<<<<< HEAD
     <table class="table">
+=======
+    <table id="example" class="table table-striped" style="width:100%">
+>>>>>>> f38b5c90682a942f2e67b9833353090dab42d91a
         <thead>
             <th>#</th>
             <th>Nama</th>

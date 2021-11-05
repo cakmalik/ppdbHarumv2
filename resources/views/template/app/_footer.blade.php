@@ -1,4 +1,4 @@
-<section class="pt-4 bg-dark text-white">
+{{-- <section class="pt-4 bg-dark text-white">
     <footer class="footer">
         <div class="container">
             <div class="row">
@@ -26,6 +26,7 @@
             </div>
         </div>
     </footer>
+<<<<<<< HEAD:resources/views/template/app/_footer.blade.php
 </section>
 
 
@@ -35,6 +36,14 @@ integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+
 
 <script src="{{ asset('js/new/app.js') }}"></script>
 
+=======
+</section> --}}
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script src="{{ asset('js/new/app.js') }}"></script>
+@stack('foot')
+>>>>>>> f38b5c90682a942f2e67b9833353090dab42d91a:resources/views/template2/_footer.blade.php
 </body>
 
 </html>

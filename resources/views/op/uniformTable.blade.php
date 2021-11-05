@@ -1,4 +1,8 @@
 @extends('template.app.layout')
+<<<<<<< HEAD
+=======
+
+>>>>>>> f38b5c90682a942f2e67b9833353090dab42d91a
 @section('content')
     <h3><button class="btn btn-sm btn-dark"><i class="bi bi-person-bounding-box"></i></button> Ukuran baju Laki-laki</h3>
     <table class="table">

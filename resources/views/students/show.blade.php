@@ -1,7 +1,11 @@
 @extends('template.app.layout')
 @section('content')
     <a href="{{ URL::previous() }}" class="btn btn-primary"><i class="fas fa-long-arrow-alt-left"></i> Kembali</a>
+<<<<<<< HEAD
     <table class="table">
+=======
+    <table id="example" class="table table-striped" style="width:100%">
+>>>>>>> f38b5c90682a942f2e67b9833353090dab42d91a
         <tbody>
             <tr>
                 <td>Token</td>
