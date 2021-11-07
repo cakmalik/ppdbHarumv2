@@ -12,6 +12,7 @@
             <tr>
                 <th>#</th>
                 <th>Nama Lengkap</th>
+                <th>Token</th>
                 <th>Asal sekolah</th>
                 <th>Status</th>
                 <th>Action</th>
@@ -22,6 +23,7 @@
                 <tr>
                     <td>{{ $students->firstItem() + $key }}</td>
                     <td>{{ $student->full_name }}</td>
+                    <td>{{ $student->token }}</td>
                     <td>{{ $student->school_origin }}</td>
                     <td>
                         @php

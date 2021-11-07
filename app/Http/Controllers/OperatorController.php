@@ -18,16 +18,16 @@ class OperatorController extends Controller
 {
     public function showStudents()
     {
-        $students=Student::latest()->paginate(15);
+        $students=Student::latest()->paginate(1000);
 
         return view('op.students',compact('students'));
     }
     public function confirmPage()
     {
-        $students = Student::where('status',1)->paginate(30);
+        $students = Student::where('status',1)->paginate(1000);
         return view('op.confirmPage',compact('students')); 
     }
-   
+    // mengubah siswa awal menjadi di terima
     public function confirmAcc(Request $request)
     {
         $request->validate([
@@ -39,21 +39,23 @@ class OperatorController extends Controller
         Member::where('email', $token)->update(['level'=>'accept']);
         // update status menjadi 2/diterima
         Student::whereIn('id',$request->status)->update(['status'=>2]);
-        alert()->success('Menerima siswa','Berhasil');
-        return back();
+        return redirect()->back()->with(['success' => 'Berhasil diterima']);
     }
     public function confirmReject(Request $request)
     {
        $request->validate([
             'status'=>'required'
         ]);
+        //cek kode token student
+        $token = Student::whereIn('id',$request->status)->first()->token;
+        // update di members table level ke accept
+        Member::where('email', $token)->update(['level'=>'reject']);
         Student::whereIn('id',$request->status)->update(['status'=>3]);
-        alert()->success('Menolak siswa','Berhasil');
-        return back();
+        return view('member.maaf');
     }
     public function confirmed()
     {
-        $students = Student::where('status','!=',1)->orderBy('status','asc')->paginate(15);
+        $students = Student::where('status','!=',1)->orderBy('status','asc')->paginate(1000);
         return view('op.confirmed',compact('students'));
     }
     public function uniformTable()
@@ -143,7 +145,6 @@ class OperatorController extends Controller
     public function lunasDaftarulang($id)
     {
         $cek_du = Student::where('id',$id)->first();
-        // dd($cek_du);
         if($cek_du->daftarulang!==null){
             Student::find($id)->update(['telahbayar'=>1]);
             alert()->success('Fitting seragam aktif','Berhasil membayar');

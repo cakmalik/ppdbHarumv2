@@ -12,15 +12,31 @@ class MenuSeeder extends Seeder
     {
         DB::table('menus')->insert([
             [
-                'titlemenu_id' => 4,
+                'titlemenu_id' => '4,5',
                 'name' => 'Data Siswa',
                 'is_active' => 1,
                 'posisi' => 1,
                 'icon' => 'bi bi-people',
-                'url' => '/members/cek_data',
+                'url' => '/members/index',
             ],
             [
-                'titlemenu_id' => 4,
+                'titlemenu_id' => '4,5',
+                'name' => 'Informasi',
+                'posisi' => 3,
+                'is_active' => 1,
+                'icon' => 'bi bi-person-bounding-box',
+                'url' => '/members/informasi_biaya',
+            ],
+            [
+                'titlemenu_id' => '4,5',
+                'name' => 'Jadwal tes',
+                'posisi' => 3,
+                'is_active' => 1,
+                'icon' => 'bi bi-person-bounding-box',
+                'url' => '/members/schedule',
+            ],
+            [
+                'titlemenu_id' => '4',
                 'name' => 'Daftar Ulang',
                 'is_active' => 1,
                 'posisi' => 2,
@@ -28,7 +44,7 @@ class MenuSeeder extends Seeder
                 'url' => '/members/info_daftar_ulang',
             ],
             [
-                'titlemenu_id' => 4,
+                'titlemenu_id' => '4',
                 'name' => 'Seragam',
                 'posisi' => 3,
                 'is_active' => 1,

@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{ config('app.name') }}</title>
     <link rel="stylesheet" href="{{ asset('css/normalize.css') }}" />
-    {{--
-    <link rel="stylesheet" href="{{ asset('assets/miligram/milligram.min.css') }}" /> --}}
+    {{-- <link rel="stylesheet" href="{{ asset('assets/miligram/milligram.min.css') }}" /> --}}
     <link rel="stylesheet" href="{{ asset('css/landing.css') }}" />
 
     <style>
@@ -63,7 +62,6 @@
         setTimeout(function() {
             window.location.href = '/members/cek_data';
         }, 10000);
-
     </script>
 </head>
 

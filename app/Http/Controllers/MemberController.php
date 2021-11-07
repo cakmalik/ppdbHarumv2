@@ -29,11 +29,11 @@ class MemberController extends Controller
             // $ga = Income::where('category', $data->dad_income)->first()->amount;
             // dd($ga);
             // $gb = Income::where('category', $data->mom_income)->first()->amount;
-            return view('member.data', [
+            return view('member.index', [
                 'data' => $data,
                 // 'ga' => $ga,
                 // 'gb' => $gb,
-                'role' => 0,
+                'menu_id' => 5,
                 'pesan' => $pesan,
             ]);
         } elseif ($data->status == 3) {
@@ -47,12 +47,12 @@ class MemberController extends Controller
     }
     public function informasiBiaya()
     {
-        $role = 0;
-        return view('member.informasi_biaya',compact('role'));
+        $menu_id = 5;
+        return view('member.informasi_biaya',compact('menu_id'));
     }
     public function showTable()
     {
-        $students = Student::latest()->paginate(15);
+        $students = Student::latest()->paginate(1000);
         $jumlah_pendaftar = Student::get()->count();
         return view('op.students', compact('students', 'jumlah_pendaftar'));
     }
@@ -69,16 +69,16 @@ class MemberController extends Controller
     {
         $token = Auth::guard('member')->user()->email;
         $student = Student::where('token', $token)->first();
-        $role = 4;
-        return view('member.show', compact('student', 'role'));
+        $menu_id = 4;
+        return view('member.show', compact('student', 'menu_id'));
     }
 
     public function cekData()
     {
         $token = Auth::guard('member')->user()->email;
         $student = Student::where('token', $token)->first();
-        $role = 4;
-        return view('member.show', compact('student', 'role'));
+        $menu_id = 4;
+        return view('member.show', compact('student', 'menu_id'));
     }
     public function infoDaftarUlang()
     {
@@ -88,8 +88,8 @@ class MemberController extends Controller
         $student = Student::where('token', $token)->first();
 
         $fund = Fund_category::where('id', $student->daftarulang)->first();
-        $role = 4;
-        return view('member.daftarulang', compact('fund', 'role', 'alurdaftarulang'));
+        $menu_id = 4;
+        return view('member.daftarulang', compact('fund', 'menu_id', 'alurdaftarulang'));
     }
     public function seragam()
     {
@@ -97,14 +97,14 @@ class MemberController extends Controller
         $student = Student::where('token', $token)->first();
         $cek = Size::where('student_id', $student->id)->first();
         $telahbayar = $student->telahbayar;
-        $role = 4;
+        $menu_id = 4;
         if ($student->gender == 'perempuan') {
             $jk = 'p';
         } else {
             $jk = 'l';
         }
         $uniforms = Uniform::where('gender', $jk)->get();
-        return view('member.seragam', compact('role', 'uniforms', 'jk', 'cek', 'telahbayar'));
+        return view('member.seragam', compact('menu_id', 'uniforms', 'jk', 'cek', 'telahbayar'));
     }
     public function postsize(Request $request)
     {
@@ -139,9 +139,9 @@ class MemberController extends Controller
     }
     public function schedule()
     {
-        $role = 0;
+        $menu_id = 5;
         $token = Auth::guard('member')->user()->email;
         $student = Student::where('token', $token)->first();
-        return view('member.schedule', compact('role', 'student'));
+        return view('member.schedule', compact('menu_id', 'student'));
     }
 }
