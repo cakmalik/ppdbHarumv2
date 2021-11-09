@@ -2,6 +2,7 @@
     <section class="bg-secondary py-4">
         <div class="container pb-4">
             @php
+                // dd($menuid);
                 $menus = DB::table('menus')
                     ->where('titlemenu_id', 'like', '%' . $menuid . '%')
                     ->orderBy('posisi', 'asc')

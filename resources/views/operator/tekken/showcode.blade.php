@@ -29,6 +29,8 @@
                         $status = 'Belum terpakai';
                     } elseif ($item->level == 'registered') {
                         $status = 'Telah mendaftar';
+                    } elseif ($item->level == 'accept') {
+                        $status = 'Diterima';
                     } else {
                         $status = 'Ditolak';
                     }

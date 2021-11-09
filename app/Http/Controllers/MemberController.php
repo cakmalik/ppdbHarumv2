@@ -31,8 +31,6 @@ class MemberController extends Controller
             // $gb = Income::where('category', $data->mom_income)->first()->amount;
             return view('member.index', [
                 'data' => $data,
-                // 'ga' => $ga,
-                // 'gb' => $gb,
                 'menu_id' => 5,
                 'pesan' => $pesan,
             ]);
@@ -41,8 +39,10 @@ class MemberController extends Controller
             $nama = $data->nick_name;
             return view('member.maaf', compact('full_name', 'nama'));
         } else {
-            $full_name = $data->full_name;
-            return view('member.selamat', compact('full_name'));
+            return view('member.index', [
+                'data' => $data,
+                'menu_id' => 5,
+            ]);
         }
     }
     public function informasiBiaya()

@@ -10,6 +10,8 @@ class MenuSeeder extends Seeder
 {
     public function run()
     {
+        // 4 = untuk yang diterima
+        // 5 = baru mendaftar
         DB::table('menus')->insert([
             [
                 'titlemenu_id' => '4,5',

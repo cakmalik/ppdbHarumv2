@@ -52,16 +52,20 @@ Route::group(['middleware' => ['auth:member', 'ceklevel:member']], function () {
 });
 
 //bagian member sudah isi data
-Route::group(['middleware' => ['auth:member', 'ceklevel:registered']], function () {
+Route::group(['middleware' => ['auth:member', 'ceklevel:registered,accept']], function () {
     Route::group(['prefix' => 'members'], function () {
         Route::get('index', [MemberController::class, 'index'])->name('member.index');
-        
         Route::get('schedule', [MemberController::class, 'schedule']);
+    });
+    Route::get('accRedirect', [MemberController::class, 'accRedirect']);
+});
+//bagian member diterima
+Route::group(['middleware' => ['auth:member', 'ceklevel:registered,accept']], function () {
+    Route::group(['prefix' => 'members'], function () {
         Route::get('informasi_biaya',[Membercontroller::class,'informasiBiaya'])->name('member.info_biaya');
     });
     Route::get('accRedirect', [MemberController::class, 'accRedirect']);
 });
-
 // Member diterima
 Route::group(['middleware' => ['auth:member', 'ceklevel:accept']], function () {
     Route::group(['prefix' => 'members'], function () {
