@@ -31,7 +31,7 @@ class LoginController extends Controller
     public function postLoginAdmin(Request $request)
     {
         if (Auth::guard('user')->attempt(['email' => $request->email, 'password' => $request->password])) {
-            return redirect('tekken');
+            return redirect('/op/home');
         }
         return back();
     }

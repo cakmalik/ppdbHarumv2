@@ -14,16 +14,16 @@ use App\Models\setup;
 use Matrix\Operators\Operator;
 
 Route::get('/', function () {
-    $pesan_welcome = setup::where('name', 'pesan_welcome')->first()->value;
-    $judul_welcome = setup::where('name', 'judul_welcome')->first()->value;
-    return view('landingpage.welcome', compact('pesan_welcome', 'judul_welcome'));
+    // $pesan_welcome = setup::where('name', 'pesan_welcome')->first()->value;
+    // $judul_welcome = setup::where('name', 'judul_welcome')->first()->value;
+    return view('landingpage.welcome');
 })->name('landingpage.home');
 
 
 Route::group(['prefix' => 'wel'], function () {
     Route::get('jadwal', function () {
-        $pengumuman = setup::where('name', 'pengumuman_welcome')->first()->value;
-        return view('landingpage.jadwal', compact('pengumuman'));
+        // $pengumuman = setup::where('name', 'pengumuman_welcome')->first()->value;
+        return view('landingpage.jadwal');
     })->name('landingpage.jadwal');
     Route::get('panduan', function () {
         return view('landingpage.panduan');
