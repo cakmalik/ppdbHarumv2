@@ -61,8 +61,9 @@ class MemberController extends Controller
     {
         $token = Auth::guard('member')->user()->email;
         $data = Student::where('token', $token)->first();
-        $full_name = $data->full_name;
-        return view('member.selamat', compact('full_name'));
+        $pesan = $data->full_name. ' Diterima di SDIT HARUM JEMBER';
+        $menu_id = 5;
+        return view('member.index', compact('pesan','data','menu_id'));
     }
     //saat siswa diterima
     public function roleDiterima()

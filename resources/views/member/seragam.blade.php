@@ -1,49 +1,42 @@
 @extends('template.app.layoutMember')
 @section('content')
 
-    <div class="accordion border" id="ukuran">
-        <div class="accordion-item">
-            <h2 class="accordion-header" id="headingOne">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                    Ukuran Seragam
-                </button>
-            </h2>
-            <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#alur">
-                <div class="accordion-body">
-                    <div class="modalbody">
-                        <img class="img-fluid" src="{{ asset('img/ukuran.svg') }}" alt="">
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th>#</th>
-                                    <th>Info</th>
-                                    <th>S</th>
-                                    <th>M</th>
-                                    <th>L</th>
-                                    <th>XL</th>
-                                    <th>XXL</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach ($uniforms as $uni)
-                                    <tr>
-                                        <td>{{ $uni->id }}</td>
-                                        <td>{{ $uni->info }}</td>
-                                        <td>{{ $uni->s }}</td>
-                                        <td>{{ $uni->m }}</td>
-                                        <td>{{ $uni->l }}</td>
-                                        <td>{{ $uni->xl }}</td>
-                                        <td>{{ $uni->xxl }}</td>
-                                    </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+
+    {{-- disini button modal --}}
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Tabel seragam
+    </button>
+    {{-- ini memanggil modal --}}
+    <x-modal judul="Ukuran seragam">
+        <img class="img-fluid" src="{{ asset('img/ukuran.svg') }}" alt="">
+        <table class="">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Info</th>
+                    <th>S</th>
+                    <th>M</th>
+                    <th>L</th>
+                    <th>XL</th>
+                    <th>XXL</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach ($uniforms as $uni)
+                    <tr>
+                        <td>{{ $uni->id }}</td>
+                        <td>{{ $uni->info }}</td>
+                        <td>{{ $uni->s }}</td>
+                        <td>{{ $uni->m }}</td>
+                        <td>{{ $uni->l }}</td>
+                        <td>{{ $uni->xl }}</td>
+                        <td>{{ $uni->xxl }}</td>
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
+
+    </x-modal>
 
     {{-- <button class="button btn-sm tombolmodal" id="tombolmodal">Tabel ukuran</button> --}}
     <hr>
