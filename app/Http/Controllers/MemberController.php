@@ -54,7 +54,7 @@ class MemberController extends Controller
     {
         $students = Student::latest()->paginate(1000);
         $jumlah_pendaftar = Student::get()->count();
-        return view('op.students', compact('students', 'jumlah_pendaftar'));
+        return view('operator.students', compact('students', 'jumlah_pendaftar'));
     }
 
     public function accept()

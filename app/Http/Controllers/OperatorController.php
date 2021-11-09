@@ -20,12 +20,12 @@ class OperatorController extends Controller
     {
         $students=Student::latest()->paginate(1000);
 
-        return view('op.students',compact('students'));
+        return view('operator.students',compact('students'));
     }
     public function confirmPage()
     {
         $students = Student::where('status',1)->paginate(1000);
-        return view('op.confirmPage',compact('students')); 
+        return view('operator.confirmPage',compact('students')); 
     }
     // mengubah siswa awal menjadi di terima
     public function confirmAcc(Request $request)
@@ -56,17 +56,17 @@ class OperatorController extends Controller
     public function confirmed()
     {
         $students = Student::where('status','!=',1)->orderBy('status','asc')->paginate(1000);
-        return view('op.confirmed',compact('students'));
+        return view('operator.confirmed',compact('students'));
     }
     public function uniformTable()
     {
         $uniforms=Uniform::get();
-        return view('op.uniformTable',compact('uniforms'));
+        return view('operator.uniformTable',compact('uniforms'));
     }
     public function opSet()
     {
         $pesanwa = setup::where('name','pesan_wa')->first();
-        return view('op.opset',compact('pesanwa'));
+        return view('operator.opset',compact('pesanwa'));
     }
     public function setwa(Request $request)
     {
@@ -78,12 +78,12 @@ class OperatorController extends Controller
     public function fundCategories()
     {
         $funds = Fund_category::orderBy('id','asc')->get();
-        return view('op.fund.fund_categories',compact('funds'));
+        return view('operator.fund.fund_categories',compact('funds'));
     }
     public function editFund($id)
     {
         $fund = Fund_category::where('id',$id)->first();
-        return view('op.fund.edit',compact('fund'));
+        return view('operator.fund.edit',compact('fund'));
     }
     public function updateFund(Request $request,$id)
     {
@@ -129,7 +129,7 @@ class OperatorController extends Controller
     {
         $funds = Fund_category::orderBy('id','asc')->get();
         $students = Student::where('status',2)->orderBy('status','asc')->paginate(15);
-        return view('op.fund.apply',compact('students','funds'));
+        return view('operator.fund.apply',compact('students','funds'));
     }
     public function postApplyDaftarulang(Request $request,$id)
     {
@@ -170,12 +170,12 @@ class OperatorController extends Controller
     public function tableFitting()
     {
         $sizes = Size::latest()->paginate(15);
-        return view('op.table_fitting', compact('sizes'));
+        return view('operator.table_fitting', compact('sizes'));
     }
     public function manageSchedule()
     {
         $students = Student::paginate(1000);
-        return view('op.manage_schedule',compact('students'));   
+        return view('operator.manage_schedule',compact('students'));   
     }
     public function postSchedule(Request $request)
     {
@@ -206,7 +206,7 @@ class OperatorController extends Controller
      public function editjadwal($id)
     {
         $student = Student::find($id)->first();
-        return view('op.editjadwal',compact('student'));
+        return view('operator.editjadwal',compact('student'));
     }
     public function updatejadwal(Request $request,$id)
     {

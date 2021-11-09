@@ -80,7 +80,7 @@ class StudentController extends Controller
 		->paginate();
  
     		// mengirim data pegawai ke view index
-		return view('op.students',compact('students'));
+		return view('operator.students',compact('students'));
  
 	}
     
