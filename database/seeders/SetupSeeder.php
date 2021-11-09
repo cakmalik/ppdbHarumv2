@@ -22,7 +22,7 @@ class SetupSeeder extends Seeder
             ],
             [
                 'name'=>'nomor_wa',
-                'value'=>'+6281335122672',
+                'value'=>'+6285746507030',
                 'info'=>'Ini nomor wa admin/operator'
             ],
             [

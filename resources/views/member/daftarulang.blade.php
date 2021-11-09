@@ -70,7 +70,8 @@
         {{-- <button class="btn btn-dark tombolmodal" id="tombolmodal">
     Alur daftar ulang
 </button> --}}
-        <a target="_blank" href="https://wa.me/+6281335122672" class="btn btn-dark mb-3" id="tombolmodal">
+
+        <a target="_blank" href="https://wa.me/+6285746507030" class="btn btn-dark mb-3" id="tombolmodal">
             Konfirmasi pembayaran
         </a>
 

@@ -2,7 +2,12 @@
     <section class="bg-secondary py-4">
         <div class="container pb-4">
             @php
-                // dd($menuid);
+                $level = Auth::user()->level;
+                if ($level == 'accept') {
+                    $menuid = 4;
+                } else {
+                    $menuid = 5;
+                }
                 $menus = DB::table('menus')
                     ->where('titlemenu_id', 'like', '%' . $menuid . '%')
                     ->orderBy('posisi', 'asc')

@@ -9,7 +9,7 @@
     </p>
     <p>
         3. Setelah melakukan transfer, Lakukan konfirmasi ke
-        nomor 081 335 122 672. dengan format sbb:
+        nomor 0857 4650 7030. dengan format sbb:
     </p>
     <p>
         4. Batas Daftar Ulang Maksimal hingga 14 Maret 2020. bagi yang tidak melakukan daftar ulang hingga waktu yang telah

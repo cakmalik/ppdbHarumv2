@@ -14,7 +14,7 @@ class MenuSeeder extends Seeder
         // 5 = baru mendaftar
         DB::table('menus')->insert([
             [
-                'titlemenu_id' => '4,5',
+                'titlemenu_id' => '4',
                 'name' => 'Data Siswa',
                 'is_active' => 1,
                 'posisi' => 1,
@@ -22,7 +22,7 @@ class MenuSeeder extends Seeder
                 'url' => '/members/index',
             ],
             [
-                'titlemenu_id' => '4,5',
+                'titlemenu_id' => '4',
                 'name' => 'Informasi',
                 'posisi' => 3,
                 'is_active' => 1,
@@ -30,7 +30,7 @@ class MenuSeeder extends Seeder
                 'url' => '/members/informasi_biaya',
             ],
             [
-                'titlemenu_id' => '4,5',
+                'titlemenu_id' => '4',
                 'name' => 'Jadwal tes',
                 'posisi' => 3,
                 'is_active' => 1,
@@ -52,6 +52,31 @@ class MenuSeeder extends Seeder
                 'is_active' => 1,
                 'icon' => 'bi bi-person-bounding-box',
                 'url' => '/members/fitting_seragam',
+            ],
+            // Untuk yang baru daftar
+            [
+                'titlemenu_id' => '5',
+                'name' => 'Data Siswa',
+                'is_active' => 1,
+                'posisi' => 1,
+                'icon' => 'bi bi-people',
+                'url' => '/members/index',
+            ],
+            [
+                'titlemenu_id' => '5',
+                'name' => 'Informasi',
+                'posisi' => 3,
+                'is_active' => 1,
+                'icon' => 'bi bi-person-bounding-box',
+                'url' => '/members/informasi_biaya',
+            ],
+            [
+                'titlemenu_id' => '5',
+                'name' => 'Jadwal tes',
+                'posisi' => 3,
+                'is_active' => 1,
+                'icon' => 'bi bi-person-bounding-box',
+                'url' => '/members/schedule',
             ],
             // MENU OPERTATOR
             [

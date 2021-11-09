@@ -41,7 +41,7 @@ class MemberController extends Controller
         } else {
             return view('member.index', [
                 'data' => $data,
-                'menu_id' => 5,
+                'menu_id' => 4,
             ]);
         }
     }

@@ -1,5 +1,6 @@
 @extends('template.app.layoutMember')
 @section('title', 'Data siswa')
+
 @section('content')
     @if (isset($pesan))
         <x-alert halo="Selamat" :pesan="$pesan" />
