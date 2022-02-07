@@ -232,7 +232,7 @@ class OperatorController extends Controller
         $date->settings(['formatFunction' => 'translatedFormat']);
         $tgl = $date->format('l, j F Y');
         $jam = $CS->jadwal->jam;
-        $message = "Assalamualaikum wr wb. Mengingatkan kepada Ayah/Bunda dan Ananda : *".$CS->full_name."* untuk hadir mengikuti Psikotes di SDIT Harapan Umat Jember pada *".$tgl."*, Jam : *".$jam."* Terima kasih atas perhatiannya. Waasalamualaikum wrb wb";
+        $message = "Assalamualaikum wr wb. Mengingatkan kepada Ayah/Bunda dan Ananda :\n*".$CS->full_name."* \nuntuk hadir mengikuti Psikotes di SDIT Harapan Umat Jember pada: \n*".$tgl."*, \nJam : *".$jam."* \nTerima kasih atas perhatiannya. Waasalamualaikum wrb wb. \n \n_(Wa ini dikirim otomatis. untuk informasi lebih lanjut 088289378109)_";
         $client = new Client();
         try {
             $res = $client->post('http://sister.sditharum.id:7000/send-message', [
