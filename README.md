@@ -5,8 +5,6 @@
 [![MIT License][license-shield]][license-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
-
-
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
@@ -29,8 +27,6 @@
     <a href="https://github.com/hasinilmalik/ppdbHarumv2/issues">Request Feature</a>
   </p>
 </p>
-
-
 
 <!-- TABLE OF CONTENTS -->
 <details open="open">
@@ -58,23 +54,19 @@
   </ol>
 </details>
 
-
-
 <!-- ABOUT THE PROJECT -->
+
 ## About The Project
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
-
 ### Built With
 
-* [Laravel 8](https://laravel.com)
-* [Bootstrap 5](https://getbootstrap.com)
-
-
-
+-   [Laravel 8](https://laravel.com)
+-   [Bootstrap 5](https://getbootstrap.com)
 
 <!-- GETTING STARTED -->
+
 ## Getting Started
 
 To get a local copy up and running follow these simple steps.
@@ -82,60 +74,60 @@ To get a local copy up and running follow these simple steps.
 ### Prerequisites
 
 This is an example of how to list things you need to use the software and how to install them.
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
+
+-   npm
+    ```sh
+    npm install npm@latest -g
+    ```
 
 ### Installation
 
 1. Clone the repo
-   ```sh
-   git clone https://github.com/hasinilmalik/ppdbHarumv2.git
-   ```
+    ```sh
+    git clone https://github.com/hasinilmalik/ppdbHarumv2.git
+    ```
 2. Install NPM packages
-   ```sh
-   npm install
-   ```
+    ```sh
+    npm install
+    ```
 3. Install Composer
-   ```sh
-   composer install --ignore-platform-reqs
-   ```
+    ```sh
+    composer install --ignore-platform-reqs
+    ```
 4. Rename .env.example to .env
 5. Edit .env file
-    Customize your database like this:
-     ```sh
+   Customize your database like this:
+    ```sh
     DB_DATABASE=ppdbv2
     DB_USERNAME=root
     DB_PASSWORD=
     ```
-   And make sure you have created a database with the same name. example "ppdv2"
+    And make sure you have created a database with the same name. example "ppdv2"
 6. Run migration fresh and Seeder
-   ```sh
-   php artisan migrate:fresh --seed
-   ```
-7. Run Development server 
     ```sh
-   php artisan serve
+    php artisan migrate:fresh --seed
+    ```
+7. Run Development server
+    ```sh
+    php artisan serve
     ```
 
 <!-- USAGE EXAMPLES -->
+
 ## Usage
 
 Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
 
 _For more examples, please refer to the [Documentation](https://example.com)_
 
-
-
 <!-- ROADMAP -->
+
 ## Roadmap
 
 See the [open issues](https://github.com/hasinilmalik/ppdbHarumv2/issues) for a list of proposed features (and known issues).
 
-
-
 <!-- CONTRIBUTING -->
+
 ## Contributing
 
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
@@ -146,40 +138,33 @@ Contributions are what make the open source community such an amazing place to l
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-
-
 <!-- LICENSE -->
+
 ## License
 
 Distributed under the MIT License. See `LICENSE` for more information.
 
-
-
 <!-- CONTACT -->
+
 ## Contact
 
 M Hasin Ilmalik - [@hasinilmalik](https://twitter.com/hasinilmalik) - hasinilmalik@gmail.com
 
 Project Link: [https://github.com/hasinilmalik/ppdbHarumv2](https://github.com/hasinilmalik/ppdbHarumv2)
 
-
-
 <!-- ACKNOWLEDGEMENTS -->
+
 ## Acknowledgements
 
-* [Allah SWT and Rasulallah SAW]()
-* [Parents]()
-* [Partners ~ Ikromudin Al Islami]()
-* [laravel]()
-* [bootstrap]()
-
-
-
-
-
+-   [Allah SWT and Rasulallah SAW]()
+-   [Parents]()
+-   [Partners ~ Ikromudin Al Islami]()
+-   [laravel]()
+-   [bootstrap]()
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+
 [contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge
 [contributors-url]: https://github.com/othneildrew/Best-README-Template/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=for-the-badge
