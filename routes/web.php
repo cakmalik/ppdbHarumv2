@@ -19,7 +19,6 @@ Route::get('/', function () {
     return view('landingpage.welcome');
 })->name('landingpage.home');
 
-
 Route::group(['prefix' => 'wel'], function () {
     Route::get('jadwal', function () {
         // $pengumuman = setup::where('name', 'pengumuman_welcome')->first()->value;
@@ -151,3 +150,4 @@ Route::get('member/export', [MemberController::class, 'exportExcel'])->name('exp
 //TRY YAJRA
 Route::get('user', [UserController::class, 'index']);
 Route::get('user/json', [UserController::class, 'json']);
+Route::get('kirimwa/{id}',[OperatorController::class,'kirimWa'])->name('kirim.wa');

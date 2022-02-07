@@ -12,14 +12,19 @@ use UxWeb\SweetAlert\SweetAlert;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Students\Fund_category;
+use Carbon\Carbon;
+use Exception;
+use GuzzleHttp\Client;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Http;
+
 
 class OperatorController extends Controller
 {
     public function showStudents()
     {
         $students=Student::latest()->paginate(1000);
-
+        
         return view('operator.students',compact('students'));
     }
     public function confirmPage()
@@ -43,7 +48,7 @@ class OperatorController extends Controller
     }
     public function confirmReject(Request $request)
     {
-       $request->validate([
+        $request->validate([
             'status'=>'required'
         ]);
         //cek kode token student
@@ -71,8 +76,8 @@ class OperatorController extends Controller
     public function setwa(Request $request)
     {
         DB::table('setups')
-              ->where('name', 'pesan_wa')
-              ->update(['value' => $request->value]);
+        ->where('name', 'pesan_wa')
+        ->update(['value' => $request->value]);
         return back();
     }
     public function fundCategories()
@@ -139,7 +144,7 @@ class OperatorController extends Controller
         }else{
             alert()->error('Kategori belum dipilih', 'MAAF !');
         }
-
+        
         return back();
     }
     public function lunasDaftarulang($id)
@@ -190,8 +195,8 @@ class OperatorController extends Controller
             'jam.required'=>'Pastikan jam ditentukan',
             // 'nilai.unique'=>'Ada siswa yang sudah terjadwal',
             'nilai.required'=>'Pilih siswa'
-        ]
-    );
+            ]
+        );
         $students = $request->nilai;
         foreach($students as $std){
             Schedule::create([
@@ -203,7 +208,7 @@ class OperatorController extends Controller
         alert()->success('Waktu dan Tanggal telah diatur', 'Berhasil');
         return back();
     }
-     public function editjadwal($id)
+    public function editjadwal($id)
     {
         $student = Student::find($id)->first();
         return view('operator.editjadwal',compact('student'));
@@ -218,4 +223,38 @@ class OperatorController extends Controller
         alert()->success('Tanggal & Jam diganti','Berhasil');
         return back();
     }
-}
+    public function kirimWa($id)
+    {  
+        $CS = Student::where('id',$id)->first();
+        $number = $CS->mom_phone;
+        
+        $date = Carbon::parse($CS->jadwal->tanggal)->locale('id');
+        $date->settings(['formatFunction' => 'translatedFormat']);
+        $tgl = $date->format('l, j F Y');
+        $jam = $CS->jadwal->jam;
+        $message = "Assalamualaikum wr wb. Mengingatkan kepada Ayah/Bunda dan Ananda : *".$CS->full_name."* untuk hadir mengikuti Psikotes di SDIT Harapan Umat Jember pada *".$tgl."*, Jam : *".$jam."* Terima kasih atas perhatiannya. Waasalamualaikum wrb wb";
+        $client = new Client();
+        try {
+            $res = $client->post('http://sister.sditharum.id:7000/send-message', [
+                
+                'headers' => [
+                    'Content-Type' => 'application/x-www-form-urlencoded',
+                ],
+                'form_params' => [
+                    // 'number' => sprintf('%08d', 85233002598),
+                    'number' => $number,
+                    'message' => $message
+                    ]
+                ]);
+                
+                $res = json_decode($res->getBody()->getContents(), true);
+                // dd($res);
+            }
+            catch (Exception $e) {
+                $response = $e->getresponse();
+                $result =  json_decode($response->getBody()->getContents());
+                return response()->json(['data' => $result]);
+            }
+            
+        }
+    }

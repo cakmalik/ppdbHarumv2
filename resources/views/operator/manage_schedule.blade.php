@@ -64,6 +64,8 @@
                         <td>
                             <a href="{{ route('edit.jadwal', $student->id) }}" class="btn btn-primary btn-sm"><i
                                     class="bi bi-pencil-square"></i></a>
+                            <a href="{{ route('kirim.wa', $student->id) }}" class="btn btn-success btn-sm"><i
+                                class="bi bi-whatsapp"></i></a>
                         </td>
                     </tr>
                 @endforeach
