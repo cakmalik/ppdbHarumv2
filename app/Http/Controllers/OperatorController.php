@@ -246,9 +246,8 @@ class OperatorController extends Controller
                     'message' => $message
                     ]
                 ]);
-                
                 $res = json_decode($res->getBody()->getContents(), true);
-                // dd($res);
+                return back()->with('success','Terkirim');
             }
             catch (Exception $e) {
                 $response = $e->getresponse();
@@ -258,3 +257,4 @@ class OperatorController extends Controller
             
         }
     }
+    
