@@ -168,6 +168,13 @@ class OperatorController extends Controller
     }
     public function gantiTerima($id)
     {
+        // //cek kode token student
+        $token = Student::where('id',$id)->first()->token;
+        // // update di members table level ke accept
+        Member::where('email', $token)->update(['level'=>'accept']);
+        // // update status menjadi 2/diterima
+        // Student::whereIn('id',$token)->update(['status'=>2]);
+        // return redirect()->back()->with(['success' => 'Berhasil diterima']);
         Student::find($id)->update(['status'=>2]);
         alert()->success('Data diganti terima','Berhasil');
         return back();
