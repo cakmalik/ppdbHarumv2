@@ -1,9 +1,65 @@
 @extends('template.app.layout')
 @section('title', 'Atur Kategori')
 @section('judul', 'Atur Kategori')
+@push('head')
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        /* The Modal (background) */
+        .modal {
+            display: none;
+            /* Hidden by default */
+            position: fixed;
+            /* Stay in place */
+            z-index: 1;
+            /* Sit on top */
+            padding-top: 100px;
+            /* Location of the box */
+            left: 0;
+            top: 0;
+            width: 100%;
+            /* Full width */
+            height: 100%;
+            /* Full height */
+            overflow: auto;
+            /* Enable scroll if needed */
+            background-color: rgb(0, 0, 0);
+            /* Fallback color */
+            background-color: rgba(0, 0, 0, 0.4);
+            /* Black w/ opacity */
+        }
+
+        /* Modal Content */
+        .modal-content {
+            background-color: #fefefe;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+        }
+
+        /* The Close Button */
+        .close {
+            color: #aaaaaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+    </style>
+@endpush
 @section('content')
-    <button id="tombolmodal" class="button tombolmodal">Tambah kategori
-    </button>
+    <button id="myBtn" class="btn btn-primary">Add Category</button>
+
     <table class="table">
         <thead>
             <tr>
@@ -58,8 +114,8 @@
     </table>
 
     <!-- modal -->
-    <div id="modal" class="modal">
-        <div class="modalcard">
+    <div id="myModal" class="modal">
+        <div class="modal-content">
             <div class="modaljudul">
                 <p>Tambah kategori</p>
                 <i id="tutup" class="fas fa-times-circle tutup"></i>
@@ -67,30 +123,72 @@
             <div class="modalbody">
                 <form action="{{ route('store.fund') }}" method="post">
                     @csrf
-                    <input type="radio" name="gender" value="p"> Perempuan
-                    <input type="radio" name="gender" value="l"> Laki-laki
+                    <input class="form-check-label" type="radio" name="gender" value="p"> Perempuan
+                    <input class="form-check-label" type="radio" name="gender" value="l"> Laki-laki
                     <br>
                     <label for="name">Nama kategory</label>
-                    <input name="name" type="text" value="{{ old('name') }}">
+                    <input class="form-control mb-2" name="name" type="text" value="{{ old('name') }}">
                     <label for="gedung">Uang gedung</label>
-                    <input name="gedung" type="number" value="{{ old('gedung') }}">
+                    <input class="form-control mb-2" name="gedung" type="number" value="{{ old('gedung') }}">
                     <label for="perpustakaan">Uang perpustakaan</label>
-                    <input name="perpustakaan" type="number" value="{{ old('perpustakaan') }}">
+                    <input class="form-control mb-2" name="perpustakaan" type="number" value="{{ old('perpustakaan') }}">
                     <label for="kegiatan">Uang kegiatan</label>
-                    <input name="kegiatan" type="number" value="{{ old('kegiatan') }}">
+                    <input class="form-control mb-2" name="kegiatan" type="number" value="{{ old('kegiatan') }}">
                     <label for="bukumedia">Uang buku dan media</label>
-                    <input name="bukumedia" type="number" value="{{ old('bukumedia') }}">
+                    <input class="form-control mb-2" name="bukumedia" type="number" value="{{ old('bukumedia') }}">
                     <label for="seragam">Uang seragam</label>
-                    <input name="seragam" type="number" value="{{ old('seragam') }}">
+                    <input class="form-control mb-2" name="seragam" type="number" value="{{ old('seragam') }}">
                     <label for="jilbab">Uang jilbab</label>
-                    <input name="jilbab" type="number" value="{{ old('jilbab') }}">
+                    <input class="form-control mb-2" name="jilbab" type="number" value="{{ old('jilbab') }}">
                     <label for="ipp">IPP</label>
-                    <input name="ipp" type="number" value="{{ old('ipp') }}">
+                    <input class="form-control mb-2" name="ipp" type="number" value="{{ old('ipp') }}">
 
-                    <button type="submit">Update</button>
+                    <button class="btn btn-primary" type="submit">Update</button>
                 </form>
             </div>
         </div>
     </div>
 
+    <!-- Trigger/Open The Modal -->
+
+    <!-- The Modal -->
+    {{-- <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Some text in the Modal..</p>
+        </div>
+
+    </div> --}}
+
 @endsection
+@push('foot')
+    <script>
+        // Get the modal
+        var modal = document.getElementById("myModal");
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("myBtn");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks the button, open the modal 
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+@endpush
