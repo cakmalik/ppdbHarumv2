@@ -133,7 +133,7 @@ class OperatorController extends Controller
     public function applyDaftarUlang()
     {
         $funds = Fund_category::orderBy('id','asc')->get();
-        $students = Student::where('status',2)->orderBy('status','asc')->paginate(15);
+        $students = Student::where('status',2)->get();
         return view('operator.fund.apply',compact('students','funds'));
     }
     public function postApplyDaftarulang(Request $request,$id)

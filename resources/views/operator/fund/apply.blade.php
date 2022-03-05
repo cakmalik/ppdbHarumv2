@@ -1,6 +1,6 @@
 @extends('template.app.layout')
 @section('title', 'Tentukan nominal')
-<x-tabeldata/>
+<x-tabeldata />
 <x-modal judul="Kategori daftar ulang">
     <div class="table table-responsive">
         <table class="table table-striped table-responsive mt-3" style="width:100%">
@@ -40,18 +40,17 @@
                 @endforeach
             </tbody>
         </table>
-    </div>               
+    </div>
 </x-modal>
 @section('content')
-    
+
 
     <button type="button" class="btn btn-primary mb-4" data-bs-toggle="modal" data-bs-target="#exampleModal">
         Kategori Biaya Daftar Ulang
     </button>
-    
-    <table  id="example" class="table table-striped mt-3" style="width:100%">
+
+    <table id="example" class="table table-striped mt-3" style="width:100%">
         <thead>
-            <th>#</th>
             <th>Nama</th>
             <th>Status</th>
             <th>Pilih</th>
@@ -62,7 +61,6 @@
         <tbody>
             @foreach ($students as $key => $student)
                 <tr>
-                    <td>{{ $key + $students->firstItem() }}</td>
                     <td>
                         {{ $student->full_name }}
                     </td>
@@ -79,7 +77,6 @@
                         @endif
                         @if ($student->telahbayar == 1)
                             - {{ 'lunas' }}
-
                         @endif
                     </td>
                     <form action="{{ route('apply.daftarulang', $student->id) }}" method="POST">
